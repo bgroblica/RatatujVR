@@ -21,16 +21,30 @@ public class Bowl : MonoBehaviour
     }
     public void AddMilk(float amount)
     {
-        milkAmount += amount;
-        milkAmount = Mathf.Clamp(milkAmount, 0, maxIngredients);
+        float total = milkAmount + flourAmount;
+
+        if (total >= maxIngredients) return;
+
+        float spaceLeft = maxIngredients - total;
+
+        float amountToAdd = Mathf.Min(amount, spaceLeft);
+
+        milkAmount += amountToAdd;
 
         UpdateVisual();
     }
 
     public void AddFlour(float amount)
     {
-        flourAmount += amount;
-        flourAmount = Mathf.Clamp(flourAmount, 0, maxIngredients);
+        float total = milkAmount + flourAmount;
+
+        if (total >= maxIngredients) return;
+
+        float spaceLeft = maxIngredients - total;
+
+        float amountToAdd = Mathf.Min(amount, spaceLeft);
+
+        flourAmount += amountToAdd;
 
         UpdateVisual();
     }
