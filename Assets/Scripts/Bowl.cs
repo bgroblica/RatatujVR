@@ -2,22 +2,40 @@ using UnityEngine;
 
 public class Bowl : MonoBehaviour
 {
-    private Vector3 initialScale;
-    private Vector3 initialPosition;
+    private Vector3 initialScaleMilk;
+    private Vector3 initialPositionMilk;
+    private Vector3 initialScaleFlour;
+    private Vector3 initialPositionFlour;
 
-    [Header("Milk")]
+    [Header("Material / Color")]
+    public Renderer fillingRenderer;
+    public Color milkColor = Color.white;
+    public Color batterColor = new Color(1f, 0.9f, 0.6f);
+
+    [Header("Ingredients")]
     public float milkAmount = 0f;
     public float flourAmount = 0f;
     public float maxIngredients = 5f;
 
+    [Header("Mixing")]
+    public float mixProgress = 0f;
+    public float maxMix = 5f;
+
     [Header("Visual")]
-    public Transform fillingVisual;
-    public float maxHeight = 0.2f;
+    public Transform milkVisual;
+    public float maxMilkHeight = 0.2f;
+    public float milkSizeModifier = 1.32f;
+
+    public Transform flourVisual;
+    public float maxFlourHeight = 0.2f;
+    public float flourSizeModifier = 1.32f;
 
     private void Awake()
     {
-        initialScale = fillingVisual.localScale;
-        initialPosition = fillingVisual.localPosition;
+        initialScaleMilk = milkVisual.localScale;
+        initialPositionMilk = milkVisual.localPosition;
+        initialScaleFlour = flourVisual.localScale;
+        initialPositionFlour = flourVisual.localPosition;
     }
     public void AddMilk(float amount)
     {
@@ -31,7 +49,7 @@ public class Bowl : MonoBehaviour
 
         milkAmount += amountToAdd;
 
-        UpdateVisual();
+        UpdateVisualMilk();
     }
 
     public void AddFlour(float amount)
@@ -46,33 +64,84 @@ public class Bowl : MonoBehaviour
 
         flourAmount += amountToAdd;
 
-        UpdateVisual();
+        UpdateVisualFlour();
     }
 
-    private void UpdateVisual()
+    private void UpdateVisualMilk()
     {
-        float total = milkAmount + flourAmount;
-
         float normalized = maxIngredients > 0
-            ? total / maxIngredients
+            ? milkAmount / maxIngredients
             : 0f;
 
         normalized = Mathf.Clamp01(normalized);
 
-        float newHeight = normalized * maxHeight;
+        float newHeight = normalized * maxMilkHeight;
 
-        fillingVisual.localPosition = new Vector3(
-            initialPosition.x,
-            initialPosition.y,
-            initialPosition.z + newHeight
+        milkVisual.localPosition = new Vector3(
+            initialPositionMilk.x,
+            initialPositionMilk.y,
+            initialPositionMilk.z + newHeight
         );
 
-        float scaleMultiplier = Mathf.Lerp(1f, 1.32f, normalized);
+        float scaleMultiplier = Mathf.Lerp(1f, milkSizeModifier, normalized);
 
-        Vector3 scale = initialScale;
+        Vector3 scale = initialScaleMilk;
         scale.x *= scaleMultiplier;
         scale.y *= scaleMultiplier;
 
-        fillingVisual.localScale = scale;
+        milkVisual.localScale = scale;
+    }
+
+    private void UpdateVisualFlour()
+    {
+        float flourNormalized = maxIngredients > 0
+            ? flourAmount / maxIngredients
+            : 0f;
+
+        flourNormalized = Mathf.Clamp01(flourNormalized);
+
+        float mixPercent = maxMix > 0
+            ? mixProgress / maxMix
+            : 0f;
+
+        mixPercent = Mathf.Clamp01(mixPercent);
+
+        float remaining = Mathf.Lerp(flourNormalized, 0f, mixPercent);
+
+        float newHeight = remaining * maxFlourHeight;
+
+        flourVisual.localPosition = new Vector3(
+            initialPositionFlour.x,
+            initialPositionFlour.y,
+            initialPositionFlour.z + (newHeight / 2f)
+        );
+
+        float scaleXY = Mathf.Lerp(1f, flourSizeModifier, remaining);
+
+        Vector3 scale = initialScaleFlour;
+        scale.x *= scaleXY;
+        scale.y *= scaleXY;
+        scale.z *= newHeight * 250f; 
+
+        flourVisual.localScale = scale;
+    }
+
+    public void Mix(float intensity)
+    {
+        mixProgress += intensity * Time.deltaTime;
+        mixProgress = Mathf.Clamp(mixProgress, 0, maxMix);
+
+        UpdateMaterial();
+        UpdateVisualFlour();
+    }
+
+    private void UpdateMaterial()
+    {
+        float mixPercent = maxMix > 0 ? mixProgress / maxMix : 0f;
+        mixPercent = Mathf.Clamp01(mixPercent);
+
+        Color currentColor = Color.Lerp(milkColor, batterColor, mixPercent);
+
+        fillingRenderer.material.color = currentColor;
     }
 }
