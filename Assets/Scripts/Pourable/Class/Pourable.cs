@@ -10,13 +10,20 @@ public abstract class Pourable : MonoBehaviour
     public float pourRate = 0.02f;
     public float pourDistance = 1f;
 
+    [Header("Amount")]
+    public float maxAmount = 5f;
+    [SerializeField] protected float currentAmount;
+
     protected bool isPouring = false;
     protected bool isHeld = false;
+    protected bool isEmpty = false;
 
     private XRGrabInteractable grabInteractable;
 
     protected virtual void Awake()
     {
+        currentAmount = maxAmount;
+
         grabInteractable = GetComponent<XRGrabInteractable>();
 
         grabInteractable.selectEntered.AddListener(OnGrab);
@@ -27,6 +34,17 @@ public abstract class Pourable : MonoBehaviour
     {
         grabInteractable.selectEntered.RemoveListener(OnGrab);
         grabInteractable.selectExited.RemoveListener(OnRelease);
+    }
+
+    protected virtual void ReduceAmount(float amount)
+    {
+        currentAmount -= amount;
+        currentAmount = Mathf.Clamp(currentAmount, 0f, maxAmount);
+        UpdateAmount();
+    }
+    protected virtual float GetCurrentAmount()
+    {
+        return currentAmount;
     }
 
     private void OnGrab(SelectEnterEventArgs args)
@@ -48,27 +66,49 @@ public abstract class Pourable : MonoBehaviour
 
         if (angle > pourAngle && !isPouring)
         {
-            Debug.Log("START POUR");
             StartPour();
         }
         else if (angle <= pourAngle && isPouring)
         {
-            Debug.Log("STOP POUR");
             StopPour();
         }
     }
-
+    public abstract void UpdateAmount();
     protected virtual void StartPour()
     {
+        if (GetCurrentAmount() <= 0f || isEmpty)
+        {
+            Debug.Log("EMPTY - can't pour");
+            return;
+        }
+
         isPouring = true;
-        InvokeRepeating(nameof(Pour), 0f, pourRate);
+        InvokeRepeating(nameof(PourTick), 0f, pourRate);
     }
 
     protected virtual void StopPour()
     {
         isPouring = false;
-        CancelInvoke(nameof(Pour));
+        CancelInvoke(nameof(PourTick));
     }
 
-    protected abstract void Pour();
+    private void PourTick()
+    {
+        if (GetCurrentAmount() <= 0f)
+        {
+            isEmpty = true;
+            StopPour();
+            return;
+        }
+
+        isEmpty = false;
+
+        float amountToPour = pourRate;
+
+        ReduceAmount(amountToPour);
+
+        Pour(amountToPour);
+    }
+
+    protected abstract void Pour(float amount);
 }

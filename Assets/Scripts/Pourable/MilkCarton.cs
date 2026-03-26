@@ -4,16 +4,19 @@ public class MilkCarton : Pourable
 {
     public ParticleSystem milkParticles;
 
+    public override void UpdateAmount()
+    {
+    }
     protected override void StartPour()
     {
+        if (isEmpty) return;
+
         base.StartPour();
 
         if (milkParticles != null)
         {
             milkParticles.Play();
-            Debug.Log("StartPouring");
         }
-
     }
 
     protected override void StopPour()
@@ -24,7 +27,7 @@ public class MilkCarton : Pourable
             milkParticles.Stop();
     }
 
-    protected override void Pour()
+    protected override void Pour(float amount)
     {
         if (pourPoint == null) return;
 
@@ -37,7 +40,7 @@ public class MilkCarton : Pourable
             if (bowl != null)
             {
                 Debug.Log("HIT BOWL!");
-                bowl.AddMilk(0.1f);
+                bowl.AddMilk(amount);
             }
         }
     }

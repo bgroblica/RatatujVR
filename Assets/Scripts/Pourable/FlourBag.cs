@@ -4,16 +4,19 @@ public class FlourBag : Pourable
 {
     public ParticleSystem flourParticles;
 
+    public override void UpdateAmount()
+    {
+    }
     protected override void StartPour()
     {
+        if (isEmpty) return;
+
         base.StartPour();
 
         if (flourParticles != null)
         {
             flourParticles.Play();
-            Debug.Log("StartPouring");
         }
-
     }
 
     protected override void StopPour()
@@ -24,7 +27,7 @@ public class FlourBag : Pourable
             flourParticles.Stop();
     }
 
-    protected override void Pour()
+    protected override void Pour(float amount)
     {
         if (pourPoint == null) return;
 
@@ -37,7 +40,7 @@ public class FlourBag : Pourable
             if (bowl != null)
             {
                 Debug.Log("HIT BOWL!");
-                bowl.AddFlour(0.1f);
+                bowl.AddFlour(amount);
             }
         }
     }

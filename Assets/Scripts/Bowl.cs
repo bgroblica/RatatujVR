@@ -7,6 +7,8 @@ public class Bowl : MonoBehaviour
     private Vector3 initialScaleFlour;
     private Vector3 initialPositionFlour;
 
+    public BatterBowl batterBowl;
+
     [Header("Material / Color")]
     public Renderer fillingRenderer;
     public Color milkColor = Color.white;
@@ -50,6 +52,7 @@ public class Bowl : MonoBehaviour
         milkAmount += amountToAdd;
 
         UpdateVisualMilk();
+        batterBowl.UpdateAmount();
     }
 
     public void AddFlour(float amount)
@@ -65,9 +68,10 @@ public class Bowl : MonoBehaviour
         flourAmount += amountToAdd;
 
         UpdateVisualFlour();
+        batterBowl.UpdateAmount();
     }
 
-    private void UpdateVisualMilk()
+    public void UpdateVisualMilk()
     {
         float normalized = maxIngredients > 0
             ? milkAmount / maxIngredients
@@ -143,5 +147,13 @@ public class Bowl : MonoBehaviour
         Color currentColor = Color.Lerp(milkColor, batterColor, mixPercent);
 
         fillingRenderer.material.color = currentColor;
+    }
+    public bool IsFullyMixed()
+    {
+        return maxMix > 0 && (mixProgress / maxMix) >= 1f;
+    }
+    public float GetBatterAmount()
+    {
+        return milkAmount + flourAmount;
     }
 }
