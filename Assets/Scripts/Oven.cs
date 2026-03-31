@@ -5,6 +5,10 @@ public class Oven : MonoBehaviour
 {
     private List<Mold> moldsInside = new List<Mold>();
 
+    public Animator animator;
+
+    private bool isOpen = false;
+
     private void OnTriggerEnter(Collider other)
     {
         Mold mold = other.GetComponentInParent<Mold>();
@@ -31,6 +35,13 @@ public class Oven : MonoBehaviour
         {
             moldsInside.Remove(mold);
         }
+    }
+
+    public void ToggleDoor()
+    {
+        isOpen = !isOpen;
+
+        animator.SetBool("Open", isOpen);
     }
 
     private void Update()
