@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: e7144ccf066ab8142849efb71ef1ac86
+guid: 1ae6e83b83af4c54e8bc5af1342834ed
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
@@ -12,7 +12,7 @@ ModelImporter:
   animations:
     legacyGenerateAnimations: 4
     bakeSimulation: 0
-    resampleCurves: 0
+    resampleCurves: 1
     optimizeGameObjects: 0
     removeConstantScaleCurves: 0
     motionNodeName: 
@@ -31,9 +31,9 @@ ModelImporter:
     extraUserProperties: []
     clipAnimations:
     - serializedVersion: 16
-      name: F_KeyboardKey_01Action
-      takeName: F_KeyboardKey_01Action
-      internalID: -1346662275582063511
+      name: F_KeyboardKey_01|F_KeyboardKey_01_CLICK
+      takeName: F_KeyboardKey_01|F_KeyboardKey_01_CLICK
+      internalID: 3624017952376731684
       firstFrame: 0
       lastFrame: 8
       wrapMode: 0
@@ -60,9 +60,9 @@ ModelImporter:
       maskSource: {instanceID: 0}
       additiveReferencePoseFrame: 0
     - serializedVersion: 16
-      name: F_KeyboardKey_02Action
-      takeName: F_KeyboardKey_02Action
-      internalID: -5059953282829377157
+      name: F_KeyboardKey_01|F_KeyboardKey_01_UNCLICK
+      takeName: F_KeyboardKey_01|F_KeyboardKey_01_UNCLICK
+      internalID: 9204443462381574587
       firstFrame: 0
       lastFrame: 8
       wrapMode: 0
@@ -89,9 +89,96 @@ ModelImporter:
       maskSource: {instanceID: 0}
       additiveReferencePoseFrame: 0
     - serializedVersion: 16
-      name: F_KeyboardKey_03Action
-      takeName: F_KeyboardKey_03Action
-      internalID: -2433210156247100671
+      name: F_KeyboardKey_02|F_KeyboardKey_02_CLICK
+      takeName: F_KeyboardKey_02|F_KeyboardKey_02_CLICK
+      internalID: -1521440296982444962
+      firstFrame: 0
+      lastFrame: 8
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: F_KeyboardKey_02|F_KeyboardKey_02_UNCLICK
+      takeName: F_KeyboardKey_02|F_KeyboardKey_02_UNCLICK
+      internalID: 5720297826992451212
+      firstFrame: 0
+      lastFrame: 8
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: F_KeyboardKey_03|F_KeyboardKey_03_CLICK
+      takeName: F_KeyboardKey_03|F_KeyboardKey_03_CLICK
+      internalID: -6560597020485637316
+      firstFrame: 0
+      lastFrame: 8
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: F_KeyboardKey_03|F_KeyboardKey_03_UNCLICK
+      takeName: F_KeyboardKey_03|F_KeyboardKey_03_UNCLICK
+      internalID: 8868809870142077354
       firstFrame: 0
       lastFrame: 8
       wrapMode: 0
