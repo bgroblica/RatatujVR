@@ -41,6 +41,8 @@ public class Oven : MonoBehaviour
     {
         isOpen = !isOpen;
 
+        Debug.Log("Pressed, hand inside");
+
         animator.SetBool("Open", isOpen);
     }
 
@@ -51,6 +53,10 @@ public class Oven : MonoBehaviour
             if (mold != null && mold.HasBatter())
             {
                 mold.Baking();
+            }
+            if (mold != null && mold.IsFullyBaked())
+            {
+                mold.ReleaseCake();
             }
         }
     }
