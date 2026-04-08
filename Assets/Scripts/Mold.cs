@@ -132,24 +132,29 @@ public class Mold : MonoBehaviour
 
     public void ReleaseCake()
     {
-        Transform holder = currentBatter.transform.Find("ColliderHolder");
+        if (currentBatter == null) return;
+
+        GameObject cake = currentBatter;
+        currentBatter = null;
+        batterVisual = null;
+        batterRenderer = null;
+
+        cake.transform.SetParent(null, true);
+
+        cake.transform.position += -transform.up * 0.05f;
+
+        Transform holder = cake.transform.Find("ColliderHolder");
         if (holder != null)
         {
             holder.gameObject.SetActive(true);
         }
 
-        currentBatter.transform.SetParent(null);
-
-        Rigidbody rb = currentBatter.GetComponent<Rigidbody>();
+        Rigidbody rb = cake.GetComponent<Rigidbody>();
         if (rb != null)
         {
             rb.isKinematic = false;
             rb.useGravity = true;
         }
-
-        currentBatter = null;
-        batterVisual = null;
-        batterRenderer = null;
 
         batterAmount = 0f;
         bakeProgress = 0f;
