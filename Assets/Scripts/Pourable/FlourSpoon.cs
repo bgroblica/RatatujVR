@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class FlourBag : Pourable
+public class FlourSpoon : Pourable
 {
     public ParticleSystem flourParticles;
 
