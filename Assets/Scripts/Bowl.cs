@@ -14,6 +14,7 @@ public class Bowl : MonoBehaviour
     public float flourAmount = 0f;
     public float eggAmount = 0f;
     public float sugarAmount = 0f;
+    public float butterAmount = 0f;
     public float maxIngredients = 20f;
 
     [Header("Mixing")]
@@ -59,7 +60,7 @@ public class Bowl : MonoBehaviour
 
     public void AddFlour(float amount)
     {
-        float total = milkAmount + flourAmount + eggAmount + sugarAmount;
+        float total = milkAmount + flourAmount + eggAmount + sugarAmount + butterAmount;
 
         if (total >= maxIngredients) return;
 
@@ -75,32 +76,35 @@ public class Bowl : MonoBehaviour
 
     public void AddEgg(float amount)
     {
-        float total = milkAmount + flourAmount + eggAmount + sugarAmount;
+        float total = milkAmount + flourAmount + eggAmount + sugarAmount + butterAmount;
 
         if (total >= maxIngredients) return;
 
-        float spaceLeft = maxIngredients - total;
+        eggAmount += amount;
 
-        float amountToAdd = Mathf.Min(amount, spaceLeft);
-
-        eggAmount += amountToAdd;
-
-       // UpdateVisualEgg();
+        // UpdateVisualEgg();
         batterBowl.UpdateAmount();
     }
     public void AddSugar(float amount)
     {
-        float total = milkAmount + flourAmount + eggAmount + sugarAmount;
+        float total = milkAmount + flourAmount + eggAmount + sugarAmount + butterAmount;
 
         if (total >= maxIngredients) return;
 
-        float spaceLeft = maxIngredients - total;
-
-        float amountToAdd = Mathf.Min(amount, spaceLeft);
-
-        sugarAmount += amountToAdd;
+        sugarAmount += amount;
 
        // UpdateVisualSugar();
+        batterBowl.UpdateAmount();
+    }
+    public void AddButter(float amount)
+    {
+        float total = milkAmount + flourAmount + eggAmount + sugarAmount + butterAmount;
+
+        if (total >= maxIngredients) return;
+
+        sugarAmount += amount;
+
+        // UpdateVisualButter();
         batterBowl.UpdateAmount();
     }
 
