@@ -1,50 +1,59 @@
 using UnityEngine;
-using UnityEngine.XR.Interaction.Toolkit.Interactables;
 
 public class FlourScooping : MonoBehaviour
 {
-    public bool isInFlour = false;
+    [SerializeField] private FlourSpoon flourSpoon;
 
     private FlourBag currentBag;
 
-    private XRGrabInteractable grab;
-    private Rigidbody rb;
+    [Header("Flour Scoop")]
+    public float scoopAmount = 1f;
 
-    [Header("Flour")]
-    public float flourAmount = 0f;
-    public float maxFlour = 1f;
-    public float collectSpeed = 0.5f;
-
-    private void Awake()
-    {
-        grab = GetComponent<XRGrabInteractable>();
-        rb = GetComponent<Rigidbody>();
-    }
     public void EnterFlour(FlourBag bag)
     {
-        isInFlour = true;
         currentBag = bag;
+
+        flourSpoon.StopScoopingPour();
+
+        CollectFlour();
     }
 
     public void ExitFlour()
     {
-        isInFlour = false;
         currentBag = null;
-    }
-
-    private void Update()
-    {
-        if (isInFlour)
-        {
-            CollectFlour();
-        }
     }
 
     private void CollectFlour()
     {
-        if (flourAmount >= maxFlour) return;
+        if (currentBag == null) return;
 
-        flourAmount += collectSpeed * Time.deltaTime;
-        flourAmount = Mathf.Clamp(flourAmount, 0f, maxFlour);
+        if (flourSpoon.IsFull())
+        {
+            Debug.Log("Spoon full");
+            return;
+        }
+
+        if (currentBag.flourAmount <= 0f)
+            return;
+
+        float roomLeft =
+            flourSpoon.maxAmount - flourSpoon.GetCurrentAmount();
+
+        float taken = Mathf.Min(
+            scoopAmount,
+            currentBag.flourAmount,
+            roomLeft
+        );
+
+        currentBag.ReduceFlour(taken);
+
+        flourSpoon.AddScoopedFlour(taken);
+
+        Debug.Log("Collected flour: " + taken);
+    }
+
+    public bool IsInFlour()
+    {
+        return currentBag != null;
     }
 }

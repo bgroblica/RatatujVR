@@ -2,7 +2,9 @@ using UnityEngine;
 
 public class FlourBag : MonoBehaviour
 {
-    private float flourAmount = 100f;
+    [SerializeField] private Collider flourCollider;
+
+    public float flourAmount = 100f;
 
     public float ReduceFlour(float amount)
     {
@@ -14,9 +16,9 @@ public class FlourBag : MonoBehaviour
 
         return taken;
     }
-    private void OnTriggerEnter(Collider other)
+    private void OnTriggerEnter(Collider flourCollider)
     {
-        FlourScooping spoon = other.GetComponent<FlourScooping>();
+        FlourScooping spoon = flourCollider.GetComponent<FlourScooping>();
 
         if (spoon != null)
         {
@@ -24,9 +26,9 @@ public class FlourBag : MonoBehaviour
         }
     }
 
-    private void OnTriggerExit(Collider other)
+    private void OnTriggerExit(Collider flourCollider)
     {
-        FlourScooping spoon = other.GetComponent<FlourScooping>();
+        FlourScooping spoon = flourCollider.GetComponent<FlourScooping>();
 
         if (spoon != null)
         {

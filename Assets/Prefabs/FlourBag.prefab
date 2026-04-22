@@ -87,8 +87,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 0.38777542, y: 0.105914, z: 0.0789361}
-  m_Center: {x: 0.00000023841858, y: 0.60107297, z: -0.17782095}
+  m_Size: {x: 0.38777542, y: 0.33153075, z: 0.09190248}
+  m_Center: {x: 0.00000023841858, y: 0.4882646, z: -0.18430415}
 --- !u!1 &1685834660629273313
 GameObject:
   m_ObjectHideFlags: 0
@@ -140,8 +140,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 0.38777542, y: 0.105914, z: 0.0789361}
-  m_Center: {x: 0.00000023841858, y: 0.60107297, z: -0.17782095}
+  m_Size: {x: 0.38777542, y: 0.33023405, z: 0.08412279}
+  m_Center: {x: 0.00000023841858, y: 0.48891294, z: -0.18041429}
 --- !u!1 &2501549469979745556
 GameObject:
   m_ObjectHideFlags: 0
@@ -193,8 +193,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 0.38777542, y: 0.105914, z: 0.0789361}
-  m_Center: {x: 0.00000023841858, y: 0.60107297, z: -0.17782095}
+  m_Size: {x: 0.38777542, y: 0.33153075, z: 0.06207958}
+  m_Center: {x: 0.00000023841858, y: 0.4882646, z: -0.16939269}
 --- !u!1 &3530123524654223528
 GameObject:
   m_ObjectHideFlags: 0
@@ -246,8 +246,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 0.38777542, y: 0.105914, z: 0.0789361}
-  m_Center: {x: 0.00000023841858, y: 0.60107297, z: -0.17782095}
+  m_Size: {x: 0.38777542, y: 0.3302341, z: 0.06596935}
+  m_Center: {x: 0.00000023841858, y: 0.4889129, z: -0.17133757}
 --- !u!1 &8345716936959895213
 GameObject:
   m_ObjectHideFlags: 0
@@ -299,8 +299,61 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 0.38777542, y: 0.54912364, z: 0.4980204}
-  m_Center: {x: 0.00000023841858, y: 0.2703917, z: 0.0010565519}
+  m_Size: {x: 0.43315816, y: 0.4116789, z: 0.53303003}
+  m_Center: {x: -0.0019446611, y: 0.20166934, z: -0.0021851063}
+--- !u!1 &9031258026262354020
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1508224900574907399}
+  - component: {fileID: 3626337813210495422}
+  m_Layer: 0
+  m_Name: FlourCollider
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1508224900574907399
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9031258026262354020}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 474591302959052265}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &3626337813210495422
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9031258026262354020}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.3283422, y: 0.19400513, z: 0.30594254}
+  m_Center: {x: -0.0006738901, y: 0.54972345, z: -0.0015482903}
 --- !u!1001 &80131565432099330
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -366,6 +419,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: -8679921383154817045, guid: cd7c76c8689f72442a9b8f1b3f4e6963, type: 3}
       insertIndex: -1
       addedObject: {fileID: 4268476277043379596}
+    - targetCorrespondingSourceObject: {fileID: -8679921383154817045, guid: cd7c76c8689f72442a9b8f1b3f4e6963, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1508224900574907399}
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: cd7c76c8689f72442a9b8f1b3f4e6963, type: 3}
       insertIndex: -1
@@ -417,6 +473,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d8db3878a664f0c4986f06317bb3aebe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  flourCollider: {fileID: 3626337813210495422}
+  flourAmount: 100
 --- !u!1001 &806362216851870808
 PrefabInstance:
   m_ObjectHideFlags: 0
