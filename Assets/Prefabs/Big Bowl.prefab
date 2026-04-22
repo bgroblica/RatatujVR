@@ -130,7 +130,6 @@ GameObject:
   - component: {fileID: 2064650551366939632}
   - component: {fileID: 1581726929515771666}
   - component: {fileID: 3572001000852011981}
-  - component: {fileID: 2810347155405857868}
   - component: {fileID: 3931783989077316728}
   - component: {fileID: 5187800848247297365}
   - component: {fileID: 1686514952188183721}
@@ -251,27 +250,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!65 &2810347155405857868
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1702894876586997470}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 1
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 0.5153084, y: 0.5208872, z: 0.12450041}
-  m_Center: {x: -0.0013947487, y: 0.0013947785, z: 0.08316947}
 --- !u!114 &3931783989077316728
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -414,20 +392,23 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   batterBowl: {fileID: 8885189425255088206}
-  fillingRenderer: {fileID: 9200045683690092161}
-  milkColor: {r: 1, g: 1, b: 1, a: 1}
-  batterColor: {r: 1, g: 0.9, b: 0.6, a: 1}
   milkAmount: 0
   flourAmount: 0
-  maxIngredients: 8
+  eggAmount: 0
+  sugarAmount: 0
+  butterAmount: 0
+  maxIngredients: 10
   mixProgress: 0
-  maxMix: 8
+  maxMix: 10
   milkVisual: {fileID: 8395395163111092335}
   maxMilkHeight: 0.2
   milkSizeModifier: 1.32
   flourVisual: {fileID: 9014380091723166066}
   maxFlourHeight: 0.1
   flourSizeModifier: 2
+  fillingRenderer: {fileID: 9200045683690092161}
+  milkColor: {r: 1, g: 1, b: 1, a: 1}
+  batterColor: {r: 1, g: 0.9, b: 0.6, a: 1}
 --- !u!114 &1686514952188183721
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -441,7 +422,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bowl: {fileID: 5187800848247297365}
-  minMixSpeed: 0.5
+  minMixSpeed: 1
 --- !u!114 &8885189425255088206
 MonoBehaviour:
   m_ObjectHideFlags: 0
