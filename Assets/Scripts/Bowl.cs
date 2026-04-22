@@ -9,15 +9,13 @@ public class Bowl : MonoBehaviour
 
     public BatterBowl batterBowl;
 
-    [Header("Material / Color")]
-    public Renderer fillingRenderer;
-    public Color milkColor = Color.white;
-    public Color batterColor = new Color(1f, 0.9f, 0.6f);
-
     [Header("Ingredients")]
     public float milkAmount = 0f;
     public float flourAmount = 0f;
-    public float maxIngredients = 5f;
+    public float eggAmount = 0f;
+    public float sugarAmount = 0f;
+    public float butterAmount = 0f;
+    public float maxIngredients = 20f;
 
     [Header("Mixing")]
     public float mixProgress = 0f;
@@ -32,6 +30,11 @@ public class Bowl : MonoBehaviour
     public float maxFlourHeight = 0.2f;
     public float flourSizeModifier = 1.32f;
 
+    [Header("Material / Color")]
+    public Renderer fillingRenderer;
+    public Color milkColor = Color.white;
+    public Color batterColor = new Color(1f, 0.9f, 0.6f);
+
     private void Awake()
     {
         initialScaleMilk = milkVisual.localScale;
@@ -41,7 +44,7 @@ public class Bowl : MonoBehaviour
     }
     public void AddMilk(float amount)
     {
-        float total = milkAmount + flourAmount;
+        float total = milkAmount + flourAmount + eggAmount + sugarAmount;
 
         if (total >= maxIngredients) return;
 
@@ -57,7 +60,7 @@ public class Bowl : MonoBehaviour
 
     public void AddFlour(float amount)
     {
-        float total = milkAmount + flourAmount;
+        float total = milkAmount + flourAmount + eggAmount + sugarAmount + butterAmount;
 
         if (total >= maxIngredients) return;
 
@@ -68,6 +71,40 @@ public class Bowl : MonoBehaviour
         flourAmount += amountToAdd;
 
         UpdateVisualFlour();
+        batterBowl.UpdateAmount();
+    }
+
+    public void AddEgg(float amount)
+    {
+        float total = milkAmount + flourAmount + eggAmount + sugarAmount + butterAmount;
+
+        if (total >= maxIngredients) return;
+
+        eggAmount += amount;
+
+        // UpdateVisualEgg();
+        batterBowl.UpdateAmount();
+    }
+    public void AddSugar(float amount)
+    {
+        float total = milkAmount + flourAmount + eggAmount + sugarAmount + butterAmount;
+
+        if (total >= maxIngredients) return;
+
+        sugarAmount += amount;
+
+       // UpdateVisualSugar();
+        batterBowl.UpdateAmount();
+    }
+    public void AddButter(float amount)
+    {
+        float total = milkAmount + flourAmount + eggAmount + sugarAmount + butterAmount;
+
+        if (total >= maxIngredients) return;
+
+        sugarAmount += amount;
+
+        // UpdateVisualButter();
         batterBowl.UpdateAmount();
     }
 

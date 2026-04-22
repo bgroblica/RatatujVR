@@ -42,7 +42,7 @@ public abstract class Pourable : MonoBehaviour
         currentAmount = Mathf.Clamp(currentAmount, 0f, maxAmount);
         UpdateAmount();
     }
-    protected virtual float GetCurrentAmount()
+    public virtual float GetCurrentAmount()
     {
         return currentAmount;
     }

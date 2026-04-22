@@ -39,7 +39,7 @@ public class BatterBowl : Pourable
         if (batterParticles != null)
             batterParticles.Stop();
     }
-    protected override float GetCurrentAmount()
+    public override float GetCurrentAmount()
     {
         if (bowl == null) return 0f;
 
