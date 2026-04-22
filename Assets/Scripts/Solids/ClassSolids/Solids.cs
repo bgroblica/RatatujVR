@@ -5,7 +5,8 @@ public abstract class Solids : MonoBehaviour
     public enum IngredientType
     {
         Butter,
-        Sugar
+        Sugar,
+        Egg
     }
 
     public IngredientType ingredientType;
@@ -30,6 +31,9 @@ public abstract class Solids : MonoBehaviour
 
             case IngredientType.Sugar:
                 bowl.AddSugar(amount);
+                break;
+            case IngredientType.Egg:
+                bowl.AddEgg(amount);
                 break;
         }
 
