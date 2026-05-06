@@ -1,4 +1,4 @@
-using UnityEngine;
+﻿using UnityEngine;
 
 public class Bowl : MonoBehaviour
 {
@@ -15,6 +15,7 @@ public class Bowl : MonoBehaviour
     public float eggAmount = 0f;
     public float sugarAmount = 0f;
     public float butterAmount = 0f;
+
     public float maxIngredients = 20f;
 
     [Header("Mixing")]
@@ -39,81 +40,89 @@ public class Bowl : MonoBehaviour
     {
         initialScaleMilk = milkVisual.localScale;
         initialPositionMilk = milkVisual.localPosition;
+
         initialScaleFlour = flourVisual.localScale;
         initialPositionFlour = flourVisual.localPosition;
     }
+
+    // ---------------------------
+    // CLEANING (read-only logic)
+    // ---------------------------
+    private float Clean(float value)
+    {
+        if (Mathf.Abs(value) < 0.01f)
+            return 0f;
+
+        return value;
+    }
+
+    public float GetTotalIngredients()
+    {
+        return Clean(
+            milkAmount +
+            flourAmount +
+            eggAmount +
+            sugarAmount +
+            butterAmount
+        );
+    }
+
+    // ---------------------------
+    // INGREDIENT ADDING
+    // ---------------------------
     public void AddMilk(float amount)
     {
-        float total = milkAmount + flourAmount + eggAmount + sugarAmount;
+        if (GetTotalIngredients() >= maxIngredients) return;
 
-        if (total >= maxIngredients) return;
-
-        float spaceLeft = maxIngredients - total;
-
-        float amountToAdd = Mathf.Min(amount, spaceLeft);
-
-        milkAmount += amountToAdd;
-
+        milkAmount += amount;
         UpdateVisualMilk();
+
         batterBowl.UpdateAmount();
     }
 
     public void AddFlour(float amount)
     {
-        float total = milkAmount + flourAmount + eggAmount + sugarAmount + butterAmount;
+        if (GetTotalIngredients() >= maxIngredients) return;
 
-        if (total >= maxIngredients) return;
-
-        float spaceLeft = maxIngredients - total;
-
-        float amountToAdd = Mathf.Min(amount, spaceLeft);
-
-        flourAmount += amountToAdd;
-
+        flourAmount += amount;
         UpdateVisualFlour();
+
         batterBowl.UpdateAmount();
     }
 
     public void AddEgg(float amount)
     {
-        float total = milkAmount + flourAmount + eggAmount + sugarAmount + butterAmount;
-
-        if (total >= maxIngredients) return;
+        if (GetTotalIngredients() >= maxIngredients) return;
 
         eggAmount += amount;
 
-        // UpdateVisualEgg();
         batterBowl.UpdateAmount();
     }
+
     public void AddSugar(float amount)
     {
-        float total = milkAmount + flourAmount + eggAmount + sugarAmount + butterAmount;
-
-        if (total >= maxIngredients) return;
+        if (GetTotalIngredients() >= maxIngredients) return;
 
         sugarAmount += amount;
 
-       // UpdateVisualSugar();
         batterBowl.UpdateAmount();
     }
+
     public void AddButter(float amount)
     {
-        float total = milkAmount + flourAmount + eggAmount + sugarAmount + butterAmount;
+        if (GetTotalIngredients() >= maxIngredients) return;
 
-        if (total >= maxIngredients) return;
+        butterAmount += amount; // ✔ FIXED BUG
 
-        sugarAmount += amount;
-
-        // UpdateVisualButter();
         batterBowl.UpdateAmount();
     }
 
+    // ---------------------------
+    // VISUALS
+    // ---------------------------
     public void UpdateVisualMilk()
     {
-        float normalized = maxIngredients > 0
-            ? milkAmount / maxIngredients
-            : 0f;
-
+        float normalized = milkAmount / maxIngredients;
         normalized = Mathf.Clamp01(normalized);
 
         float newHeight = normalized * maxMilkHeight;
@@ -135,10 +144,7 @@ public class Bowl : MonoBehaviour
 
     private void UpdateVisualFlour()
     {
-        float flourNormalized = maxIngredients > 0
-            ? flourAmount / maxIngredients
-            : 0f;
-
+        float flourNormalized = flourAmount / maxIngredients;
         flourNormalized = Mathf.Clamp01(flourNormalized);
 
         float mixPercent = maxMix > 0
@@ -162,11 +168,14 @@ public class Bowl : MonoBehaviour
         Vector3 scale = initialScaleFlour;
         scale.x *= scaleXY;
         scale.y *= scaleXY;
-        scale.z *= newHeight * 250f; 
+        scale.z *= newHeight * 250f;
 
         flourVisual.localScale = scale;
     }
 
+    // ---------------------------
+    // MIXING
+    // ---------------------------
     public void Mix(float intensity)
     {
         mixProgress += intensity * Time.deltaTime;
@@ -185,12 +194,17 @@ public class Bowl : MonoBehaviour
 
         fillingRenderer.material.color = currentColor;
     }
+
+    // ---------------------------
+    // STATE CHECKS
+    // ---------------------------
     public bool IsFullyMixed()
     {
         return maxMix > 0 && (mixProgress / maxMix) >= 1f;
     }
+
     public float GetBatterAmount()
     {
-        return milkAmount + flourAmount;
+        return Clean(milkAmount + flourAmount);
     }
 }

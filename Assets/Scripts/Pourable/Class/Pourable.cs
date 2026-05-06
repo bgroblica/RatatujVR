@@ -1,4 +1,4 @@
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.XR.Interaction.Toolkit;
 using UnityEngine.XR.Interaction.Toolkit.Interactables;
 
@@ -8,7 +8,6 @@ public abstract class Pourable : MonoBehaviour
     public Transform pourPoint;
     public float pourAngle = 60f;
     public float pourRate = 0.02f;
-    public float pourDistance = 1f;
 
     [Header("Amount")]
     public float maxAmount = 5f;
@@ -20,20 +19,28 @@ public abstract class Pourable : MonoBehaviour
 
     private XRGrabInteractable grabInteractable;
 
+    public bool IsPouring => isPouring;
+
     protected virtual void Awake()
     {
         currentAmount = maxAmount;
 
         grabInteractable = GetComponent<XRGrabInteractable>();
-
         grabInteractable.selectEntered.AddListener(OnGrab);
         grabInteractable.selectExited.AddListener(OnRelease);
     }
 
     protected virtual void OnDestroy()
     {
+        if (grabInteractable == null) return;
+
         grabInteractable.selectEntered.RemoveListener(OnGrab);
         grabInteractable.selectExited.RemoveListener(OnRelease);
+    }
+
+    public virtual float GetCurrentAmount()
+    {
+        return currentAmount;
     }
 
     protected virtual void ReduceAmount(float amount)
@@ -42,17 +49,13 @@ public abstract class Pourable : MonoBehaviour
         currentAmount = Mathf.Clamp(currentAmount, 0f, maxAmount);
         UpdateAmount();
     }
-    public virtual float GetCurrentAmount()
-    {
-        return currentAmount;
-    }
 
-    private void OnGrab(SelectEnterEventArgs args)
+    protected virtual void OnGrab(SelectEnterEventArgs args)
     {
         isHeld = true;
     }
 
-    private void OnRelease(SelectExitEventArgs args)
+    protected virtual void OnRelease(SelectExitEventArgs args)
     {
         isHeld = false;
         StopPour();
@@ -62,7 +65,7 @@ public abstract class Pourable : MonoBehaviour
     {
         if (!isHeld) return;
 
-        float angle = Vector3.Angle(transform.forward, Vector3.up);
+        float angle = Vector3.Angle(transform.up, Vector3.up);
 
         if (angle > pourAngle && !isPouring)
         {
@@ -73,22 +76,28 @@ public abstract class Pourable : MonoBehaviour
             StopPour();
         }
     }
+
     public abstract void UpdateAmount();
+    protected abstract void Pour(float amount);
+
     protected virtual void StartPour()
     {
         if (GetCurrentAmount() <= 0f || isEmpty)
-        {
-            Debug.Log("EMPTY - can't pour");
             return;
-        }
 
         isPouring = true;
+
+        OnStartPour();
+
         InvokeRepeating(nameof(PourTick), 0f, pourRate);
     }
 
     protected virtual void StopPour()
     {
         isPouring = false;
+
+        OnStopPour();
+
         CancelInvoke(nameof(PourTick));
     }
 
@@ -106,9 +115,10 @@ public abstract class Pourable : MonoBehaviour
         float amountToPour = pourRate;
 
         ReduceAmount(amountToPour);
-
         Pour(amountToPour);
     }
 
-    protected abstract void Pour(float amount);
+    // 🔥 NEW HOOKS (key fix)
+    protected virtual void OnStartPour() { }
+    protected virtual void OnStopPour() { }
 }

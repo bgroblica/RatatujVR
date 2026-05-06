@@ -13,18 +13,24 @@ public class Egg : Solids
     public Mesh wholeEgg;
     public Mesh crackedEgg;
 
+    [Header("Cracking")]
     public GameObject eggShellPrefab;
-
     public float crackForce = 2f;
-
-    public float crackVelocity = 1.5f;
+    public float crackVelocity = 1f;
 
     private Rigidbody rb;
     private EggState eggState = EggState.Whole;
 
+    private EggPourable eggPourable;
+
     private void Awake()
     {
         rb = GetComponent<Rigidbody>();
+
+        eggPourable = GetComponent<EggPourable>();
+        if (eggPourable != null)
+            eggPourable.enabled = false;
+
         SetState(EggState.Whole);
     }
 
@@ -41,7 +47,21 @@ public class Egg : Solids
 
     private void SetState(EggState newState)
     {
+        if (eggState == newState) return;
+
         eggState = newState;
+
+        if (eggState == EggState.Cracked)
+        {
+            SpawnShells();
+
+            if (eggPourable != null)
+            {
+                eggPourable.enabled = true;
+                eggPourable.Fill();
+            }
+        }
+
         UpdateVisuals();
     }
 
@@ -57,9 +77,9 @@ public class Egg : Solids
 
         Rigidbody[] bodies = shell.GetComponentsInChildren<Rigidbody>();
 
-        foreach (var rb in bodies)
+        foreach (var body in bodies)
         {
-            rb.AddForce(transform.forward * crackForce, ForceMode.Impulse);
+            body.AddForce(transform.forward * crackForce, ForceMode.Impulse);
         }
     }
 
@@ -73,7 +93,6 @@ public class Egg : Solids
 
             case EggState.Cracked:
                 meshFilter.mesh = crackedEgg;
-                SpawnShells();
                 break;
         }
     }
