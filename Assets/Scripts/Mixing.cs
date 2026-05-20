@@ -10,6 +10,7 @@ public class Mixing : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
+        Debug.Log("ENTER: " + other.name + " | root: " + other.transform.root.name);
         if (other.CompareTag("Spoon"))
         {
             Debug.Log("SPOON ENTERED");
@@ -20,6 +21,7 @@ public class Mixing : MonoBehaviour
 
     private void OnTriggerExit(Collider other)
     {
+        Debug.Log("EXIT: " + other.name + " | root: " + other.transform.root.name);
         if (other.CompareTag("Spoon"))
         {
             spoonInside = false;

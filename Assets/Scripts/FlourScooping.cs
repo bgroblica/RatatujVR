@@ -9,18 +9,43 @@ public class FlourScooping : MonoBehaviour
     [Header("Flour Scoop")]
     public float scoopAmount = 1f;
 
+    [Header("Exit Delay")]
+    public float exitDelay = 3f;
+
+    private bool inFlourZone = false;
+    private float exitTimer = 0f;
+
     public void EnterFlour(FlourBag bag)
     {
         currentBag = bag;
-
-        flourSpoon.StopScoopingPour();
-
+        inFlourZone = true;
+        exitTimer = 0f;
         CollectFlour();
     }
 
     public void ExitFlour()
     {
-        currentBag = null;
+        exitTimer = exitDelay;
+    }
+
+    private void Update()
+    {
+        if (exitTimer > 0f)
+        {
+            exitTimer -= Time.deltaTime;
+
+            if (exitTimer <= 0f)
+            {
+                exitTimer = 0f;
+                inFlourZone = false;
+                currentBag = null;
+            }
+        }
+    }
+
+    public bool IsInFlour()
+    {
+        return inFlourZone || exitTimer > 0f;
     }
 
     private void CollectFlour()
@@ -46,14 +71,8 @@ public class FlourScooping : MonoBehaviour
         );
 
         currentBag.ReduceFlour(taken);
-
         flourSpoon.AddScoopedFlour(taken);
 
         Debug.Log("Collected flour: " + taken);
-    }
-
-    public bool IsInFlour()
-    {
-        return currentBag != null;
     }
 }

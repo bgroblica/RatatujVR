@@ -5003,10 +5003,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pourPoint: {fileID: 3544882044244005128}
-  pourAngle: 120
+  pourAngle: 40
   pourRate: 0.02
-  pourDistance: 1
-  maxAmount: 5
+  maxAmount: 1
   currentAmount: 0
   flourScooping: {fileID: 3383395900803980026}
   flourParticles: {fileID: 322417675027128651}
@@ -5024,6 +5023,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   flourSpoon: {fileID: 181208338410428893}
   scoopAmount: 1
+  exitDelay: 2
 --- !u!54 &3029801978177308874
 Rigidbody:
   m_ObjectHideFlags: 0
