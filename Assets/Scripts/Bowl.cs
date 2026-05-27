@@ -16,11 +16,25 @@ public class Bowl : MonoBehaviour
     public float sugarAmount = 0f;
     public float butterAmount = 0f;
 
+    public float allIngredients = 0f;
+
     public float maxIngredients = 20f;
 
     [Header("Mixing")]
     public float mixProgress = 0f;
     public float maxMix = 5f;
+    public float mixModifier = 1f;
+
+    [Header("Mixed Batter Data")]
+    public float batterAmount = 0f;
+
+    public float batterMilk;
+    public float batterFlour;
+    public float batterEgg;
+    public float batterSugar;
+    public float batterButter;
+
+    private bool batterCreated = false;
 
     [Header("Visual")]
     public Transform milkVisual;
@@ -58,13 +72,7 @@ public class Bowl : MonoBehaviour
 
     public float GetTotalIngredients()
     {
-        return Clean(
-            milkAmount +
-            flourAmount +
-            eggAmount +
-            sugarAmount +
-            butterAmount
-        );
+        return Clean(allIngredients);
     }
 
     // ---------------------------
@@ -75,6 +83,10 @@ public class Bowl : MonoBehaviour
         if (GetTotalIngredients() >= maxIngredients) return;
 
         milkAmount += amount;
+        milkAmount = RoundIngredient(milkAmount);
+
+        allIngredients += amount;
+        allIngredients = RoundIngredient(allIngredients);
         UpdateVisualMilk();
 
         batterBowl.UpdateAmount();
@@ -85,6 +97,10 @@ public class Bowl : MonoBehaviour
         if (GetTotalIngredients() >= maxIngredients) return;
 
         flourAmount += amount;
+        flourAmount = RoundIngredient(flourAmount);
+
+        allIngredients += amount;
+        allIngredients = RoundIngredient(allIngredients);
         UpdateVisualFlour();
 
         batterBowl.UpdateAmount();
@@ -95,6 +111,10 @@ public class Bowl : MonoBehaviour
         if (GetTotalIngredients() >= maxIngredients) return;
 
         eggAmount += amount;
+        eggAmount = RoundIngredient(eggAmount);
+
+        allIngredients += amount;
+        allIngredients = RoundIngredient(allIngredients);
 
         batterBowl.UpdateAmount();
     }
@@ -104,6 +124,10 @@ public class Bowl : MonoBehaviour
         if (GetTotalIngredients() >= maxIngredients) return;
 
         sugarAmount += amount;
+        sugarAmount = RoundIngredient(sugarAmount);
+
+        allIngredients += amount;
+        allIngredients = RoundIngredient(allIngredients);
 
         batterBowl.UpdateAmount();
     }
@@ -112,7 +136,11 @@ public class Bowl : MonoBehaviour
     {
         if (GetTotalIngredients() >= maxIngredients) return;
 
-        butterAmount += amount; // ✔ FIXED BUG
+        butterAmount += amount;
+        butterAmount = RoundIngredient(butterAmount);
+
+        allIngredients += amount;
+        allIngredients = RoundIngredient(allIngredients);
 
         batterBowl.UpdateAmount();
     }
@@ -178,11 +206,51 @@ public class Bowl : MonoBehaviour
     // ---------------------------
     public void Mix(float intensity)
     {
-        mixProgress += intensity * Time.deltaTime;
+        mixProgress += intensity * Time.deltaTime * mixModifier;
         mixProgress = Mathf.Clamp(mixProgress, 0, maxMix);
 
         UpdateMaterial();
         UpdateVisualFlour();
+        if (IsFullyMixed() && !batterCreated)
+        {
+            CreateBatter();
+        }
+    }
+    private float RoundIngredient(float value)
+    {
+        return Mathf.Round(value * 100f) / 100f;
+    }
+    private void CreateBatter()
+    {
+        batterCreated = true;
+
+        // SAVE RECIPE DATA
+        batterMilk = milkAmount;
+        batterFlour = flourAmount;
+        batterEgg = eggAmount;
+        batterSugar = sugarAmount;
+        batterButter = butterAmount;
+
+        // CREATE FINAL BATTER
+        batterAmount =
+            milkAmount +
+            flourAmount +
+            eggAmount +
+            sugarAmount +
+            butterAmount;
+
+        // CLEAR RAW INGREDIENTS
+        milkAmount = 0f;
+        flourAmount = 0f;
+        eggAmount = 0f;
+        sugarAmount = 0f;
+        butterAmount = 0f;
+
+        allIngredients = 0f;
+
+        batterBowl.SetFilled();
+
+        Debug.Log("Batter created");
     }
 
     private void UpdateMaterial()
@@ -201,10 +269,38 @@ public class Bowl : MonoBehaviour
     public bool IsFullyMixed()
     {
         return maxMix > 0 && (mixProgress / maxMix) >= 1f;
+
     }
 
     public float GetBatterAmount()
     {
-        return Clean(milkAmount + flourAmount);
+        return Clean(batterAmount);
+    }
+
+    public void ResetBowl()
+    {
+        milkAmount = 0f;
+        flourAmount = 0f;
+        eggAmount = 0f;
+        sugarAmount = 0f;
+        butterAmount = 0f;
+
+        allIngredients = 0f;
+
+        batterAmount = 0f;
+
+        batterMilk = 0f;
+        batterFlour = 0f;
+        batterEgg = 0f;
+        batterSugar = 0f;
+        batterButter = 0f;
+
+        batterCreated = false;
+
+        mixProgress = 0f;
+
+        UpdateVisualMilk();
+        UpdateVisualFlour();
+        UpdateMaterial();
     }
 }

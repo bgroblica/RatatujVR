@@ -13,6 +13,13 @@ public class Mold : MonoBehaviour
     public GameObject batterPrefab;
     public Transform batterVisual;
 
+    [Header("Recipe Data")]
+    public float milkAmount;
+    public float flourAmount;
+    public float eggAmount;
+    public float sugarAmount;
+    public float butterAmount;
+
     [Header("Material / Color")]
     public Color batterColor = new Color(1f, 0.9f, 0.6f);
     public Color cakeColor = new Color32(196, 109, 33, 255);
@@ -38,7 +45,14 @@ public class Mold : MonoBehaviour
         initialScaleBatter = batterVisual.localScale;
     }
 
-    public void AddBatter(float amount)
+    public void AddBatter(
+        float amount,
+        float milk,
+        float flour,
+        float egg,
+        float sugar,
+        float butter
+    )
     {
         if (currentBatter == null)
         {
@@ -47,7 +61,8 @@ public class Mold : MonoBehaviour
                 batterVisual
             );
 
-            batterRenderer = currentBatter.GetComponentInChildren<Renderer>();
+            batterRenderer =
+                currentBatter.GetComponentInChildren<Renderer>();
 
             if (batterRenderer != null)
             {
@@ -55,8 +70,17 @@ public class Mold : MonoBehaviour
             }
         }
 
-        float total = batterAmount;
-        float spaceLeft = maxBatter - total;
+        if (batterAmount <= 0f)
+        {
+            milkAmount = milk;
+            flourAmount = flour;
+            eggAmount = egg;
+            sugarAmount = sugar;
+            butterAmount = butter;
+        }
+
+        float spaceLeft = maxBatter - batterAmount;
+
         float amountToAdd = Mathf.Min(amount, spaceLeft);
 
         batterAmount += amountToAdd;
@@ -136,7 +160,6 @@ public class Mold : MonoBehaviour
 
         GameObject cake = currentBatter;
         currentBatter = null;
-        batterVisual = null;
         batterRenderer = null;
 
         cake.transform.SetParent(null, true);
@@ -158,5 +181,10 @@ public class Mold : MonoBehaviour
 
         batterAmount = 0f;
         bakeProgress = 0f;
+        milkAmount = 0f;
+        flourAmount = 0f;
+        eggAmount = 0f;
+        sugarAmount = 0f;
+        butterAmount = 0f;
     }
 }

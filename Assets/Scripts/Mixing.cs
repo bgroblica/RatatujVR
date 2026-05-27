@@ -33,6 +33,9 @@ public class Mixing : MonoBehaviour
     {
         if (spoonInside && currentSpoon != null)
         {
+            if (bowl.IsFullyMixed())
+                return;
+
             float speed = currentSpoon.smoothedSpeed;
 
             if (speed > minMixSpeed)

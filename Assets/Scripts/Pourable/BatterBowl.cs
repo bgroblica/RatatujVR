@@ -6,29 +6,33 @@ public class BatterBowl : Pourable
 
     public Bowl bowl;
 
+    public void SetFilled()
+    {
+        isEmpty = false;
+    }
+
     public override void UpdateAmount()
     {
         if (bowl != null)
         {
-            currentAmount = bowl.GetBatterAmount();
+            currentAmount = bowl.batterAmount;
         }
     }
     protected override void StartPour()
     {
         if (isEmpty) return;
 
+        if (!bowl.IsFullyMixed())
+        {
+            Debug.Log("Not mixed yet!");
+            return;
+        }
+
+        base.StartPour();
+
         if (batterParticles != null)
         {
-            if (!bowl.IsFullyMixed())
-            {
-                Debug.Log("Not mixed yet!");
-                return;  
-            }
-
-            base.StartPour();
-
             batterParticles.Play();
-            Debug.Log("StartPouring");
         }
     }
 
@@ -39,32 +43,23 @@ public class BatterBowl : Pourable
         if (batterParticles != null)
             batterParticles.Stop();
     }
-    public override float GetCurrentAmount()
-    {
-        if (bowl == null) return 0f;
-
-        return bowl.milkAmount + bowl.flourAmount;
-    }
 
     protected override void ReduceAmount(float amount)
     {
         if (bowl == null) return;
 
-        float total = bowl.milkAmount + bowl.flourAmount;
-        if (total <= 0f) return;
+        bowl.batterAmount -= amount;
 
-        float milkRatio = bowl.milkAmount / total;
-        float flourRatio = bowl.flourAmount / total;
+        bowl.batterAmount =
+            Mathf.Clamp(bowl.batterAmount, 0f, bowl.maxIngredients);
 
-        bowl.milkAmount -= amount * milkRatio;
-        bowl.flourAmount -= amount * flourRatio;
+        currentAmount = bowl.batterAmount;
 
-        bowl.milkAmount = Mathf.Clamp(bowl.milkAmount, 0f, bowl.maxIngredients);
-        bowl.flourAmount = Mathf.Clamp(bowl.flourAmount, 0f, bowl.maxIngredients);
-
-        bowl.UpdateVisualMilk();
-        bowl.Mix(0f);
-        UpdateAmount();
+        if (bowl.batterAmount <= 0.01f)
+        {
+            bowl.ResetBowl();
+            isEmpty = true;
+        }
     }
 
     protected override void Pour(float amount)
@@ -80,7 +75,14 @@ public class BatterBowl : Pourable
             if (mold != null)
             {
                 Debug.Log("HIT BOWL!");
-                mold.AddBatter(amount);
+                mold.AddBatter(
+                               amount,
+                               bowl.batterMilk,
+                               bowl.batterFlour,
+                               bowl.batterEgg,
+                               bowl.batterSugar,
+                               bowl.batterButter
+                              );
             }
         }
     }

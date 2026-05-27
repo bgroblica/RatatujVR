@@ -549,9 +549,17 @@ MonoBehaviour:
   eggAmount: 0
   sugarAmount: 0
   butterAmount: 0
+  allIngredients: 0
   maxIngredients: 10
   mixProgress: 0
-  maxMix: 10
+  maxMix: 5
+  mixModifier: 10
+  batterAmount: 0
+  batterMilk: 0
+  batterFlour: 0
+  batterEgg: 0
+  batterSugar: 0
+  batterButter: 0
   milkVisual: {fileID: 8395395163111092335}
   maxMilkHeight: 0.2
   milkSizeModifier: 1.32
@@ -590,7 +598,7 @@ MonoBehaviour:
   pourPoint: {fileID: 3620389046420317150}
   pourAngle: 60
   pourRate: 0.5
-  maxAmount: 0
+  maxAmount: 10
   currentAmount: 0
   batterParticles: {fileID: 791232709932840114}
   bowl: {fileID: 5187800848247297365}
