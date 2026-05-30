@@ -80,35 +80,50 @@ public class Bowl : MonoBehaviour
     // ---------------------------
     public void AddMilk(float amount)
     {
-        if (GetTotalIngredients() >= maxIngredients) return;
+        float spaceLeft = maxIngredients - allIngredients;
+
+        if (spaceLeft <= 0f)
+            return;
+
+        amount = Mathf.Min(amount, spaceLeft);
 
         milkAmount += amount;
         milkAmount = RoundIngredient(milkAmount);
 
         allIngredients += amount;
         allIngredients = RoundIngredient(allIngredients);
-        UpdateVisualMilk();
 
+        UpdateVisualMilk();
         batterBowl.UpdateAmount();
     }
 
     public void AddFlour(float amount)
     {
-        if (GetTotalIngredients() >= maxIngredients) return;
+        float spaceLeft = maxIngredients - allIngredients;
+
+        if (spaceLeft <= 0f)
+            return;
+
+        amount = Mathf.Min(amount, spaceLeft);
 
         flourAmount += amount;
         flourAmount = RoundIngredient(flourAmount);
 
         allIngredients += amount;
         allIngredients = RoundIngredient(allIngredients);
-        UpdateVisualFlour();
 
+        UpdateVisualFlour();
         batterBowl.UpdateAmount();
     }
 
     public void AddEgg(float amount)
     {
-        if (GetTotalIngredients() >= maxIngredients) return;
+        float spaceLeft = maxIngredients - allIngredients;
+
+        if (spaceLeft <= 0f)
+            return;
+
+        amount = Mathf.Min(amount, spaceLeft);
 
         eggAmount += amount;
         eggAmount = RoundIngredient(eggAmount);
@@ -121,7 +136,12 @@ public class Bowl : MonoBehaviour
 
     public void AddSugar(float amount)
     {
-        if (GetTotalIngredients() >= maxIngredients) return;
+        float spaceLeft = maxIngredients - allIngredients;
+
+        if (spaceLeft <= 0f)
+            return;
+
+        amount = Mathf.Min(amount, spaceLeft);
 
         sugarAmount += amount;
         sugarAmount = RoundIngredient(sugarAmount);
@@ -134,7 +154,12 @@ public class Bowl : MonoBehaviour
 
     public void AddButter(float amount)
     {
-        if (GetTotalIngredients() >= maxIngredients) return;
+        float spaceLeft = maxIngredients - allIngredients;
+
+        if (spaceLeft <= 0f)
+            return;
+
+        amount = Mathf.Min(amount, spaceLeft);
 
         butterAmount += amount;
         butterAmount = RoundIngredient(butterAmount);
@@ -249,6 +274,7 @@ public class Bowl : MonoBehaviour
         allIngredients = 0f;
 
         batterBowl.SetFilled();
+        batterBowl.UpdateAmount();
 
         Debug.Log("Batter created");
     }

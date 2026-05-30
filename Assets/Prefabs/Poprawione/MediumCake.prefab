@@ -13,7 +13,10 @@ GameObject:
   - component: {fileID: 6765057149320859184}
   - component: {fileID: 6240131559576166918}
   - component: {fileID: 2319246080584933832}
-  - component: {fileID: 8520785642948063935}
+  - component: {fileID: 7084180123712137044}
+  - component: {fileID: 5204275936465072458}
+  - component: {fileID: 3086004737414065809}
+  - component: {fileID: 5855091461078291031}
   m_Layer: 0
   m_Name: MediumCake
   m_TagString: Untagged
@@ -34,7 +37,6 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 7483628400008622525}
   - {fileID: 4576868420289940495}
   - {fileID: 1822542485437853038}
   - {fileID: 4335575131088300970}
@@ -102,7 +104,7 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 129357779985346837}
   serializedVersion: 4
-  m_Mass: 2
+  m_Mass: 0.5
   m_Drag: 0
   m_AngularDrag: 0.05
   m_CenterOfMass: {x: 0, y: 0, z: 0}
@@ -120,7 +122,7 @@ Rigidbody:
   m_IsKinematic: 1
   m_Interpolate: 0
   m_Constraints: 0
-  m_CollisionDetection: 0
+  m_CollisionDetection: 2
 --- !u!114 &2319246080584933832
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -142,7 +144,7 @@ MonoBehaviour:
   - {fileID: 5731791769955773316}
   - {fileID: 4228361625980524187}
   m_InteractionLayers:
-    m_Bits: 1
+    m_Bits: 9
   m_DistanceCalculationMode: 1
   m_SelectMode: 1
   m_FocusMode: 1
@@ -209,7 +211,7 @@ MonoBehaviour:
   m_SnapToColliderVolume: 1
   m_ReinitializeDynamicAttachEverySingleGrab: 1
   m_AttachEaseInTime: 0.15
-  m_MovementType: 2
+  m_MovementType: 0
   m_PredictedVisualsTransform: {fileID: 0}
   m_VelocityDamping: 1
   m_VelocityScale: 1
@@ -256,7 +258,7 @@ MonoBehaviour:
   m_LimitAngularVelocity: 0
   m_MaxLinearVelocityDelta: 10
   m_MaxAngularVelocityDelta: 20
---- !u!114 &8520785642948063935
+--- !u!114 &7084180123712137044
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -265,11 +267,97 @@ MonoBehaviour:
   m_GameObject: {fileID: 129357779985346837}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e8723eb7851548443aca6fa4d1d4945a, type: 3}
+  m_Script: {fileID: 11500000, guid: 60523e0647cc6ab43acc73cb266a32a7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  anchor: {fileID: 4192449200076009444}
-  snapDistance: 0.15
+  m_InteractionManager: {fileID: 0}
+  m_InteractionLayers:
+    m_Bits: 16
+  m_Handedness: 0
+  m_AttachTransform: {fileID: 4576868420289940495}
+  m_KeepSelectedTargetValid: 1
+  m_DisableVisualsWhenBlockedInGroup: 1
+  m_StartingSelectedInteractable: {fileID: 0}
+  m_StartingTargetFilter: {fileID: 0}
+  m_AutoFindParentInteractableInHierarchy: 0
+  m_ParentInteractableObject: {fileID: 0}
+  m_HoverEntered:
+    m_PersistentCalls:
+      m_Calls: []
+  m_HoverExited:
+    m_PersistentCalls:
+      m_Calls: []
+  m_SelectEntered:
+    m_PersistentCalls:
+      m_Calls: []
+  m_SelectExited:
+    m_PersistentCalls:
+      m_Calls: []
+  m_StartingHoverFilters: []
+  m_StartingSelectFilters: []
+  m_ShowInteractableHoverMeshes: 1
+  m_InteractableHoverMeshMaterial: {fileID: 0}
+  m_InteractableCantHoverMeshMaterial: {fileID: 0}
+  m_SocketActive: 1
+  m_InteractableHoverScale: 1
+  m_RecycleDelayTime: 1
+  m_HoverSocketSnapping: 0
+  m_SocketSnappingRadius: 0.1
+  m_SocketScaleMode: 0
+  m_FixedScale: {x: 1, y: 1, z: 1}
+  m_TargetBoundsSize: {x: 1, y: 1, z: 1}
+--- !u!65 &5204275936465072458
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 129357779985346837}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.43452117, y: 0.15974253, z: 0.42245406}
+  m_Center: {x: 0, y: 0.115, z: 0}
+--- !u!114 &3086004737414065809
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 129357779985346837}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0714f29148f759f42b62346451a03e72, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &5855091461078291031
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 129357779985346837}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 89ac8d40191defb4cb2f525ad8949297, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  milkAmount: 0
+  flourAmount: 0
+  eggAmount: 0
+  sugarAmount: 0
+  butterAmount: 0
+  finalBakeProgress: 0
+  baked: 0
 --- !u!1 &216410353690924501
 GameObject:
   m_ObjectHideFlags: 0
@@ -279,7 +367,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4576868420289940495}
-  - component: {fileID: 3625497398938167630}
   m_Layer: 0
   m_Name: SnapSocket
   m_TagString: Untagged
@@ -302,20 +389,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 3624388269877009288}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &3625497398938167630
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 216410353690924501}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3490550c8ae869e429a47879885ea8ad, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  socketType: 0
-  occupied: 0
 --- !u!1 &2265939521286035254
 GameObject:
   m_ObjectHideFlags: 0
@@ -459,51 +532,6 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.5119693, y: 0.20341678, z: 0.13686725}
   m_Center: {x: 1.3636083e-11, y: 0.00055591017, z: 0.0005980059}
---- !u!1 &2793406724787666177
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 7483628400008622525}
-  - component: {fileID: 4192449200076009444}
-  m_Layer: 0
-  m_Name: SnapAnchor
-  m_TagString: Untagged
-  m_Icon: {fileID: -5938655980376293919, guid: 0000000000000000d000000000000000, type: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &7483628400008622525
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2793406724787666177}
-  serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: -0.0985, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 3624388269877009288}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &4192449200076009444
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2793406724787666177}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1d9d6a4f0126c7945887163967c80e2c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  anchorType: 0
 --- !u!1 &3156953638322631904
 GameObject:
   m_ObjectHideFlags: 0

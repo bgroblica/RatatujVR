@@ -9,6 +9,8 @@ public class Oven : MonoBehaviour
 
     private bool isOpen = false;
 
+    private bool isOn = false;
+
     private void OnTriggerEnter(Collider other)
     {
         Mold mold = other.GetComponentInParent<Mold>();
@@ -41,19 +43,28 @@ public class Oven : MonoBehaviour
     {
         isOpen = !isOpen;
 
-        Debug.Log("Pressed, hand inside");
-
         animator.SetBool("Open", isOpen);
+    }
+
+    public void TogglePower()
+    {
+        isOn = !isOn;
+
+        Debug.Log("Oven power: " + (isOn ? "ON" : "OFF"));
     }
 
     private void Update()
     {
+        if (!isOn || isOpen)
+            return;
+
         foreach (Mold mold in moldsInside)
         {
             if (mold != null && mold.HasBatter())
             {
                 mold.Baking();
             }
+
             if (mold != null && mold.IsFullyBaked())
             {
                 mold.ReleaseCake();

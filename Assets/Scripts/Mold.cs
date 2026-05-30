@@ -1,4 +1,3 @@
-using System;
 using UnityEngine;
 
 public class Mold : MonoBehaviour
@@ -162,6 +161,20 @@ public class Mold : MonoBehaviour
         currentBatter = null;
         batterRenderer = null;
 
+        CakeData data = cake.GetComponent<CakeData>();
+
+        if (data != null)
+        {
+            data.milkAmount = milkAmount;
+            data.flourAmount = flourAmount;
+            data.eggAmount = eggAmount;
+            data.sugarAmount = sugarAmount;
+            data.butterAmount = butterAmount;
+
+            data.finalBakeProgress = bakeProgress;
+            data.baked = true;
+        }
+
         cake.transform.SetParent(null, true);
 
         cake.transform.position += -transform.up * 0.05f;
@@ -181,6 +194,7 @@ public class Mold : MonoBehaviour
 
         batterAmount = 0f;
         bakeProgress = 0f;
+
         milkAmount = 0f;
         flourAmount = 0f;
         eggAmount = 0f;
