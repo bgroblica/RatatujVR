@@ -14,8 +14,9 @@ GameObject:
   - component: {fileID: 6240131559576166918}
   - component: {fileID: 2319246080584933832}
   - component: {fileID: 1546975845997925376}
-  - component: {fileID: 5249866739072419056}
   - component: {fileID: 925322545105880980}
+  - component: {fileID: 7966648955582637896}
+  - component: {fileID: 703638139370553321}
   m_Layer: 0
   m_Name: SmallCake
   m_TagString: Untagged
@@ -39,6 +40,7 @@ Transform:
   - {fileID: 1822542485437853038}
   - {fileID: 4335575131088300970}
   - {fileID: 6700900345285100818}
+  - {fileID: 4037571664005878546}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &3571979023585693828
@@ -277,18 +279,6 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.24024925, y: 0.13411057, z: 0.26564226}
   m_Center: {x: 0, y: 0.095, z: 0}
---- !u!114 &5249866739072419056
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 129357779985346837}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0714f29148f759f42b62346451a03e72, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &925322545105880980
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -308,6 +298,149 @@ MonoBehaviour:
   butterAmount: 0
   finalBakeProgress: 0
   baked: 0
+  bakeState: {fileID: 703638139370553321}
+--- !u!114 &7966648955582637896
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 129357779985346837}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 86f9d09235b0da841aff77b553e845df, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &703638139370553321
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 129357779985346837}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ae61d165e44e20e4688176534e659dee, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  milkAmount: 0
+  flourAmount: 0
+  eggAmount: 0
+  sugarAmount: 0
+  butterAmount: 0
+  bakeProgress: 0
+  bakedMin: 400
+  bakedMax: 500
+  bakeTick: 1
+  cakeRenderer: {fileID: 6765057149320859184}
+  batterColor: {r: 1, g: 0.9, b: 0.6, a: 1}
+  bakedColor: {r: 0.76862746, g: 0.42745098, b: 0.12941177, a: 1}
+  burntColor: {r: 0.23529412, g: 0.15686275, b: 0.078431375, a: 1}
+  nextLayerSocket: {fileID: 0}
+  decorationSockets:
+  - {fileID: 595326742101790871}
+--- !u!1 &566170004754754575
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4037571664005878546}
+  - component: {fileID: 595326742101790871}
+  - component: {fileID: 8540556661420237449}
+  m_Layer: 0
+  m_Name: DecorationSocket1
+  m_TagString: Untagged
+  m_Icon: {fileID: -5442936267250999957, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4037571664005878546
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 566170004754754575}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0.058, z: -0.0315}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 3624388269877009288}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &595326742101790871
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 566170004754754575}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 60523e0647cc6ab43acc73cb266a32a7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_InteractionManager: {fileID: 0}
+  m_InteractionLayers:
+    m_Bits: 64
+  m_Handedness: 0
+  m_AttachTransform: {fileID: 4037571664005878546}
+  m_KeepSelectedTargetValid: 1
+  m_DisableVisualsWhenBlockedInGroup: 1
+  m_StartingSelectedInteractable: {fileID: 0}
+  m_StartingTargetFilter: {fileID: 0}
+  m_AutoFindParentInteractableInHierarchy: 0
+  m_ParentInteractableObject: {fileID: 2319246080584933832}
+  m_HoverEntered:
+    m_PersistentCalls:
+      m_Calls: []
+  m_HoverExited:
+    m_PersistentCalls:
+      m_Calls: []
+  m_SelectEntered:
+    m_PersistentCalls:
+      m_Calls: []
+  m_SelectExited:
+    m_PersistentCalls:
+      m_Calls: []
+  m_StartingHoverFilters: []
+  m_StartingSelectFilters: []
+  m_ShowInteractableHoverMeshes: 1
+  m_InteractableHoverMeshMaterial: {fileID: 0}
+  m_InteractableCantHoverMeshMaterial: {fileID: 0}
+  m_SocketActive: 1
+  m_InteractableHoverScale: 1
+  m_RecycleDelayTime: 1
+  m_HoverSocketSnapping: 0
+  m_SocketSnappingRadius: 0.1
+  m_SocketScaleMode: 0
+  m_FixedScale: {x: 1, y: 1, z: 1}
+  m_TargetBoundsSize: {x: 1, y: 1, z: 1}
+--- !u!65 &8540556661420237449
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 566170004754754575}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.2, y: 0.15, z: 0.2}
+  m_Center: {x: 0, y: 0, z: 0.0315}
 --- !u!1 &2265939521286035254
 GameObject:
   m_ObjectHideFlags: 0

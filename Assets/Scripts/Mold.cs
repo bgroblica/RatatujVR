@@ -5,7 +5,6 @@ public class Mold : MonoBehaviour
     private Vector3 initialScaleBatter;
     private Vector3 initialPositionBatter;
 
-    private Renderer batterRenderer;
     private GameObject currentBatter;
 
     [Header("Batter Prefab")]
@@ -19,18 +18,9 @@ public class Mold : MonoBehaviour
     public float sugarAmount;
     public float butterAmount;
 
-    [Header("Material / Color")]
-    public Color batterColor = new Color(1f, 0.9f, 0.6f);
-    public Color cakeColor = new Color32(196, 109, 33, 255);
-
     [Header("Ingredients")]
     public float batterAmount = 0f;
     public float maxBatter = 8f;
-
-    [Header("Baking")]
-    public float bakeProgress = 0f;
-    public float bakeTick = 0.1f;
-    public float maxBake = 20f;
 
     [Header("Visual")]
     public float maxBatterHeight = 0.2f;
@@ -39,9 +29,12 @@ public class Mold : MonoBehaviour
     private void Awake()
     {
         batterAmount = 0f;
-        bakeProgress = 0f;
-        initialPositionBatter = batterVisual.localPosition;
-        initialScaleBatter = batterVisual.localScale;
+
+        initialPositionBatter =
+            batterVisual.localPosition;
+
+        initialScaleBatter =
+            batterVisual.localScale;
     }
 
     public void AddBatter(
@@ -55,18 +48,11 @@ public class Mold : MonoBehaviour
     {
         if (currentBatter == null)
         {
-            currentBatter = Instantiate(
-                batterPrefab,
-                batterVisual
-            );
-
-            batterRenderer =
-                currentBatter.GetComponentInChildren<Renderer>();
-
-            if (batterRenderer != null)
-            {
-                batterRenderer.material.color = batterColor;
-            }
+            currentBatter =
+                Instantiate(
+                    batterPrefab,
+                    batterVisual
+                );
         }
 
         if (batterAmount <= 0f)
@@ -78,9 +64,11 @@ public class Mold : MonoBehaviour
             butterAmount = butter;
         }
 
-        float spaceLeft = maxBatter - batterAmount;
+        float spaceLeft =
+            maxBatter - batterAmount;
 
-        float amountToAdd = Mathf.Min(amount, spaceLeft);
+        float amountToAdd =
+            Mathf.Min(amount, spaceLeft);
 
         batterAmount += amountToAdd;
 
@@ -89,58 +77,41 @@ public class Mold : MonoBehaviour
 
     private void UpdateVisualBatter()
     {
-        if (batterVisual == null) return;
+        if (batterVisual == null)
+            return;
 
-        float normalized = maxBatter > 0
+        float normalized =
+            maxBatter > 0
             ? batterAmount / maxBatter
             : 0f;
 
-        normalized = Mathf.Clamp01(normalized);
+        normalized =
+            Mathf.Clamp01(normalized);
 
-        float newHeight = normalized * maxBatterHeight;
+        float newHeight =
+            normalized * maxBatterHeight;
 
-        batterVisual.localPosition = new Vector3(
-            initialPositionBatter.x,
-            initialPositionBatter.y + newHeight,
-            initialPositionBatter.z
-        );
+        batterVisual.localPosition =
+            new Vector3(
+                initialPositionBatter.x,
+                initialPositionBatter.y + newHeight,
+                initialPositionBatter.z
+            );
 
-        float scaleY = Mathf.Lerp(1f, batterSizeModifier, normalized);
+        float scaleY =
+            Mathf.Lerp(
+                1f,
+                batterSizeModifier,
+                normalized
+            );
 
-        Vector3 scale = initialScaleBatter;
+        Vector3 scale =
+            initialScaleBatter;
+
         scale.y *= scaleY;
 
-        batterVisual.localScale = scale;
-    }
-
-    public void Baking()
-    {
-        if (!HasBatter()) return;
-        if (bakeProgress >= maxBake) return;
-
-        bakeProgress += bakeTick * Time.deltaTime;
-        bakeProgress = Mathf.Clamp(bakeProgress, 0, maxBake);
-
-        UpdateMaterial();
-    }
-
-    private void UpdateMaterial()
-    {
-        if (batterRenderer == null) return;
-
-        float bakePercent = maxBake > 0
-            ? bakeProgress / maxBake
-            : 0f;
-
-        bakePercent = Mathf.Clamp01(bakePercent);
-
-        Color currentColor = Color.Lerp(
-            batterColor,
-            cakeColor,
-            bakePercent
-        );
-
-        batterRenderer.material.color = currentColor;
+        batterVisual.localScale =
+            scale;
     }
 
     public bool HasBatter()
@@ -148,44 +119,54 @@ public class Mold : MonoBehaviour
         return batterAmount >= maxBatter;
     }
 
-    public bool IsFullyBaked()
+    public GameObject GetCake()
     {
-        return bakeProgress >= maxBake;
+        return currentBatter;
     }
 
     public void ReleaseCake()
     {
-        if (currentBatter == null) return;
+        if (currentBatter == null)
+            return;
 
-        GameObject cake = currentBatter;
+        GameObject cakeObject =
+            currentBatter;
+
         currentBatter = null;
-        batterRenderer = null;
 
-        CakeData data = cake.GetComponent<CakeData>();
+        Cake cake =
+            cakeObject.GetComponent<Cake>();
 
-        if (data != null)
+        if (cake != null)
         {
-            data.milkAmount = milkAmount;
-            data.flourAmount = flourAmount;
-            data.eggAmount = eggAmount;
-            data.sugarAmount = sugarAmount;
-            data.butterAmount = butterAmount;
-
-            data.finalBakeProgress = bakeProgress;
-            data.baked = true;
+            cake.milkAmount = milkAmount;
+            cake.flourAmount = flourAmount;
+            cake.eggAmount = eggAmount;
+            cake.sugarAmount = sugarAmount;
+            cake.butterAmount = butterAmount;
         }
 
-        cake.transform.SetParent(null, true);
+        cakeObject.transform.SetParent(
+            null,
+            true
+        );
 
-        cake.transform.position += -transform.up * 0.05f;
+        cakeObject.transform.position +=
+            -transform.up * 0.05f;
 
-        Transform holder = cake.transform.Find("ColliderHolder");
+        Transform holder =
+            cakeObject.transform.Find(
+                "ColliderHolder"
+            );
+
         if (holder != null)
         {
             holder.gameObject.SetActive(true);
         }
 
-        Rigidbody rb = cake.GetComponent<Rigidbody>();
+        Rigidbody rb =
+            cakeObject.GetComponent<Rigidbody>();
+
         if (rb != null)
         {
             rb.isKinematic = false;
@@ -193,7 +174,6 @@ public class Mold : MonoBehaviour
         }
 
         batterAmount = 0f;
-        bakeProgress = 0f;
 
         milkAmount = 0f;
         flourAmount = 0f;

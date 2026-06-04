@@ -550,7 +550,7 @@ MonoBehaviour:
   sugarAmount: 0
   butterAmount: 0
   allIngredients: 0
-  maxIngredients: 10
+  maxIngredients: 18
   mixProgress: 0
   maxMix: 5
   mixModifier: 10

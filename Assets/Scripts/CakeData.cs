@@ -12,4 +12,5 @@ public class CakeData : MonoBehaviour
     [Header("Baking")]
     public float finalBakeProgress;
     public bool baked;
+    public Cake bakeState;
 }

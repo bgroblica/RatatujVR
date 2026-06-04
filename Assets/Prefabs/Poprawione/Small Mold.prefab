@@ -470,13 +470,8 @@ MonoBehaviour:
   eggAmount: 0
   sugarAmount: 0
   butterAmount: 0
-  batterColor: {r: 1, g: 0.9, b: 0.6, a: 1}
-  cakeColor: {r: 0.76862746, g: 0.42745098, b: 0.12941177, a: 1}
   batterAmount: 0
-  maxBatter: 4
-  bakeProgress: 0
-  bakeTick: 0.1
-  maxBake: 10
+  maxBatter: 8
   maxBatterHeight: 0.2
   batterSizeModifier: 1.32
 --- !u!1 &3756529971746856412

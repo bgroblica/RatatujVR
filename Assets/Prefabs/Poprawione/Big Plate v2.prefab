@@ -183,7 +183,7 @@ GameObject:
   - component: {fileID: 1382040917840240013}
   - component: {fileID: 7903743472785978024}
   - component: {fileID: 8619458632654392574}
-  - component: {fileID: 1978192634318816598}
+  - component: {fileID: 8060144178577161139}
   m_Layer: 0
   m_Name: Big Plate v2
   m_TagString: Untagged
@@ -493,7 +493,7 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1.7087319, y: 0.844617, z: 1.7087319}
   m_Center: {x: 0.000000085149495, y: 0.4241093, z: 0}
---- !u!114 &1978192634318816598
+--- !u!114 &8060144178577161139
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -502,9 +502,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 3673019050906703296}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0714f29148f759f42b62346451a03e72, type: 3}
+  m_Script: {fileID: 11500000, guid: 89c28d6fdc1474748967418c6f4c5a3e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  startSocket: {fileID: 7903743472785978024}
 --- !u!1 &3840141409116811115
 GameObject:
   m_ObjectHideFlags: 0
