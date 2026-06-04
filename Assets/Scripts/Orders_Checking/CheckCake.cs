@@ -62,13 +62,13 @@ public class CheckCake : MonoBehaviour
         float score = 0f;
 
         // ------------------------
-        // 1. Bake state (still binary)
+        // 1. Bake state
         // ------------------------
         if (actual.cake.GetState() == required.requiredBakeState)
             score += 1f;
 
         // ------------------------
-        // 2. Ingredients (soft scoring)
+        // 2. Ingredients
         // ------------------------
         float ingredientScore =
             IngredientScore(actual.cake.milkAmount, required.milk) +
@@ -77,19 +77,33 @@ public class CheckCake : MonoBehaviour
             IngredientScore(actual.cake.sugarAmount, required.sugar) +
             IngredientScore(actual.cake.butterAmount, required.butter);
 
-        ingredientScore /= 5f; // normalize
+        ingredientScore /= 5f;
+
         score += ingredientScore;
 
         // ------------------------
-        // 3. Decorations (still strict for now)
+        // 3. Flavour
+        // ------------------------
+        float flavourScore =
+            actual.cake.flavour == required.flavour
+            ? 1f
+            : 0f;
+
+        score += flavourScore;
+
+        // ------------------------
+        // 4. Decorations
         // ------------------------
         int strawberries = 0;
         int lemons = 0;
 
         foreach (var deco in actual.decorations)
         {
-            if (deco.CompareTag("Strawberry")) strawberries++;
-            if (deco.CompareTag("Lemon")) lemons++;
+            if (deco.CompareTag("Strawberry"))
+                strawberries++;
+
+            if (deco.CompareTag("Lemon"))
+                lemons++;
         }
 
         float decoScore =
@@ -100,7 +114,10 @@ public class CheckCake : MonoBehaviour
 
         score += decoScore;
 
-        return score / 3f; // normalize final 0–1
+        // ------------------------
+        // Final score (0-1)
+        // ------------------------
+        return score / 4f;
     }
     private float IngredientScore(float actual, float required)
 {

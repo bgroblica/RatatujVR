@@ -9,6 +9,7 @@ public class Bowl : MonoBehaviour
 
     public BatterBowl batterBowl;
 
+
     [Header("Ingredients")]
     public float milkAmount = 0f;
     public float flourAmount = 0f;
@@ -19,6 +20,11 @@ public class Bowl : MonoBehaviour
     public float allIngredients = 0f;
 
     public float maxIngredients = 20f;
+
+    [Header("Flavour")]
+    public Cake.CakeFlavour flavour = Cake.CakeFlavour.Deafult;
+
+    public Cake.CakeFlavour batterFlavour;
 
     [Header("Mixing")]
     public float mixProgress = 0f;
@@ -50,6 +56,9 @@ public class Bowl : MonoBehaviour
     public Color milkColor = Color.white;
     public Color batterColor = new Color(1f, 0.9f, 0.6f);
 
+    [Header("Flavour Color")]
+    public Color flavourColor = new Color(1f, 0.9f, 0.6f);
+
     private void Awake()
     {
         initialScaleMilk = milkVisual.localScale;
@@ -78,6 +87,17 @@ public class Bowl : MonoBehaviour
     // ---------------------------
     // INGREDIENT ADDING
     // ---------------------------
+    public void SetFlavour(Cake.CakeFlavour newFlavour)
+    {
+        flavour = newFlavour;
+
+        Debug.Log("Flavour set to: " + flavour);
+    }
+    public void SetFlavourColor(Color color)
+    {
+        flavourColor = color;
+        Debug.Log("Flavour color set to: " + flavourColor);
+    }
     public void AddMilk(float amount)
     {
         float spaceLeft = maxIngredients - allIngredients;
@@ -249,12 +269,15 @@ public class Bowl : MonoBehaviour
     {
         batterCreated = true;
 
+
         // SAVE RECIPE DATA
         batterMilk = milkAmount;
         batterFlour = flourAmount;
         batterEgg = eggAmount;
         batterSugar = sugarAmount;
         batterButter = butterAmount;
+
+        batterFlavour = flavour;
 
         // CREATE FINAL BATTER
         batterAmount =
@@ -320,6 +343,12 @@ public class Bowl : MonoBehaviour
         batterEgg = 0f;
         batterSugar = 0f;
         batterButter = 0f;
+
+        flavour = Cake.CakeFlavour.Deafult;
+
+        flavourColor =
+            new Color(1f, 0.9f, 0.6f);
+        batterFlavour = Cake.CakeFlavour.Deafult;
 
         batterCreated = false;
 

@@ -9,6 +9,7 @@ public class CakeLayerData
     public float egg;
     public float sugar;
     public float butter;
+    public Cake.CakeFlavour flavour;
 
     [Header("Decorations")]
     public int strawberries;

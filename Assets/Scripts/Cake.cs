@@ -12,6 +12,9 @@ public class Cake : MonoBehaviour
     public float sugarAmount;
     public float butterAmount;
 
+    [Header("Flavour")]
+    public CakeFlavour flavour;
+
     [Header("Baking")]
     public float bakeProgress = 0f;
 
@@ -27,8 +30,36 @@ public class Cake : MonoBehaviour
     public Color bakedColor = new Color32(196, 109, 33, 255);
     public Color burntColor = new Color32(60, 40, 20, 255);
 
+    [Header("Flavour Color")]
+    public Color flavourColor = new Color(1f, 0.9f, 0.6f);
+
     public XRSocketInteractor nextLayerSocket;
     public List<XRSocketInteractor> decorationSockets;
+
+    public enum CakeFlavour
+    {
+        Deafult,
+        Vanilla,
+        Strawberry,
+        Chocolate
+    }
+    private Color GetBakedColor()
+    {
+        switch (flavour)
+        {
+            case CakeFlavour.Vanilla:
+                return new Color32(196, 109, 33, 255);
+
+            case CakeFlavour.Strawberry:
+                return new Color32(180, 90, 110, 255);
+
+            case CakeFlavour.Chocolate:
+                return new Color32(90, 55, 30, 255);
+
+            default:
+                return new Color32(196, 109, 33, 255);
+        }
+    }
 
     private void Awake()
     {
@@ -56,10 +87,12 @@ public class Cake : MonoBehaviour
                     bakeProgress
                 );
 
+            Color bakedFlavourColor = GetBakedColor();
+
             cakeRenderer.material.color =
                 Color.Lerp(
                     batterColor,
-                    bakedColor,
+                    bakedFlavourColor,
                     t
                 );
         }
@@ -72,9 +105,11 @@ public class Cake : MonoBehaviour
                     bakeProgress
                 );
 
+            Color bakedFlavourColor = GetBakedColor();
+
             cakeRenderer.material.color =
                 Color.Lerp(
-                    bakedColor,
+                    bakedFlavourColor,
                     burntColor,
                     t
                 );

@@ -22,9 +22,15 @@ public class Mold : MonoBehaviour
     public float batterAmount = 0f;
     public float maxBatter = 8f;
 
+    [Header("Flavour")]
+    public Cake.CakeFlavour flavour;
+
     [Header("Visual")]
     public float maxBatterHeight = 0.2f;
     public float batterSizeModifier = 1.32f;
+
+    [Header("Flavour Color")]
+    public Color flavourColor = new Color(1f, 0.9f, 0.6f);
 
     private void Awake()
     {
@@ -43,7 +49,9 @@ public class Mold : MonoBehaviour
         float flour,
         float egg,
         float sugar,
-        float butter
+        float butter,
+        Cake.CakeFlavour flavour,
+        Color flavourColor
     )
     {
         if (currentBatter == null)
@@ -62,6 +70,9 @@ public class Mold : MonoBehaviour
             eggAmount = egg;
             sugarAmount = sugar;
             butterAmount = butter;
+
+            this.flavour = flavour;
+            this.flavourColor = flavourColor;
         }
 
         float spaceLeft =
@@ -139,6 +150,9 @@ public class Mold : MonoBehaviour
 
         if (cake != null)
         {
+            cake.flavourColor = flavourColor;
+            cake.batterColor = flavourColor;
+
             cake.milkAmount = milkAmount;
             cake.flourAmount = flourAmount;
             cake.eggAmount = eggAmount;
@@ -180,5 +194,8 @@ public class Mold : MonoBehaviour
         eggAmount = 0f;
         sugarAmount = 0f;
         butterAmount = 0f;
+
+        flavour = Cake.CakeFlavour.Deafult;
+        flavourColor = new Color(1f, 0.9f, 0.6f);
     }
 }

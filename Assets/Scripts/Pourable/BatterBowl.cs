@@ -9,6 +9,7 @@ public class BatterBowl : Pourable
     public void SetFilled()
     {
         isEmpty = false;
+        UpdateAmount();
     }
 
     public override void UpdateAmount()
@@ -76,13 +77,15 @@ public class BatterBowl : Pourable
             {
                 Debug.Log("HIT BOWL!");
                 mold.AddBatter(
-                               amount,
-                               bowl.batterMilk,
-                               bowl.batterFlour,
-                               bowl.batterEgg,
-                               bowl.batterSugar,
-                               bowl.batterButter
-                              );
+                    amount,
+                    bowl.batterMilk,
+                    bowl.batterFlour,
+                    bowl.batterEgg,
+                    bowl.batterSugar,
+                    bowl.batterButter,
+                    bowl.batterFlavour,
+                    bowl.flavourColor
+                );
             }
         }
     }
