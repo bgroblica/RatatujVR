@@ -14,7 +14,6 @@ GameObject:
   - component: {fileID: 6240131559576166918}
   - component: {fileID: 2319246080584933832}
   - component: {fileID: 1546975845997925376}
-  - component: {fileID: 925322545105880980}
   - component: {fileID: 7966648955582637896}
   - component: {fileID: 703638139370553321}
   m_Layer: 0
@@ -173,7 +172,31 @@ MonoBehaviour:
       m_Calls: []
   m_LastSelectExited:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 6240131559576166918}
+        m_TargetAssemblyTypeName: UnityEngine.Rigidbody, UnityEngine
+        m_MethodName: set_useGravity
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
+      - m_Target: {fileID: 6240131559576166918}
+        m_TargetAssemblyTypeName: UnityEngine.Rigidbody, UnityEngine
+        m_MethodName: set_isKinematic
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   m_SelectEntered:
     m_PersistentCalls:
       m_Calls: []
@@ -277,28 +300,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 0.24024925, y: 0.13411057, z: 0.26564226}
+  m_Size: {x: 0.175, y: 0.15, z: 0.175}
   m_Center: {x: 0, y: 0.095, z: 0}
---- !u!114 &925322545105880980
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 129357779985346837}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 89ac8d40191defb4cb2f525ad8949297, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  milkAmount: 0
-  flourAmount: 0
-  eggAmount: 0
-  sugarAmount: 0
-  butterAmount: 0
-  finalBakeProgress: 0
-  baked: 0
-  bakeState: {fileID: 703638139370553321}
 --- !u!114 &7966648955582637896
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -328,6 +331,7 @@ MonoBehaviour:
   eggAmount: 0
   sugarAmount: 0
   butterAmount: 0
+  flavour: 0
   bakeProgress: 0
   bakedMin: 400
   bakedMax: 500
@@ -336,6 +340,7 @@ MonoBehaviour:
   batterColor: {r: 1, g: 0.9, b: 0.6, a: 1}
   bakedColor: {r: 0.76862746, g: 0.42745098, b: 0.12941177, a: 1}
   burntColor: {r: 0.23529412, g: 0.15686275, b: 0.078431375, a: 1}
+  flavourColor: {r: 1, g: 0.9, b: 0.6, a: 1}
   nextLayerSocket: {fileID: 0}
   decorationSockets:
   - {fileID: 595326742101790871}

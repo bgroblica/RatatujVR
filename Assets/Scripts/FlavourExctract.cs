@@ -9,6 +9,8 @@ public class FlavourExtract : Pourable
 
     protected override void StartPour()
     {
+        Debug.Log("EXTRACT START");
+
         base.StartPour();
 
         if (flavourParticles != null)
@@ -17,6 +19,8 @@ public class FlavourExtract : Pourable
 
     protected override void StopPour()
     {
+        Debug.Log("EXTRACT STOP");
+
         base.StopPour();
 
         if (flavourParticles != null)

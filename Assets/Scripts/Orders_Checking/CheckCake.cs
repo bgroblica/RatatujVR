@@ -9,6 +9,12 @@ public class CheckCake : MonoBehaviour
 
     public int maxStars = 5;
 
+    public void CheckCurrentCake()
+    {
+        int stars = EvaluateCake();
+
+        Debug.Log("Final Stars: " + stars);
+    }
     public int EvaluateCake()
     {
         var order = orderManager.GetActiveOrder();
@@ -51,7 +57,9 @@ public class CheckCake : MonoBehaviour
 
         int stars = Mathf.RoundToInt(average * 5f);
 
-        Debug.Log("Cake score: " + stars + " stars");
+        Debug.Log("========== FINAL RESULT ==========");
+        Debug.Log("Average Score: " + average.ToString("F2"));
+        Debug.Log("Stars: " + stars + "/" + maxStars);
 
         return stars;
     }
@@ -61,23 +69,89 @@ public class CheckCake : MonoBehaviour
     {
         float score = 0f;
 
+        Debug.Log("========== CAKE LAYER ==========");
+
         // ------------------------
         // 1. Bake state
         // ------------------------
-        if (actual.cake.GetState() == required.requiredBakeState)
+        bool bakeCorrect =
+            actual.cake.GetState() ==
+            required.requiredBakeState;
+
+        Debug.Log(
+            $"Bake State: {actual.cake.GetState()} | " +
+            $"Required: {required.requiredBakeState} | " +
+            $"Correct: {bakeCorrect}"
+        );
+
+        if (bakeCorrect)
             score += 1f;
 
         // ------------------------
         // 2. Ingredients
         // ------------------------
+        float milkScore =
+            IngredientScore(
+                actual.cake.milkAmount,
+                required.milk
+            );
+
+        float flourScore =
+            IngredientScore(
+                actual.cake.flourAmount,
+                required.flour
+            );
+
+        float eggScore =
+            IngredientScore(
+                actual.cake.eggAmount,
+                required.egg
+            );
+
+        float sugarScore =
+            IngredientScore(
+                actual.cake.sugarAmount,
+                required.sugar
+            );
+
+        float butterScore =
+            IngredientScore(
+                actual.cake.butterAmount,
+                required.butter
+            );
+
+        Debug.Log(
+            $"Milk: {actual.cake.milkAmount} / {required.milk} = {milkScore:F2}"
+        );
+
+        Debug.Log(
+            $"Flour: {actual.cake.flourAmount} / {required.flour} = {flourScore:F2}"
+        );
+
+        Debug.Log(
+            $"Egg: {actual.cake.eggAmount} / {required.egg} = {eggScore:F2}"
+        );
+
+        Debug.Log(
+            $"Sugar: {actual.cake.sugarAmount} / {required.sugar} = {sugarScore:F2}"
+        );
+
+        Debug.Log(
+            $"Butter: {actual.cake.butterAmount} / {required.butter} = {butterScore:F2}"
+        );
+
         float ingredientScore =
-            IngredientScore(actual.cake.milkAmount, required.milk) +
-            IngredientScore(actual.cake.flourAmount, required.flour) +
-            IngredientScore(actual.cake.eggAmount, required.egg) +
-            IngredientScore(actual.cake.sugarAmount, required.sugar) +
-            IngredientScore(actual.cake.butterAmount, required.butter);
+            milkScore +
+            flourScore +
+            eggScore +
+            sugarScore +
+            butterScore;
 
         ingredientScore /= 5f;
+
+        Debug.Log(
+            $"Ingredient Score: {ingredientScore:F2}"
+        );
 
         score += ingredientScore;
 
@@ -88,6 +162,12 @@ public class CheckCake : MonoBehaviour
             actual.cake.flavour == required.flavour
             ? 1f
             : 0f;
+
+        Debug.Log(
+            $"Flavour: {actual.cake.flavour} | " +
+            $"Required: {required.flavour} | " +
+            $"Score: {flavourScore:F2}"
+        );
 
         score += flavourScore;
 
@@ -106,18 +186,33 @@ public class CheckCake : MonoBehaviour
                 lemons++;
         }
 
+        Debug.Log(
+            $"Strawberries: {strawberries}/{required.strawberries}"
+        );
+
+        Debug.Log(
+            $"Lemons: {lemons}/{required.lemons}"
+        );
+
         float decoScore =
             (strawberries == required.strawberries ? 1f : 0f) +
             (lemons == required.lemons ? 1f : 0f);
 
         decoScore /= 2f;
 
+        Debug.Log(
+            $"Decoration Score: {decoScore:F2}"
+        );
+
         score += decoScore;
 
-        // ------------------------
-        // Final score (0-1)
-        // ------------------------
-        return score / 4f;
+        float finalLayerScore = score / 4f;
+
+        Debug.Log(
+            $"Layer Final Score: {finalLayerScore:F2}"
+        );
+
+        return finalLayerScore;
     }
     private float IngredientScore(float actual, float required)
 {

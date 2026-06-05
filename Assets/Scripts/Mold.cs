@@ -73,6 +73,18 @@ public class Mold : MonoBehaviour
 
             this.flavour = flavour;
             this.flavourColor = flavourColor;
+
+            Cake cake =
+                currentBatter.GetComponent<Cake>();
+
+            if (cake != null)
+            {
+                cake.flavour = flavour;
+                cake.flavourColor = flavourColor;
+                cake.batterColor = flavourColor;
+
+                cake.RefreshVisuals();
+            }
         }
 
         float spaceLeft =

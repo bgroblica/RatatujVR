@@ -5004,7 +5004,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pourPoint: {fileID: 3544882044244005128}
   pourAngle: 40
-  pourRate: 0.02
+  pourRate: 0.2
   maxAmount: 1
   currentAmount: 0
   flourScooping: {fileID: 3383395900803980026}

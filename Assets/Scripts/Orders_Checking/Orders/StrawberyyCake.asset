@@ -1,0 +1,28 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 20a4b2744f6f7c64983cd605c22a84d0, type: 3}
+  m_Name: StrawberyyCake
+  m_EditorClassIdentifier: 
+  cakeName: Strawberry Cake
+  maxIngredients: Big is 18, medium is 12, small is 8
+  layers:
+  - milk: 5
+    flour: 5
+    egg: 1
+    sugar: 6
+    butter: 1
+    flavour: 2
+    strawberries: 1
+    lemons: 0
+    requiredBakeState: 1
+  frostingType: 
+  frostingSomething: 

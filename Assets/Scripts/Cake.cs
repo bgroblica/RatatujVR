@@ -65,6 +65,10 @@ public class Cake : MonoBehaviour
     {
         UpdateColor();
     }
+    public void RefreshVisuals()
+    {
+        UpdateColor();
+    }
     public void Bake()
     {
         bakeProgress += bakeTick * Time.deltaTime;

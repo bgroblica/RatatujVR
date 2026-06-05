@@ -15,7 +15,6 @@ GameObject:
   - component: {fileID: 2319246080584933832}
   - component: {fileID: 4512444560254521497}
   - component: {fileID: 2431283071652396574}
-  - component: {fileID: 623126790151799285}
   - component: {fileID: 4521814166066234684}
   - component: {fileID: 1255179182473290776}
   m_Layer: 0
@@ -178,7 +177,31 @@ MonoBehaviour:
       m_Calls: []
   m_LastSelectExited:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 6240131559576166918}
+        m_TargetAssemblyTypeName: UnityEngine.Rigidbody, UnityEngine
+        m_MethodName: set_useGravity
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
+      - m_Target: {fileID: 6240131559576166918}
+        m_TargetAssemblyTypeName: UnityEngine.Rigidbody, UnityEngine
+        m_MethodName: set_isKinematic
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   m_SelectEntered:
     m_PersistentCalls:
       m_Calls: []
@@ -277,7 +300,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_InteractionManager: {fileID: 0}
   m_InteractionLayers:
-    m_Bits: 12
+    m_Bits: 8
   m_Handedness: 0
   m_AttachTransform: {fileID: 8374266540958477250}
   m_KeepSelectedTargetValid: 1
@@ -330,28 +353,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 0.62947106, y: 0.20835435, z: 0.60414094}
+  m_Size: {x: 0.5, y: 0.2, z: 0.5}
   m_Center: {x: 0, y: 0.15, z: 0}
---- !u!114 &623126790151799285
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 129357779985346837}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 89ac8d40191defb4cb2f525ad8949297, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  milkAmount: 0
-  flourAmount: 0
-  eggAmount: 0
-  sugarAmount: 0
-  butterAmount: 0
-  finalBakeProgress: 0
-  baked: 0
-  bakeState: {fileID: 1255179182473290776}
 --- !u!114 &4521814166066234684
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -381,6 +384,7 @@ MonoBehaviour:
   eggAmount: 0
   sugarAmount: 0
   butterAmount: 0
+  flavour: 0
   bakeProgress: 0
   bakedMin: 1300
   bakedMax: 1500
@@ -389,6 +393,7 @@ MonoBehaviour:
   batterColor: {r: 1, g: 0.9, b: 0.6, a: 1}
   bakedColor: {r: 0.76862746, g: 0.42745098, b: 0.12941177, a: 1}
   burntColor: {r: 0.23529412, g: 0.15686275, b: 0.078431375, a: 1}
+  flavourColor: {r: 1, g: 0.9, b: 0.6, a: 1}
   nextLayerSocket: {fileID: 4512444560254521497}
   decorationSockets:
   - {fileID: 1294458005376225729}
