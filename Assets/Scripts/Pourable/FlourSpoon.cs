@@ -5,12 +5,21 @@ public class FlourSpoon : Pourable
 {
     [SerializeField] private FlourScooping flourScooping;
 
+    [Header("Flour Visuals")]
+    public GameObject filledMesh;
 
     public ParticleSystem flourParticles;
 
     public override void UpdateAmount()
     {
+        // not used
     }
+
+    private void Start()
+    {
+        RefreshVisual();
+    }
+
     protected override void StartPour()
     {
         if (isEmpty) return;
@@ -27,17 +36,20 @@ public class FlourSpoon : Pourable
             flourParticles.Play();
         }
     }
+
     public void StopScoopingPour()
     {
         StopPour();
     }
+
     public void AddScoopedFlour(float amount)
     {
         currentAmount += amount;
-
-        currentAmount = Mathf.Clamp(currentAmount,0f,maxAmount);
+        currentAmount = Mathf.Clamp(currentAmount, 0f, maxAmount);
 
         isEmpty = false;
+
+        RefreshVisual();
 
         Debug.Log("Spoon flour: " + currentAmount);
     }
@@ -49,9 +61,17 @@ public class FlourSpoon : Pourable
         if (flourParticles != null)
             flourParticles.Stop();
     }
+
     public bool IsFull()
     {
         return currentAmount >= maxAmount;
+    }
+
+    protected override void ReduceAmount(float amount)
+    {
+        base.ReduceAmount(amount);
+
+        RefreshVisual();
     }
 
     protected override void Pour(float amount)
@@ -70,5 +90,13 @@ public class FlourSpoon : Pourable
                 bowl.AddFlour(amount);
             }
         }
+    }
+
+    private void RefreshVisual()
+    {
+        bool hasFlour = currentAmount > 0f;
+
+        if (filledMesh != null)
+            filledMesh.SetActive(hasFlour);
     }
 }
