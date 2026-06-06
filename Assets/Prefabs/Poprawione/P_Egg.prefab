@@ -172,7 +172,7 @@ MonoBehaviour:
   amount: 1
   meshFilter: {fileID: 7599722944182696989}
   wholeEgg: {fileID: -6820650550861052275, guid: a310d645aa38aea4cb388b22867bd540, type: 3}
-  crackedEgg: {fileID: 7897819249229369928, guid: 8691ef7b257f5c94d8a1830b4223d7b8, type: 3}
+  crackedEgg: {fileID: 3536217719649374247, guid: b1861f6e6687f294f8dc41371666c6de, type: 3}
   eggShellPrefab: {fileID: 7750204212939458051, guid: 50ca55752ff22194a8d277ba181b6b61, type: 3}
   crackForce: 2
   crackVelocity: 0.1
@@ -194,7 +194,6 @@ MonoBehaviour:
   maxAmount: 1
   currentAmount: 0
   pourParticles: {fileID: 9003862549174528019}
-  pourDelay: 2
 --- !u!54 &695650531294680585
 Rigidbody:
   m_ObjectHideFlags: 0

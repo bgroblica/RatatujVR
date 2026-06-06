@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 20a4b2744f6f7c64983cd605c22a84d0, type: 3}
-  m_Name: StrawberyyCake
+  m_Name: StrawberryCake
   m_EditorClassIdentifier: 
   cakeName: Strawberry Cake
   maxIngredients: Big is 18, medium is 12, small is 8
