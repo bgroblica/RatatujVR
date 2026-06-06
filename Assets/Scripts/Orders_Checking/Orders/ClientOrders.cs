@@ -12,10 +12,12 @@ public class ClientOrders : ScriptableObject
     [Header("Computer Preview")]
     public Material previewMaterial;
 
+    [Header("Printing")]
+    public GameObject orderPaperPrefab;
+
+    public GameObject happyResultPrefab;
+    public GameObject sadResultPrefab;
+
     [Header("Layers (1–3 cakes stacked)")]
     public List<CakeLayerData> layers = new List<CakeLayerData>();
-
-    [Header("Frosting (later)")]
-    public string frostingType;
-    public string frostingSomething;
 }
