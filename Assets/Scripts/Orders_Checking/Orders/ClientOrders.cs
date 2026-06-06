@@ -9,6 +9,9 @@ public class ClientOrders : ScriptableObject
 
     public string maxIngredients = "Big is 27, medium is 18, small is 9";
 
+    [Header("Computer Preview")]
+    public Material previewMaterial;
+
     [Header("Layers (1–3 cakes stacked)")]
     public List<CakeLayerData> layers = new List<CakeLayerData>();
 

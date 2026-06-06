@@ -13,8 +13,6 @@ public class HandAnimationController : MonoBehaviour
         float grip = gripAction.action.ReadValue<float>();
         float trigger = triggerAction.action.ReadValue<float>();
 
-        Debug.Log("Grip: " + grip);
-        Debug.Log("Trigger: " + trigger);
 
         animator.SetFloat("Grip", grip, 0.1f, Time.deltaTime);
         animator.SetFloat("Trigger", trigger, 0.1f, Time.deltaTime);

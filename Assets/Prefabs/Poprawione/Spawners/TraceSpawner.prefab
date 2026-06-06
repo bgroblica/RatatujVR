@@ -338,7 +338,7 @@ MonoBehaviour:
   m_StartingInteractionStrengthFilters: []
   m_AutoFindParentInteractableInHierarchy: 0
   m_ParentInteractableObject: {fileID: 0}
-  sugarCubePrefab: {fileID: 5151485285805185196, guid: d3f776435aac9224bb09db2d41184bed, type: 3}
+  sugarCubePrefab: {fileID: 284885985585400442, guid: baa819154933fdd4ca0a8f01e3c68655, type: 3}
   spawnPoint: {fileID: 6511270279204557137}
 --- !u!65 &3431181884785207474
 BoxCollider:
