@@ -249,7 +249,7 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1529923800063727147}
-  m_Mesh: {fileID: -3341740195166954945, guid: 1c1b6dfbcfc657d49872ca2e27197396, type: 3}
+  m_Mesh: {fileID: -3341740195166954945, guid: 9d8aece9acb08f547ad6e562e16ac92a, type: 3}
 --- !u!23 &5748226386627916575
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -273,7 +273,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 934d786b225cbd7449e306cae5e7bc43, type: 2}
+  - {fileID: 2100000, guid: 0e895cb3e777db74aa6c65a21b9f741b, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -472,8 +472,10 @@ MonoBehaviour:
   butterAmount: 0
   batterAmount: 0
   maxBatter: 12
+  flavour: 0
   maxBatterHeight: 0.2
   batterSizeModifier: 1.32
+  flavourColor: {r: 1, g: 0.9, b: 0.6, a: 1}
 --- !u!1 &3756529971746856412
 GameObject:
   m_ObjectHideFlags: 0
