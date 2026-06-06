@@ -17,4 +17,7 @@ public class CakeLayerData
 
     [Header("Baking")]
     public Cake.CakeState requiredBakeState;
+
+    [Header("Icing")]
+    public Cake.IcingType requiredIcing;
 }

@@ -10,6 +10,8 @@ public class Computer : MonoBehaviour
 
     public Material tutorialMaterial;
 
+    public Printer printer;
+
     [Header("Orders")]
     public List<ClientOrders> availableOrders;
 
@@ -64,17 +66,26 @@ public class Computer : MonoBehaviour
         if (gameFlow.currentState == GameState.Tutorial)
         {
             Debug.Log("Print Tutorial");
+
+            if (printer != null)
+            {
+                // optional: create tutorial paper later
+                printer.PrintCurrentOrder(); // or PrintTutorial if you add it
+            }
+
             return;
         }
 
         if (gameFlow.currentState == GameState.ChoosingOrder)
         {
-            Debug.Log(
-                "Accept Order: " +
-                CurrentOrder.cakeName
-            );
+            Debug.Log("Accept Order: " + CurrentOrder.cakeName);
 
             gameFlow.StartOrder(CurrentOrder);
+
+            if (printer != null)
+            {
+                printer.PrintCurrentOrder();
+            }
         }
     }
 

@@ -15,6 +15,12 @@ public class Cake : MonoBehaviour
     [Header("Flavour")]
     public CakeFlavour flavour;
 
+    [Header("Icing")]
+
+    public GameObject lemonIcing;
+    public GameObject chocolateIcing;
+    public GameObject strawberryIcing;
+
     [Header("Baking")]
     public float bakeProgress = 0f;
 
@@ -36,12 +42,31 @@ public class Cake : MonoBehaviour
     public XRSocketInteractor nextLayerSocket;
     public List<XRSocketInteractor> decorationSockets;
 
+    public enum IcingType
+    {
+        None,
+        Lemon,
+        Chocolate,
+        Strawberry
+    }
+
+    public IcingType icing = IcingType.None;
+
     public enum CakeFlavour
     {
         Deafult,
         Vanilla,
         Strawberry,
         Chocolate
+    }
+
+    public void SetIcing(IcingType type)
+    {
+        icing = type;
+
+        if (lemonIcing) lemonIcing.SetActive(type == IcingType.Lemon);
+        if (chocolateIcing) chocolateIcing.SetActive(type == IcingType.Chocolate);
+        if (strawberryIcing) strawberryIcing.SetActive(type == IcingType.Strawberry);
     }
     private Color GetBakedColor()
     {
