@@ -353,7 +353,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 8b5611549f502134982fdeb45b32db79, type: 2}
+  - {fileID: 2100000, guid: ad3794d169edae24eb0705d8507cdd3d, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -550,9 +550,11 @@ MonoBehaviour:
   sugarAmount: 0
   butterAmount: 0
   allIngredients: 0
-  maxIngredients: 18
+  maxIngredients: 27
+  flavour: 0
+  batterFlavour: 0
   mixProgress: 0
-  maxMix: 5
+  maxMix: 9
   mixModifier: 10
   batterAmount: 0
   batterMilk: 0
@@ -569,6 +571,7 @@ MonoBehaviour:
   fillingRenderer: {fileID: 9200045683690092161}
   milkColor: {r: 1, g: 1, b: 1, a: 1}
   batterColor: {r: 1, g: 0.9, b: 0.6, a: 1}
+  flavourColor: {r: 1, g: 0.9, b: 0.6, a: 1}
 --- !u!114 &1686514952188183721
 MonoBehaviour:
   m_ObjectHideFlags: 0

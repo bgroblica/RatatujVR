@@ -7,7 +7,7 @@ public class ClientOrders : ScriptableObject
     [Header("Name")]
     public string cakeName;
 
-    public string maxIngredients = "Big is 18, medium is 12, small is 8";
+    public string maxIngredients = "Big is 27, medium is 18, small is 9";
 
     [Header("Layers (1–3 cakes stacked)")]
     public List<CakeLayerData> layers = new List<CakeLayerData>();

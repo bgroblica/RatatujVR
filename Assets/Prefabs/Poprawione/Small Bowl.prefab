@@ -550,7 +550,9 @@ MonoBehaviour:
   sugarAmount: 0
   butterAmount: 0
   allIngredients: 0
-  maxIngredients: 4
+  maxIngredients: 9
+  flavour: 0
+  batterFlavour: 0
   mixProgress: 0
   maxMix: 3
   mixModifier: 10
@@ -569,6 +571,7 @@ MonoBehaviour:
   fillingRenderer: {fileID: 9200045683690092161}
   milkColor: {r: 1, g: 1, b: 1, a: 1}
   batterColor: {r: 1, g: 0.9, b: 0.6, a: 1}
+  flavourColor: {r: 1, g: 0.9, b: 0.6, a: 1}
 --- !u!114 &1686514952188183721
 MonoBehaviour:
   m_ObjectHideFlags: 0
