@@ -48,7 +48,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gameFlow: {fileID: 0}
   screenRenderer: {fileID: 4084335080933430070}
-  tutorialMaterial: {fileID: 2100000, guid: 6577b976747ecaa418d81d0dda173b45, type: 2}
+  tutorialMaterial: {fileID: 2100000, guid: 1b983642e9e9ee0438774cd5ece3b5a1, type: 2}
+  printer: {fileID: 0}
   availableOrders:
   - {fileID: 11400000, guid: 3975409234ebaba469928aa5ea99a283, type: 2}
   - {fileID: 11400000, guid: dca0a9e84ef52a64fad12f23de28fa65, type: 2}

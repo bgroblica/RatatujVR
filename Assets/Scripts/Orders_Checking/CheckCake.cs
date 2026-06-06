@@ -1,3 +1,4 @@
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.XR.Interaction.Toolkit.Interactors;
@@ -10,7 +11,13 @@ public class CheckCake : MonoBehaviour
     public GameFlowManager gameFlowManager;
     public Printer printer;
 
-    public int maxStars = 5;
+    public Animator boxAnimator;
+
+    [Header("Judging")]
+    public float judgingDelay = 2f;
+
+    public float destroyDelay = 0.5f;
+
 
     // ---------- WEIGHTS ----------
     private const float bakeWeight = 1f;
@@ -30,17 +37,39 @@ public class CheckCake : MonoBehaviour
 
     public void CheckCurrentCake()
     {
-        int stars = EvaluateCake();
+        StartCoroutine(CheckCakeRoutine());
 
-        Debug.Log("Final Stars: " + stars);
+        if (boxAnimator != null)
+        {
+            boxAnimator.SetBool("Closed", true);
+        }
+    }
+    private IEnumerator CheckCakeRoutine()
+    {
+
+        yield return new WaitForSeconds(judgingDelay);
+
+        float score = EvaluateCake();
+
+        Debug.Log("Final Score: " + score);
 
         if (printer != null)
         {
-            printer.PrintResult(stars);
+            printer.PrintResult(score);
+        }
+
+        yield return new WaitForSeconds(destroyDelay);
+
+        DestroyCurrentCake();
+
+
+        if (boxAnimator != null)
+        {
+            boxAnimator.SetBool("Closed", false);
         }
 
         if (gameFlowManager == null)
-            return;
+            yield break;
 
         if (gameFlowManager.currentState ==
             GameState.Tutorial)
@@ -52,29 +81,30 @@ public class CheckCake : MonoBehaviour
         {
             gameFlowManager.CompleteOrder();
         }
+
     }
 
-    public int EvaluateCake()
+    public float EvaluateCake()
     {
         var order = orderManager.GetActiveOrder();
 
         if (order == null)
         {
             Debug.LogError("No active order!");
-            return 0;
+            return 0f;
         }
 
         if (plateSocket == null)
         {
             Debug.LogError("No plate socket assigned!");
-            return 0;
+            return 0f;
         }
 
         var interactable = plateSocket.GetOldestInteractableSelected();
         if (interactable == null)
         {
             Debug.Log("No plate in socket");
-            return 0;
+            return 0f;
         }
 
         CakeStackReader reader =
@@ -83,7 +113,7 @@ public class CheckCake : MonoBehaviour
         if (reader == null)
         {
             Debug.LogError("Socketed object has no CakeStackReader!");
-            return 0;
+            return 0f;
         }
 
         var cake = reader.GetFullCake();
@@ -91,35 +121,23 @@ public class CheckCake : MonoBehaviour
         if (order.layers.Count == 0 || cake.Count == 0)
         {
             Debug.LogWarning("Empty cake or order");
-            return 0;
+            return 0f;
         }
 
         float total = 0f;
-
         int layerCount = Mathf.Min(order.layers.Count, cake.Count);
 
         for (int i = 0; i < layerCount; i++)
         {
-            total += EvaluateLayerScore(
-                cake[i],
-                order.layers[i]
-            );
+            total += EvaluateLayerScore(cake[i], order.layers[i]);
         }
 
         float average = total / layerCount;
 
-        int stars =
-            Mathf.Clamp(
-                Mathf.RoundToInt(average * 5f),
-                0,
-                maxStars
-            );
-
         Debug.Log("========== FINAL RESULT ==========");
         Debug.Log("Average Score: " + average.ToString("F2"));
-        Debug.Log("Stars: " + stars + "/" + maxStars);
 
-        return stars;
+        return Mathf.Clamp01(average);
     }
 
     private float EvaluateLayerScore(
@@ -128,24 +146,13 @@ public class CheckCake : MonoBehaviour
     {
         float score = 0f;
 
-        Debug.Log("========== CAKE LAYER ==========");
-
         // ------------------------
-        // 1. Bake state
+        // 1. Bake
         // ------------------------
-        bool bakeCorrect =
-            actual.cake.GetState() ==
-            required.requiredBakeState;
+        float bakeScore =
+            actual.cake.GetState() == required.requiredBakeState ? 1f : 0f;
 
-        Debug.Log(
-            $"Bake State: {actual.cake.GetState()} | " +
-            $"Required: {required.requiredBakeState} | " +
-            $"Correct: {bakeCorrect}"
-        );
-
-        score += bakeCorrect ? 1f : 0f;
-
-        float bakeScore = bakeCorrect ? 1f : 0f;
+        score += bakeScore;
 
         // ------------------------
         // 2. Ingredients
@@ -159,34 +166,20 @@ public class CheckCake : MonoBehaviour
 
         ingredientScore /= 5f;
 
-        Debug.Log($"Ingredient Score: {ingredientScore:F2}");
-
         // ------------------------
         // 3. Flavour
         // ------------------------
         float flavourScore =
             actual.cake.flavour == required.flavour ? 1f : 0f;
 
-        Debug.Log(
-            $"Flavour: {actual.cake.flavour} | " +
-            $"Required: {required.flavour} | " +
-            $"Score: {flavourScore:F2}"
-        );
-
         // ------------------------
-        // 4. Icing (SAFE)
+        // 4. Icing
         // ------------------------
         float icingScore =
             actual.cake.icing == required.requiredIcing ? 1f : 0f;
 
-        Debug.Log(
-            $"Icing: {actual.cake.icing} | " +
-            $"Required: {required.requiredIcing} | " +
-            $"Score: {icingScore:F2}"
-        );
-
         // ------------------------
-        // 5. Decorations (FIXED)
+        // 5. Decorations (continuous)
         // ------------------------
         int strawberries = 0;
         int lemons = 0;
@@ -209,18 +202,6 @@ public class CheckCake : MonoBehaviour
         float decorationScore =
             (strawberryScore + lemonScore) / 2f;
 
-        Debug.Log(
-            $"Strawberries: {strawberries}/{required.strawberries} | Score: {strawberryScore:F2}"
-        );
-
-        Debug.Log(
-            $"Lemons: {lemons}/{required.lemons} | Score: {lemonScore:F2}"
-        );
-
-        Debug.Log(
-            $"Decoration Score: {decorationScore:F2}"
-        );
-
         // ------------------------
         // FINAL WEIGHTED SCORE
         // ------------------------
@@ -233,13 +214,11 @@ public class CheckCake : MonoBehaviour
 
         finalScore /= totalWeight;
 
-        Debug.Log($"Layer Final Score: {finalScore:F2}");
+        Debug.Log($"Layer Score: {finalScore:F2}");
 
         return finalScore;
     }
 
-    // ------------------------
-    // Ingredient helper
     // ------------------------
     private float IngredientScore(float actual, float required)
     {
@@ -252,9 +231,6 @@ public class CheckCake : MonoBehaviour
         return Mathf.Clamp01(1f - percentError);
     }
 
-    // ------------------------
-    // NEW: Decoration scoring
-    // ------------------------
     private float DecorationScore(int actual, int required)
     {
         if (required <= 0)
@@ -264,5 +240,15 @@ public class CheckCake : MonoBehaviour
         float percentError = diff / required;
 
         return Mathf.Clamp01(1f - percentError);
+    }
+    private void DestroyCurrentCake()
+    {
+        var interactable =
+            plateSocket.GetOldestInteractableSelected();
+
+        if (interactable == null)
+            return;
+
+        Destroy(interactable.transform.root.gameObject);
     }
 }

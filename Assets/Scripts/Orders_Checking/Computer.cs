@@ -69,8 +69,7 @@ public class Computer : MonoBehaviour
 
             if (printer != null)
             {
-                // optional: create tutorial paper later
-                printer.PrintCurrentOrder(); // or PrintTutorial if you add it
+                printer.PrintTutorialPage();
             }
 
             return;
@@ -133,12 +132,5 @@ public class Computer : MonoBehaviour
         }
 
         RefreshScreen();
-    }
-    private void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.E))
-        {
-            TestFinishCurrentTask();
-        }
     }
 }

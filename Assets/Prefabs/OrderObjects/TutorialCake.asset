@@ -1,0 +1,41 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 20a4b2744f6f7c64983cd605c22a84d0, type: 3}
+  m_Name: TutorialCake
+  m_EditorClassIdentifier: 
+  cakeName: Tutorial Cake
+  maxIngredients: Big is 27, medium is 18, small is 9
+  previewMaterial: {fileID: 2100000, guid: c6e3002b6e30c244d8a4bea94e7ccabe, type: 2}
+  orderPaperPrefab: {fileID: 5669651063620529089, guid: afe78b6adf540f647b50dc10a44a4d37, type: 3}
+  happyResultPrefab: {fileID: 5669651063620529089, guid: 8477dc22cdc07274b82f7baef1b1da39, type: 3}
+  sadResultPrefab: {fileID: 5669651063620529089, guid: 54589c762f31f724680f2d753d135b85, type: 3}
+  layers:
+  - milk: 3
+    flour: 4
+    egg: 2
+    sugar: 1
+    butter: 1
+    flavour: 1
+    strawberries: 0
+    lemons: 0
+    requiredBakeState: 1
+    requiredIcing: 0
+  - milk: 1
+    flour: 3
+    egg: 2
+    sugar: 2
+    butter: 1
+    flavour: 1
+    strawberries: 0
+    lemons: 1
+    requiredBakeState: 1
+    requiredIcing: 0

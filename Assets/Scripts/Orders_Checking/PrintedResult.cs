@@ -2,18 +2,17 @@ using UnityEngine;
 
 public class PrintedResult : MonoBehaviour
 {
-    [Header("Star visuals")]
-    public GameObject[] stars; // 5 objects
+    public Transform fillBar;
+    public float maxXScale = 1f;
 
-    public void SetStars(int rating)
+    public void SetScore(float score)
     {
-        rating = Mathf.Clamp(rating, 0, stars.Length);
+        score = Mathf.Clamp01(score);
 
-        for (int i = 0; i < stars.Length; i++)
-        {
-            stars[i].SetActive(i < rating);
-        }
+        Vector3 scale = fillBar.localScale;
+        scale.x = maxXScale * score;
+        fillBar.localScale = scale;
 
-        Debug.Log("Printed result: " + rating + " stars");
+        Debug.Log("Printed score: " + score);
     }
 }
