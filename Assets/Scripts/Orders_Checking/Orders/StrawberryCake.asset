@@ -16,12 +16,12 @@ MonoBehaviour:
   maxIngredients: Big is 18, medium is 12, small is 8
   layers:
   - milk: 5
-    flour: 5
-    egg: 1
-    sugar: 6
+    flour: 8
+    egg: 2
+    sugar: 2
     butter: 1
     flavour: 2
-    strawberries: 1
+    strawberries: 4
     lemons: 0
     requiredBakeState: 1
   frostingType: 
