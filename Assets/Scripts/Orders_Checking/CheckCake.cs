@@ -1,11 +1,14 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.XR.Interaction.Toolkit.Interactors;
+using static GameFlowManager;
 
 public class CheckCake : MonoBehaviour
 {
     public OrderManager orderManager;
     public XRSocketInteractor plateSocket;
+
+    public GameFlowManager gameFlowManager;
 
     public int maxStars = 5;
 
@@ -14,6 +17,20 @@ public class CheckCake : MonoBehaviour
         int stars = EvaluateCake();
 
         Debug.Log("Final Stars: " + stars);
+
+        if (gameFlowManager == null)
+            return;
+
+        if (gameFlowManager.currentState ==
+            GameState.Tutorial)
+        {
+            gameFlowManager.CompleteTutorial();
+        }
+        else if (gameFlowManager.currentState ==
+                 GameState.ActiveOrder)
+        {
+            gameFlowManager.CompleteOrder();
+        }
     }
     public int EvaluateCake()
     {

@@ -10,19 +10,29 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 20a4b2744f6f7c64983cd605c22a84d0, type: 3}
-  m_Name: StrawberryCake
+  m_Name: TutorialCake
   m_EditorClassIdentifier: 
-  cakeName: Strawberry Cake
+  cakeName: Tutorial Cake
   maxIngredients: Big is 27, medium is 18, small is 9
+  previewMaterial: {fileID: 2100000, guid: 6577b976747ecaa418d81d0dda173b45, type: 2}
   layers:
-  - milk: 5
-    flour: 8
+  - milk: 3
+    flour: 4
+    egg: 2
+    sugar: 1
+    butter: 1
+    flavour: 1
+    strawberries: 0
+    lemons: 0
+    requiredBakeState: 1
+  - milk: 1
+    flour: 3
     egg: 2
     sugar: 2
     butter: 1
-    flavour: 2
-    strawberries: 4
-    lemons: 0
+    flavour: 1
+    strawberries: 0
+    lemons: 1
     requiredBakeState: 1
-  frostingType: 
-  frostingSomething: 
+  frostingType: WIP
+  frostingSomething: WIP
