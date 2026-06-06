@@ -1,5 +1,58 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &106681255119921056
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3612796044933626631}
+  - component: {fileID: 5838436715764756061}
+  m_Layer: 0
+  m_Name: Tip
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3612796044933626631
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 106681255119921056}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1497817061778234797}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!135 &5838436715764756061
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 106681255119921056}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Radius: 0.15
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &2351256468770901501
 GameObject:
   m_ObjectHideFlags: 0
@@ -24,8 +77,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2351256468770901501}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: 1, w: -0.00000037252897}
-  m_LocalPosition: {x: 0, y: -0.105, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: 0.000003233552, w: 1}
+  m_LocalPosition: {x: 0, y: 0.361, z: 0}
   m_LocalScale: {x: 0.6499999, y: 0.6499999, z: 0.65}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -43,9 +96,10 @@ GameObject:
   - component: {fileID: 2348787662674744109}
   - component: {fileID: 6656950103886491532}
   - component: {fileID: 6040650948633069245}
-  - component: {fileID: 140087408478006804}
+  - component: {fileID: 3925198796189966766}
   - component: {fileID: 5604976667015006296}
   - component: {fileID: 4771194618354871989}
+  - component: {fileID: 2595165682751533700}
   m_Layer: 0
   m_Name: IcingPenLemon
   m_TagString: Untagged
@@ -67,6 +121,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 2067571277940744932}
+  - {fileID: 3612796044933626631}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &2348787662674744109
@@ -149,7 +204,7 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!65 &140087408478006804
+--- !u!65 &3925198796189966766
 BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -168,8 +223,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 0.031702794, y: 0.68650097, z: 0.10966893}
-  m_Center: {x: -0.0018750187, y: 0.15180598, z: 0}
+  m_Size: {x: 0.15625435, y: 0.4836942, z: 0.15625435}
+  m_Center: {x: 0, y: 0.2418471, z: 0}
 --- !u!114 &5604976667015006296
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -312,3 +367,17 @@ MonoBehaviour:
   m_LimitAngularVelocity: 0
   m_MaxLinearVelocityDelta: 10
   m_MaxAngularVelocityDelta: 20
+--- !u!114 &2595165682751533700
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5151485285805185196}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b82bd32bfc459f94f969511f4e878094, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  icingType: 1
+  applyTime: 2
