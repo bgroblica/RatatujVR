@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 1976291533104455144}
   - component: {fileID: 875673535342509457}
   m_Layer: 0
-  m_Name: ExtractVanilla
+  m_Name: ExtractStrawberry
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -223,7 +223,7 @@ ParticleSystem:
       serializedVersion: 2
       minMaxState: 0
       minColor: {r: 1, g: 1, b: 1, a: 1}
-      maxColor: {r: 1, g: 1, b: 1, a: 1}
+      maxColor: {r: 0.9169811, g: 0.34034255, b: 0.33045924, a: 1}
       maxGradient:
         serializedVersion: 2
         key0: {r: 1, g: 1, b: 1, a: 1}
@@ -4858,7 +4858,7 @@ Transform:
   m_GameObject: {fileID: 3785595468758581806}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.018, y: 0.025, z: 0}
+  m_LocalPosition: {x: -0.018, y: 0.06, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -4889,8 +4889,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8397275533809624005}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0.70710707, z: -0, w: 0.70710653}
-  m_LocalPosition: {x: 0.0185, y: 0.015, z: 0}
+  m_LocalRotation: {x: -0, y: -0.70710677, z: -0, w: 0.7071068}
+  m_LocalPosition: {x: 0.042, y: -0.044, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -4910,7 +4910,7 @@ GameObject:
   - component: {fileID: 5260020697815068468}
   - component: {fileID: 6278116047948759226}
   - component: {fileID: 8350532840180197555}
-  - component: {fileID: 6273165499314614554}
+  - component: {fileID: 866680171123612549}
   m_Layer: 0
   m_Name: VanillaExtract
   m_TagString: Untagged
@@ -4942,7 +4942,7 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8932759757077034411}
-  m_Mesh: {fileID: -6820650550861052275, guid: a310d645aa38aea4cb388b22867bd540, type: 3}
+  m_Mesh: {fileID: -2791482364499674121, guid: 07feabc74fa11c549908423b5f7aabd8, type: 3}
 --- !u!23 &7464481739396073674
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -4966,7 +4966,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 68b6fce3a53372e4ab03e95f734b545f, type: 2}
+  - {fileID: 2100000, guid: c5d21e2375fcdcd43a418880fc1249c6, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -5034,7 +5034,7 @@ MonoBehaviour:
   currentAmount: 0
   flavourParticles: {fileID: 1976291533104455144}
   flavour: 1
-  flavourColor: {r: 0.93207544, g: 0.9248016, b: 0.8705233, a: 0}
+  flavourColor: {r: 0.94716984, g: 0.94610095, b: 0.6701673, a: 0}
 --- !u!114 &8350532840180197555
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5164,7 +5164,7 @@ MonoBehaviour:
   m_LimitAngularVelocity: 0
   m_MaxLinearVelocityDelta: 10
   m_MaxAngularVelocityDelta: 20
---- !u!65 &6273165499314614554
+--- !u!65 &866680171123612549
 BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -5183,5 +5183,5 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 0.030000001, y: 0.030000001, z: 0.030000001}
-  m_Center: {x: 0, y: 0.015000001, z: 0}
+  m_Size: {x: 0.059701543, y: 0.15306935, z: 0.059701543}
+  m_Center: {x: 0, y: -0.027027484, z: 0}
