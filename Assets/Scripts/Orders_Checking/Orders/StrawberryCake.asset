@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: StrawberryCake
   m_EditorClassIdentifier: 
   cakeName: Strawberry Cake
-  maxIngredients: Big is 18, medium is 12, small is 8
+  maxIngredients: Big is 27, medium is 18, small is 9
   layers:
   - milk: 5
     flour: 8

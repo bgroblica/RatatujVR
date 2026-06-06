@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: NormalCake
   m_EditorClassIdentifier: 
   cakeName: Normal Big Cake
-  maxIngredients: Big is 18, medium is 12, small is 8
+  maxIngredients: Big is 27, medium is 18, small is 9
   layers:
   - milk: 3
     flour: 4

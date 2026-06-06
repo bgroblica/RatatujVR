@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 2368333553855650175}
   - component: {fileID: 4709089326893316991}
   m_Layer: 0
-  m_Name: Egg (10)
+  m_Name: Lemon7
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -26,13 +26,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2621143843025839627}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0.21295609, z: -0, w: 0.9770618}
-  m_LocalPosition: {x: -0.0793, y: 0.026, z: -0.0127}
+  m_LocalRotation: {x: -0.8034023, y: -0.12119477, z: -0.17510603, w: 0.5560526}
+  m_LocalPosition: {x: -0.0846, y: 0.0735, z: -0.015700005}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 8699237970563118505}
-  m_LocalEulerAnglesHint: {x: 0, y: -24.591, z: 0}
+  m_LocalEulerAnglesHint: {x: -110.624, y: -24.591003, z: 0}
 --- !u!33 &2368333553855650175
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -40,7 +40,7 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2621143843025839627}
-  m_Mesh: {fileID: -6820650550861052275, guid: 94fcd168d257f5640a70cb1f3c23e22a, type: 3}
+  m_Mesh: {fileID: 8579863475612487406, guid: 83288236ede05a04e935f6cd8ebcfb11, type: 3}
 --- !u!23 &4709089326893316991
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -151,7 +151,7 @@ GameObject:
   - component: {fileID: 4368797243057604137}
   - component: {fileID: 7113685503572156375}
   m_Layer: 0
-  m_Name: Egg (3)
+  m_Name: Lemon1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -165,13 +165,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3099424304053485177}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0.21295609, z: -0, w: 0.9770618}
-  m_LocalPosition: {x: 0.0265, y: 0.026, z: -0.065}
+  m_LocalRotation: {x: -0.8034023, y: -0.12119477, z: -0.17510603, w: 0.5560526}
+  m_LocalPosition: {x: 0.0212, y: 0.0735, z: -0.068}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 8699237970563118505}
-  m_LocalEulerAnglesHint: {x: 0, y: -24.591, z: 0}
+  m_LocalEulerAnglesHint: {x: -110.624, y: -24.591003, z: 0}
 --- !u!33 &4368797243057604137
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -179,7 +179,7 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3099424304053485177}
-  m_Mesh: {fileID: -6820650550861052275, guid: 94fcd168d257f5640a70cb1f3c23e22a, type: 3}
+  m_Mesh: {fileID: 8579863475612487406, guid: 83288236ede05a04e935f6cd8ebcfb11, type: 3}
 --- !u!23 &7113685503572156375
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -237,7 +237,7 @@ GameObject:
   - component: {fileID: 6200403623546510130}
   - component: {fileID: 390653271633858430}
   m_Layer: 0
-  m_Name: Egg (5)
+  m_Name: Lemon9
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -251,13 +251,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4006521782178876553}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0.21295609, z: -0, w: 0.9770618}
-  m_LocalPosition: {x: 0.026500002, y: 0.026, z: 0.0383}
+  m_LocalRotation: {x: -0.8034023, y: -0.12119477, z: -0.17510603, w: 0.5560526}
+  m_LocalPosition: {x: 0.021200001, y: 0.0735, z: 0.035299994}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 8699237970563118505}
-  m_LocalEulerAnglesHint: {x: 0, y: -24.591, z: 0}
+  m_LocalEulerAnglesHint: {x: -110.624, y: -24.591003, z: 0}
 --- !u!33 &6200403623546510130
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -265,7 +265,7 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4006521782178876553}
-  m_Mesh: {fileID: -6820650550861052275, guid: 94fcd168d257f5640a70cb1f3c23e22a, type: 3}
+  m_Mesh: {fileID: 8579863475612487406, guid: 83288236ede05a04e935f6cd8ebcfb11, type: 3}
 --- !u!23 &390653271633858430
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -323,7 +323,7 @@ GameObject:
   - component: {fileID: 6467509108657285494}
   - component: {fileID: 5136417503456621808}
   m_Layer: 0
-  m_Name: Egg (4)
+  m_Name: Lemon5
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -337,13 +337,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4069289410284997312}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0.21295609, z: -0, w: 0.9770618}
-  m_LocalPosition: {x: 0.026500002, y: 0.026, z: -0.0127}
+  m_LocalRotation: {x: -0.8034023, y: -0.12119477, z: -0.17510603, w: 0.5560526}
+  m_LocalPosition: {x: 0.021200001, y: 0.0735, z: -0.015700005}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 8699237970563118505}
-  m_LocalEulerAnglesHint: {x: 0, y: -24.591, z: 0}
+  m_LocalEulerAnglesHint: {x: -110.624, y: -24.591003, z: 0}
 --- !u!33 &6467509108657285494
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -351,7 +351,7 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4069289410284997312}
-  m_Mesh: {fileID: -6820650550861052275, guid: 94fcd168d257f5640a70cb1f3c23e22a, type: 3}
+  m_Mesh: {fileID: 8579863475612487406, guid: 83288236ede05a04e935f6cd8ebcfb11, type: 3}
 --- !u!23 &5136417503456621808
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -409,7 +409,7 @@ GameObject:
   - component: {fileID: 2184775155768384818}
   - component: {fileID: 688998318503323663}
   m_Layer: 0
-  m_Name: Egg (8)
+  m_Name: Lemon10
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -423,13 +423,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4225201997039197448}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0.21295609, z: -0, w: 0.9770618}
-  m_LocalPosition: {x: -0.0268, y: 0.026, z: 0.0383}
+  m_LocalRotation: {x: -0.8034023, y: -0.12119477, z: -0.17510603, w: 0.5560526}
+  m_LocalPosition: {x: -0.0321, y: 0.0735, z: 0.035299994}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 8699237970563118505}
-  m_LocalEulerAnglesHint: {x: 0, y: -24.591, z: 0}
+  m_LocalEulerAnglesHint: {x: -110.624, y: -24.591003, z: 0}
 --- !u!33 &2184775155768384818
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -437,7 +437,7 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4225201997039197448}
-  m_Mesh: {fileID: -6820650550861052275, guid: 94fcd168d257f5640a70cb1f3c23e22a, type: 3}
+  m_Mesh: {fileID: 8579863475612487406, guid: 83288236ede05a04e935f6cd8ebcfb11, type: 3}
 --- !u!23 &688998318503323663
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -494,10 +494,9 @@ GameObject:
   - component: {fileID: 8699237970563118505}
   - component: {fileID: 8729997156672894724}
   - component: {fileID: 7659020172095334055}
-  - component: {fileID: 5883308714116842136}
   - component: {fileID: 3072230061728162107}
   m_Layer: 0
-  m_Name: EggBox
+  m_Name: LemonSpawner
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -565,7 +564,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 934d786b225cbd7449e306cae5e7bc43, type: 2}
+  - {fileID: 2100000, guid: 98ee148693e409b41974874e73d5372a, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -587,33 +586,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!54 &5883308714116842136
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4412536000425660992}
-  serializedVersion: 4
-  m_Mass: 2
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_CenterOfMass: {x: 0, y: 0, z: 0}
-  m_InertiaTensor: {x: 1, y: 1, z: 1}
-  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ImplicitCom: 1
-  m_ImplicitTensor: 1
-  m_UseGravity: 1
-  m_IsKinematic: 0
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
 --- !u!114 &3072230061728162107
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -689,7 +661,7 @@ MonoBehaviour:
   m_StartingInteractionStrengthFilters: []
   m_AutoFindParentInteractableInHierarchy: 0
   m_ParentInteractableObject: {fileID: 0}
-  sugarCubePrefab: {fileID: 6145016224387559093, guid: 68db1f77b7410c446a31a0e7c4fc2105, type: 3}
+  sugarCubePrefab: {fileID: 4412536000425660992, guid: d955dfdb95d649b409d5c5ca9765ab09, type: 3}
   spawnPoint: {fileID: 6511270279204557137}
 --- !u!1 &4579096959836754196
 GameObject:
@@ -703,7 +675,7 @@ GameObject:
   - component: {fileID: 5602735945583423157}
   - component: {fileID: 1387943914902684914}
   m_Layer: 0
-  m_Name: Egg (6)
+  m_Name: Lemon2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -717,13 +689,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4579096959836754196}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0.21295609, z: -0, w: 0.9770618}
-  m_LocalPosition: {x: -0.0268, y: 0.026, z: -0.065}
+  m_LocalRotation: {x: -0.8034023, y: -0.12119477, z: -0.17510603, w: 0.5560526}
+  m_LocalPosition: {x: -0.0321, y: 0.0735, z: -0.068}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 8699237970563118505}
-  m_LocalEulerAnglesHint: {x: 0, y: -24.591, z: 0}
+  m_LocalEulerAnglesHint: {x: -110.624, y: -24.591003, z: 0}
 --- !u!33 &5602735945583423157
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -731,7 +703,7 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4579096959836754196}
-  m_Mesh: {fileID: -6820650550861052275, guid: 94fcd168d257f5640a70cb1f3c23e22a, type: 3}
+  m_Mesh: {fileID: 8579863475612487406, guid: 83288236ede05a04e935f6cd8ebcfb11, type: 3}
 --- !u!23 &1387943914902684914
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -789,7 +761,7 @@ GameObject:
   - component: {fileID: 7161906263346169847}
   - component: {fileID: 4545797421084065873}
   m_Layer: 0
-  m_Name: Egg (7)
+  m_Name: Lemon6
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -803,13 +775,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5021436682390756936}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0.21295609, z: -0, w: 0.9770618}
-  m_LocalPosition: {x: -0.0268, y: 0.026, z: -0.0127}
+  m_LocalRotation: {x: -0.8034023, y: -0.12119477, z: -0.17510603, w: 0.5560526}
+  m_LocalPosition: {x: -0.0321, y: 0.0735, z: -0.015700005}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 8699237970563118505}
-  m_LocalEulerAnglesHint: {x: 0, y: -24.591, z: 0}
+  m_LocalEulerAnglesHint: {x: -110.624, y: -24.591003, z: 0}
 --- !u!33 &7161906263346169847
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -817,7 +789,7 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5021436682390756936}
-  m_Mesh: {fileID: -6820650550861052275, guid: 94fcd168d257f5640a70cb1f3c23e22a, type: 3}
+  m_Mesh: {fileID: 8579863475612487406, guid: 83288236ede05a04e935f6cd8ebcfb11, type: 3}
 --- !u!23 &4545797421084065873
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -875,7 +847,7 @@ GameObject:
   - component: {fileID: 220809534954949040}
   - component: {fileID: 8081756536304957576}
   m_Layer: 0
-  m_Name: Egg
+  m_Name: Lemon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -889,13 +861,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5326030797953396575}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0.21295609, z: -0, w: 0.9770618}
-  m_LocalPosition: {x: 0.081, y: 0.026, z: -0.065}
+  m_LocalRotation: {x: -0.8034023, y: -0.12119477, z: -0.17510603, w: 0.5560526}
+  m_LocalPosition: {x: 0.0757, y: 0.0735, z: -0.068}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 8699237970563118505}
-  m_LocalEulerAnglesHint: {x: 0, y: -24.591, z: 0}
+  m_LocalEulerAnglesHint: {x: -110.624, y: -24.591003, z: 0}
 --- !u!33 &220809534954949040
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -903,7 +875,7 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5326030797953396575}
-  m_Mesh: {fileID: -6820650550861052275, guid: 94fcd168d257f5640a70cb1f3c23e22a, type: 3}
+  m_Mesh: {fileID: 8579863475612487406, guid: 83288236ede05a04e935f6cd8ebcfb11, type: 3}
 --- !u!23 &8081756536304957576
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -961,7 +933,7 @@ GameObject:
   - component: {fileID: 5475644333290035057}
   - component: {fileID: 8117723766566603949}
   m_Layer: 0
-  m_Name: Egg (11)
+  m_Name: Lemon11
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -975,13 +947,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5879300902152646121}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0.21295609, z: -0, w: 0.9770618}
-  m_LocalPosition: {x: -0.0793, y: 0.026, z: 0.0383}
+  m_LocalRotation: {x: -0.8034023, y: -0.12119477, z: -0.17510603, w: 0.5560526}
+  m_LocalPosition: {x: -0.0846, y: 0.0735, z: 0.035299994}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 8699237970563118505}
-  m_LocalEulerAnglesHint: {x: 0, y: -24.591, z: 0}
+  m_LocalEulerAnglesHint: {x: -110.624, y: -24.591003, z: 0}
 --- !u!33 &5475644333290035057
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -989,7 +961,7 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5879300902152646121}
-  m_Mesh: {fileID: -6820650550861052275, guid: 94fcd168d257f5640a70cb1f3c23e22a, type: 3}
+  m_Mesh: {fileID: 8579863475612487406, guid: 83288236ede05a04e935f6cd8ebcfb11, type: 3}
 --- !u!23 &8117723766566603949
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -1047,7 +1019,7 @@ GameObject:
   - component: {fileID: 7809673071511547781}
   - component: {fileID: 4239770778548670574}
   m_Layer: 0
-  m_Name: Egg (1)
+  m_Name: Lemon4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1061,13 +1033,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6494393783446460911}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0.21295609, z: -0, w: 0.9770618}
-  m_LocalPosition: {x: 0.081, y: 0.026, z: -0.0127}
+  m_LocalRotation: {x: -0.8034023, y: -0.12119477, z: -0.17510603, w: 0.5560526}
+  m_LocalPosition: {x: 0.0757, y: 0.0735, z: -0.015700005}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 8699237970563118505}
-  m_LocalEulerAnglesHint: {x: 0, y: -24.591, z: 0}
+  m_LocalEulerAnglesHint: {x: -110.624, y: -24.591003, z: 0}
 --- !u!33 &7809673071511547781
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -1075,7 +1047,7 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6494393783446460911}
-  m_Mesh: {fileID: -6820650550861052275, guid: 94fcd168d257f5640a70cb1f3c23e22a, type: 3}
+  m_Mesh: {fileID: 8579863475612487406, guid: 83288236ede05a04e935f6cd8ebcfb11, type: 3}
 --- !u!23 &4239770778548670574
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -1252,7 +1224,7 @@ Transform:
   m_GameObject: {fileID: 8640390248594279355}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.175, z: 0.235}
+  m_LocalPosition: {x: 0, y: 0.05, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1270,7 +1242,7 @@ GameObject:
   - component: {fileID: 5523397623160098498}
   - component: {fileID: 6754999299270798550}
   m_Layer: 0
-  m_Name: Egg (2)
+  m_Name: Lemon8
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1284,13 +1256,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8674015261421836505}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0.21295609, z: -0, w: 0.9770618}
-  m_LocalPosition: {x: 0.081, y: 0.026, z: 0.0383}
+  m_LocalRotation: {x: -0.8034023, y: -0.12119477, z: -0.17510603, w: 0.5560526}
+  m_LocalPosition: {x: 0.0757, y: 0.0735, z: 0.035299994}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 8699237970563118505}
-  m_LocalEulerAnglesHint: {x: 0, y: -24.591, z: 0}
+  m_LocalEulerAnglesHint: {x: -110.624, y: -24.591003, z: 0}
 --- !u!33 &5523397623160098498
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -1298,7 +1270,7 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8674015261421836505}
-  m_Mesh: {fileID: -6820650550861052275, guid: 94fcd168d257f5640a70cb1f3c23e22a, type: 3}
+  m_Mesh: {fileID: 8579863475612487406, guid: 83288236ede05a04e935f6cd8ebcfb11, type: 3}
 --- !u!23 &6754999299270798550
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -1356,7 +1328,7 @@ GameObject:
   - component: {fileID: 6581455547544641448}
   - component: {fileID: 851312996011133664}
   m_Layer: 0
-  m_Name: Egg (9)
+  m_Name: Lemon3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1370,13 +1342,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 9056148521457660690}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0.21295609, z: -0, w: 0.9770618}
-  m_LocalPosition: {x: -0.0793, y: 0.026, z: -0.065}
+  m_LocalRotation: {x: -0.8034023, y: -0.12119477, z: -0.17510603, w: 0.5560526}
+  m_LocalPosition: {x: -0.0846, y: 0.0735, z: -0.068}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 8699237970563118505}
-  m_LocalEulerAnglesHint: {x: 0, y: -24.591, z: 0}
+  m_LocalEulerAnglesHint: {x: -110.624, y: -24.591003, z: 0}
 --- !u!33 &6581455547544641448
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -1384,7 +1356,7 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 9056148521457660690}
-  m_Mesh: {fileID: -6820650550861052275, guid: 94fcd168d257f5640a70cb1f3c23e22a, type: 3}
+  m_Mesh: {fileID: 8579863475612487406, guid: 83288236ede05a04e935f6cd8ebcfb11, type: 3}
 --- !u!23 &851312996011133664
 MeshRenderer:
   m_ObjectHideFlags: 0

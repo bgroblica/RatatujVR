@@ -127,17 +127,25 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 136868652271469644, guid: d1240d887fa42734e8d3972f83a3d7e0, type: 3}
+      propertyPath: m_Height
+      value: 1.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 3944081401575792075, guid: d1240d887fa42734e8d3972f83a3d7e0, type: 3}
+      propertyPath: m_CameraYOffset
+      value: 1.8
+      objectReference: {fileID: 0}
     - target: {fileID: 4016530078330536690, guid: d1240d887fa42734e8d3972f83a3d7e0, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -1.3132284
+      value: -0.83
       objectReference: {fileID: 0}
     - target: {fileID: 4016530078330536690, guid: d1240d887fa42734e8d3972f83a3d7e0, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 0.865
       objectReference: {fileID: 0}
     - target: {fileID: 4016530078330536690, guid: d1240d887fa42734e8d3972f83a3d7e0, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -0.18396187
+      value: -0.81
       objectReference: {fileID: 0}
     - target: {fileID: 4016530078330536690, guid: d1240d887fa42734e8d3972f83a3d7e0, type: 3}
       propertyPath: m_LocalRotation.w
@@ -3240,6 +3248,18 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1093872689386354451, guid: 84e157af9c2797b4fb6339facf72371d, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -1.0044022
+      objectReference: {fileID: 0}
+    - target: {fileID: 1093872689386354451, guid: 84e157af9c2797b4fb6339facf72371d, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.30293015
+      objectReference: {fileID: 0}
+    - target: {fileID: 1093872689386354451, guid: 84e157af9c2797b4fb6339facf72371d, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 1.4742682
+      objectReference: {fileID: 0}
     - target: {fileID: 1450081929052969316, guid: 84e157af9c2797b4fb6339facf72371d, type: 3}
       propertyPath: m_Name
       value: "lod\xF3wka"
