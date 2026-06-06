@@ -12,24 +12,26 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 20a4b2744f6f7c64983cd605c22a84d0, type: 3}
   m_Name: NormalCake
   m_EditorClassIdentifier: 
-  cakeName: Normal Cake
+  cakeName: Normal Big Cake
   maxIngredients: Big is 18, medium is 12, small is 8
   layers:
-  - milk: 6
-    flour: 6
-    egg: 3
-    sugar: 2
-    butter: 1
-    strawberries: 0
-    lemons: 0
-    requiredBakeState: 1
-  - milk: 4
+  - milk: 3
     flour: 4
     egg: 2
     sugar: 1
     butter: 1
-    strawberries: 1
+    flavour: 1
+    strawberries: 0
     lemons: 0
+    requiredBakeState: 1
+  - milk: 2
+    flour: 3
+    egg: 1
+    sugar: 1
+    butter: 1
+    flavour: 1
+    strawberries: 0
+    lemons: 1
     requiredBakeState: 1
   frostingType: WIP
   frostingSomething: WIP
