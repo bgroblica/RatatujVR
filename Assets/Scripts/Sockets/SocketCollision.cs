@@ -44,22 +44,26 @@ public class SocketCollision : MonoBehaviour
         RestoreCollisions();
     }
 
-    private void IgnoreBetween(Transform obj, Transform socketRoot)
+    private void IgnoreBetween(Transform objRoot, Transform socketRoot)
     {
         RestoreCollisions();
 
-        var objCols = obj.GetComponentsInChildren<Collider>(true);
-
+        var objCols = objRoot.GetComponentsInChildren<Collider>(true);
         var socketCols = socketRoot.GetComponentsInChildren<Collider>(true);
 
+        // IMPORTANT: also include parent stacks above socket
+        var socketStackCols = socketRoot.root.GetComponentsInChildren<Collider>(true);
+
         foreach (var c1 in objCols)
-            foreach (var c2 in socketCols)
+        {
+            foreach (var c2 in socketStackCols)
             {
                 if (c1 == c2) continue;
 
                 Physics.IgnoreCollision(c1, c2, true);
                 ignoredPairs.Add((c1, c2));
             }
+        }
     }
 
     private void RestoreCollisions()

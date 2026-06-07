@@ -312,8 +312,6 @@ GameObject:
   - component: {fileID: 6887346887999593764}
   - component: {fileID: 5381621341310924014}
   - component: {fileID: 5480493416160809110}
-  - component: {fileID: 1309840758901913142}
-  - component: {fileID: 6314871637621084156}
   m_Layer: 0
   m_Name: Small Plate
   m_TagString: Untagged
@@ -661,34 +659,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   startSocket: {fileID: 6887346887999593764}
---- !u!114 &1309840758901913142
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4680966802345969216}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 44be9f46d3407bc45abe9e804eabc0cc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  handAttach1: {fileID: 6005866041399516745}
-  handAttach2: {fileID: 3134767171786950501}
-  socketAttach: {fileID: 6349472645011193832}
---- !u!114 &6314871637621084156
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4680966802345969216}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fd60cbfaf64b8d94daa531da670e30e4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  socket: {fileID: 6887346887999593764}
 --- !u!1 &5167732704936203274
 GameObject:
   m_ObjectHideFlags: 0

@@ -30,13 +30,6 @@ public class Printer : MonoBehaviour
     public bool TutorialPagesFinished()
     {
         return currentTutorialPage >= tutorialPages.Count;
-        if (TutorialPagesFinished())
-        {
-            if (computer != null)
-            {
-                computer.SetTutorialFinishedScreen();
-            }
-        }
     }
 
     public void PrintTutorialPage()
