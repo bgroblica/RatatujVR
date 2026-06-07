@@ -1,74 +1,144 @@
-﻿using System.Collections;
+﻿using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.XR.Interaction.Toolkit;
 using UnityEngine.XR.Interaction.Toolkit.Interactors;
 
 public class SocketCollision : MonoBehaviour
 {
+    private readonly List<(Collider, Collider)> ignoredPairs =
+        new List<(Collider, Collider)>();
+
+    // Track what is currently socketed (prevents double-exit issues)
+    private readonly HashSet<Cake> socketedCakes = new HashSet<Cake>();
+
     private void OnEnable()
     {
-        var sockets = FindObjectsByType<XRSocketInteractor>(FindObjectsSortMode.None);
-
-        foreach (var socket in sockets)
-        {
-            socket.selectEntered.AddListener(OnSocketEntered);
-            socket.selectExited.AddListener(OnSocketExited);
-        }
+        RegisterSockets();
     }
 
     private void OnDisable()
     {
-        var sockets = FindObjectsByType<XRSocketInteractor>(FindObjectsSortMode.None);
+        XRSocketInteractor[] sockets =
+            FindObjectsByType<XRSocketInteractor>(FindObjectsSortMode.None);
 
-        foreach (var socket in sockets)
+        foreach (XRSocketInteractor socket in sockets)
         {
             socket.selectEntered.RemoveListener(OnSocketEntered);
             socket.selectExited.RemoveListener(OnSocketExited);
         }
     }
 
+    private void RegisterSockets()
+    {
+        XRSocketInteractor[] sockets =
+            FindObjectsByType<XRSocketInteractor>(FindObjectsSortMode.None);
+
+        foreach (XRSocketInteractor socket in sockets)
+        {
+            socket.selectEntered.RemoveListener(OnSocketEntered);
+            socket.selectExited.RemoveListener(OnSocketExited);
+
+            socket.selectEntered.AddListener(OnSocketEntered);
+            socket.selectExited.AddListener(OnSocketExited);
+        }
+
+        Debug.Log($"SocketCollision registered to {sockets.Length} sockets");
+    }
+
     private void OnSocketEntered(SelectEnterEventArgs args)
     {
-        var cake = args.interactableObject.transform.GetComponentInParent<Rigidbody>();
-        if (!cake) return;
+        Cake cake =
+            args.interactableObject.transform.GetComponentInParent<Cake>();
 
-        StartCoroutine(SafeSocketEnter(cake));
+        if (cake == null)
+            return;
+
+        Transform socketTransform =
+            args.interactorObject.transform;
+
+        socketedCakes.Add(cake);
+
+        SetSocketedState(cake.gameObject, true);
+
+        IgnoreWithHierarchy(cake.transform, socketTransform);
+
+        Debug.Log($"{cake.name} socketed");
     }
 
     private void OnSocketExited(SelectExitEventArgs args)
     {
-        var rb = args.interactableObject.transform.GetComponentInParent<Rigidbody>();
-        if (!rb) return;
+        Cake cake =
+            args.interactableObject.transform.GetComponentInParent<Cake>();
 
-        StartCoroutine(SafeSocketExit(rb));
+        if (cake == null)
+            return;
+
+        socketedCakes.Remove(cake);
+
+        SetSocketedState(cake.gameObject, false);
+
+        if (socketedCakes.Count == 0)
+        {
+            RestoreCollisions();
+        }
+
+        Debug.Log($"{cake.name} unsocketed");
     }
 
-    private IEnumerator SafeSocketEnter(Rigidbody rb)
+    private void IgnoreWithHierarchy(Transform cakeRoot, Transform socketRoot)
     {
-        // Let XR finish snapping first
-        yield return new WaitForFixedUpdate();
+        RestoreCollisions();
 
-        // Kill motion BEFORE physics reacts
-        rb.linearVelocity = Vector3.zero;
-        rb.angularVelocity = Vector3.zero;
+        Collider[] cakeColliders =
+            cakeRoot.GetComponentsInChildren<Collider>(true);
 
-        rb.useGravity = false;
-        rb.isKinematic = true;
+        Transform current = socketRoot;
 
-        Physics.SyncTransforms();
+        while (current != null)
+        {
+            Collider[] socketColliders =
+                current.GetComponentsInChildren<Collider>(true);
+
+            foreach (Collider c1 in cakeColliders)
+            {
+                foreach (Collider c2 in socketColliders)
+                {
+                    if (c1 == c2)
+                        continue;
+
+                    Physics.IgnoreCollision(c1, c2, true);
+                    ignoredPairs.Add((c1, c2));
+                }
+            }
+
+            current = current.parent;
+        }
     }
 
-    private IEnumerator SafeSocketExit(Rigidbody rb)
+    public void RestoreCollisions()
     {
-        // wait one physics step so XR detaches cleanly
-        yield return new WaitForFixedUpdate();
+        foreach (var pair in ignoredPairs)
+        {
+            if (pair.Item1 && pair.Item2)
+            {
+                Physics.IgnoreCollision(pair.Item1, pair.Item2, false);
+            }
+        }
 
-        rb.isKinematic = false;
-        rb.useGravity = true;
+        ignoredPairs.Clear();
+    }
 
-        rb.linearVelocity = Vector3.zero;
-        rb.angularVelocity = Vector3.zero;
+    private void SetSocketedState(GameObject obj, bool socketed)
+    {
+        Rigidbody rb = obj.GetComponent<Rigidbody>();
+        if (rb == null) return;
 
-        Physics.SyncTransforms();
+        rb.isKinematic = socketed;
+
+        if (socketed)
+        {
+            rb.linearVelocity = Vector3.zero;
+            rb.angularVelocity = Vector3.zero;
+        }
     }
 }
