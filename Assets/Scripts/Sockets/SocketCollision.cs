@@ -1,12 +1,10 @@
-﻿using System.Collections.Generic;
+﻿using System.Collections;
 using UnityEngine;
 using UnityEngine.XR.Interaction.Toolkit;
 using UnityEngine.XR.Interaction.Toolkit.Interactors;
 
 public class SocketCollision : MonoBehaviour
 {
-    private readonly List<(Collider, Collider)> ignoredPairs = new();
-
     private void OnEnable()
     {
         var sockets = FindObjectsByType<XRSocketInteractor>(FindObjectsSortMode.None);
@@ -31,49 +29,46 @@ public class SocketCollision : MonoBehaviour
 
     private void OnSocketEntered(SelectEnterEventArgs args)
     {
-        var cake = args.interactableObject.transform.GetComponentInParent<Cake>();
+        var cake = args.interactableObject.transform.GetComponentInParent<Rigidbody>();
         if (!cake) return;
 
-        Transform socket = args.interactorObject.transform;
-
-        IgnoreBetween(cake.transform, socket);
+        StartCoroutine(SafeSocketEnter(cake));
     }
 
     private void OnSocketExited(SelectExitEventArgs args)
     {
-        RestoreCollisions();
+        var rb = args.interactableObject.transform.GetComponentInParent<Rigidbody>();
+        if (!rb) return;
+
+        StartCoroutine(SafeSocketExit(rb));
     }
 
-    private void IgnoreBetween(Transform objRoot, Transform socketRoot)
+    private IEnumerator SafeSocketEnter(Rigidbody rb)
     {
-        RestoreCollisions();
+        // Let XR finish snapping first
+        yield return new WaitForFixedUpdate();
 
-        var objCols = objRoot.GetComponentsInChildren<Collider>(true);
-        var socketCols = socketRoot.GetComponentsInChildren<Collider>(true);
+        // Kill motion BEFORE physics reacts
+        rb.linearVelocity = Vector3.zero;
+        rb.angularVelocity = Vector3.zero;
 
-        // IMPORTANT: also include parent stacks above socket
-        var socketStackCols = socketRoot.root.GetComponentsInChildren<Collider>(true);
+        rb.useGravity = false;
+        rb.isKinematic = true;
 
-        foreach (var c1 in objCols)
-        {
-            foreach (var c2 in socketStackCols)
-            {
-                if (c1 == c2) continue;
-
-                Physics.IgnoreCollision(c1, c2, true);
-                ignoredPairs.Add((c1, c2));
-            }
-        }
+        Physics.SyncTransforms();
     }
 
-    private void RestoreCollisions()
+    private IEnumerator SafeSocketExit(Rigidbody rb)
     {
-        foreach (var pair in ignoredPairs)
-        {
-            if (pair.Item1 && pair.Item2)
-                Physics.IgnoreCollision(pair.Item1, pair.Item2, false);
-        }
+        // wait one physics step so XR detaches cleanly
+        yield return new WaitForFixedUpdate();
 
-        ignoredPairs.Clear();
+        rb.isKinematic = false;
+        rb.useGravity = true;
+
+        rb.linearVelocity = Vector3.zero;
+        rb.angularVelocity = Vector3.zero;
+
+        Physics.SyncTransforms();
     }
 }
