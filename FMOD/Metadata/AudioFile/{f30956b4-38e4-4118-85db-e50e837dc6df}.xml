@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.03.00">
+	<object class="AudioFile" id="{f30956b4-38e4-4118-85db-e50e837dc6df}">
+		<property name="assetPath">
+			<value>freesound_community-success-fanfare-trumpets-6185.mp3</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>24</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>3.9119999999999999</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{eea4a90a-8789-49c6-80bb-1dbc3f27df16}</destination>
+		</relationship>
+	</object>
+</objects>
