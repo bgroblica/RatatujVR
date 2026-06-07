@@ -15,10 +15,8 @@ GameObject:
   - component: {fileID: 2319246080584933832}
   - component: {fileID: 7084180123712137044}
   - component: {fileID: 5204275936465072458}
-  - component: {fileID: 5956353518613757439}
   - component: {fileID: 8260453138010710093}
-  - component: {fileID: 8203227574895907230}
-  - component: {fileID: 8441710712740561733}
+  - component: {fileID: 1954121262426251700}
   m_Layer: 0
   m_Name: MediumCake
   m_TagString: Untagged
@@ -355,18 +353,6 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.325, y: 0.15, z: 0.325}
   m_Center: {x: 0, y: 0.115, z: 0}
---- !u!114 &5956353518613757439
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 129357779985346837}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 86f9d09235b0da841aff77b553e845df, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &8260453138010710093
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -403,7 +389,7 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   icing: 0
---- !u!114 &8203227574895907230
+--- !u!114 &1954121262426251700
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -412,25 +398,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 129357779985346837}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 44be9f46d3407bc45abe9e804eabc0cc, type: 3}
+  m_Script: {fileID: 11500000, guid: b3934588a6d73a0438f3a56fadf6bc2d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  handAttach1: {fileID: 1822542485437853038}
-  handAttach2: {fileID: 4335575131088300970}
-  socketAttach: {fileID: 4323430541297869130}
---- !u!114 &8441710712740561733
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 129357779985346837}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fd60cbfaf64b8d94daa531da670e30e4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  socket: {fileID: 7084180123712137044}
 --- !u!1 &216410353690924501
 GameObject:
   m_ObjectHideFlags: 0
@@ -720,7 +690,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fd60cbfaf64b8d94daa531da670e30e4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  socket: {fileID: 3495142836863621579}
 --- !u!1 &3156953638322631904
 GameObject:
   m_ObjectHideFlags: 0
@@ -982,7 +951,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fd60cbfaf64b8d94daa531da670e30e4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  socket: {fileID: 7825751034242673184}
 --- !u!1 &4252991563041343143
 GameObject:
   m_ObjectHideFlags: 0
@@ -1135,7 +1103,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fd60cbfaf64b8d94daa531da670e30e4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  socket: {fileID: 6939396885316551803}
 --- !u!1 &5583368140644956880
 GameObject:
   m_ObjectHideFlags: 0
@@ -1251,7 +1218,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fd60cbfaf64b8d94daa531da670e30e4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  socket: {fileID: 5730545661045176688}
 --- !u!1 &7233784181690205024
 GameObject:
   m_ObjectHideFlags: 0
@@ -1420,7 +1386,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fd60cbfaf64b8d94daa531da670e30e4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  socket: {fileID: 2129171227706755916}
 --- !u!1 &8427859702442493291
 GameObject:
   m_ObjectHideFlags: 0
@@ -1536,7 +1501,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fd60cbfaf64b8d94daa531da670e30e4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  socket: {fileID: 922609647078623546}
 --- !u!1 &8488773424850787782
 GameObject:
   m_ObjectHideFlags: 0

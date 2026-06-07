@@ -16,8 +16,7 @@ GameObject:
   - component: {fileID: 4512444560254521497}
   - component: {fileID: 2431283071652396574}
   - component: {fileID: 1255179182473290776}
-  - component: {fileID: 2540025459426114385}
-  - component: {fileID: 3622703299804234848}
+  - component: {fileID: 3303245623217493122}
   m_Layer: 0
   m_Name: BigCakev2
   m_TagString: Untagged
@@ -401,7 +400,7 @@ MonoBehaviour:
   - {fileID: 6520800219580742618}
   - {fileID: 2978854280167661545}
   icing: 0
---- !u!114 &2540025459426114385
+--- !u!114 &3303245623217493122
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -410,19 +409,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 129357779985346837}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 44be9f46d3407bc45abe9e804eabc0cc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &3622703299804234848
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 129357779985346837}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fd60cbfaf64b8d94daa531da670e30e4, type: 3}
+  m_Script: {fileID: 11500000, guid: b3934588a6d73a0438f3a56fadf6bc2d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &808792315433164016

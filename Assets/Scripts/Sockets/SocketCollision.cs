@@ -1,38 +1,75 @@
-﻿using UnityEngine;
+﻿using System.Collections.Generic;
+using UnityEngine;
 using UnityEngine.XR.Interaction.Toolkit;
-using UnityEngine.XR.Interaction.Toolkit.Interactables;
+using UnityEngine.XR.Interaction.Toolkit.Interactors;
 
-public class SocketStackState : MonoBehaviour
+public class SocketCollision : MonoBehaviour
 {
-    private Rigidbody[] rbs;
-    private Collider[] cols;
-    private XRGrabInteractable grab;
+    private readonly List<(Collider, Collider)> ignoredPairs = new();
 
-    private void Awake()
+    private void OnEnable()
     {
-        rbs = GetComponentsInChildren<Rigidbody>(true);
-        cols = GetComponentsInChildren<Collider>(true);
-        grab = GetComponent<XRGrabInteractable>();
+        var sockets = FindObjectsByType<XRSocketInteractor>(FindObjectsSortMode.None);
+
+        foreach (var socket in sockets)
+        {
+            socket.selectEntered.AddListener(OnSocketEntered);
+            socket.selectExited.AddListener(OnSocketExited);
+        }
     }
 
-    public void SetSocketed(bool socketed)
+    private void OnDisable()
     {
-        foreach (var rb in rbs)
-        {
-            rb.linearVelocity = Vector3.zero;
-            rb.angularVelocity = Vector3.zero;
+        var sockets = FindObjectsByType<XRSocketInteractor>(FindObjectsSortMode.None);
 
-            rb.useGravity = !socketed;
-            rb.isKinematic = socketed; // safe because colliders are disabled in socketed state
+        foreach (var socket in sockets)
+        {
+            socket.selectEntered.RemoveListener(OnSocketEntered);
+            socket.selectExited.RemoveListener(OnSocketExited);
+        }
+    }
+
+    private void OnSocketEntered(SelectEnterEventArgs args)
+    {
+        var cake = args.interactableObject.transform.GetComponentInParent<Cake>();
+        if (!cake) return;
+
+        Transform socket = args.interactorObject.transform;
+
+        IgnoreBetween(cake.transform, socket);
+    }
+
+    private void OnSocketExited(SelectExitEventArgs args)
+    {
+        RestoreCollisions();
+    }
+
+    private void IgnoreBetween(Transform obj, Transform socketRoot)
+    {
+        RestoreCollisions();
+
+        var objCols = obj.GetComponentsInChildren<Collider>(true);
+
+        var socketCols = socketRoot.GetComponentsInChildren<Collider>(true);
+
+        foreach (var c1 in objCols)
+            foreach (var c2 in socketCols)
+            {
+                if (c1 == c2) continue;
+
+                Physics.IgnoreCollision(c1, c2, true);
+                ignoredPairs.Add((c1, c2));
+            }
+    }
+
+    private void RestoreCollisions()
+    {
+        foreach (var pair in ignoredPairs)
+        {
+            if (pair.Item1 && pair.Item2)
+                Physics.IgnoreCollision(pair.Item1, pair.Item2, false);
         }
 
-        foreach (var col in cols)
-        {
-            col.enabled = !socketed;
-        }
-
-        // IMPORTANT: XR must always stay enabled
-        if (grab != null)
-            grab.enabled = true;
+        ignoredPairs.Clear();
     }
 }

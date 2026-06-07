@@ -14,9 +14,8 @@ GameObject:
   - component: {fileID: 6240131559576166918}
   - component: {fileID: 2319246080584933832}
   - component: {fileID: 1546975845997925376}
-  - component: {fileID: 7966648955582637896}
   - component: {fileID: 703638139370553321}
-  - component: {fileID: 6076814296309396343}
+  - component: {fileID: 8674974553306634641}
   m_Layer: 0
   m_Name: SmallCake
   m_TagString: Untagged
@@ -307,18 +306,6 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.175, y: 0.15, z: 0.175}
   m_Center: {x: 0, y: 0.095, z: 0}
---- !u!114 &7966648955582637896
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 129357779985346837}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 86f9d09235b0da841aff77b553e845df, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &703638139370553321
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -353,7 +340,7 @@ MonoBehaviour:
   decorationSockets:
   - {fileID: 595326742101790871}
   icing: 0
---- !u!114 &6076814296309396343
+--- !u!114 &8674974553306634641
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -362,12 +349,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 129357779985346837}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 44be9f46d3407bc45abe9e804eabc0cc, type: 3}
+  m_Script: {fileID: 11500000, guid: b3934588a6d73a0438f3a56fadf6bc2d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  handAttach1: {fileID: 1822542485437853038}
-  handAttach2: {fileID: 4335575131088300970}
-  socketAttach: {fileID: 2369810649117497345}
 --- !u!1 &566170004754754575
 GameObject:
   m_ObjectHideFlags: 0
@@ -483,7 +467,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fd60cbfaf64b8d94daa531da670e30e4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  socket: {fileID: 595326742101790871}
 --- !u!1 &2265939521286035254
 GameObject:
   m_ObjectHideFlags: 0
@@ -742,7 +725,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fd60cbfaf64b8d94daa531da670e30e4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  socket: {fileID: 765088891100205037}
 --- !u!1 &3156953638322631904
 GameObject:
   m_ObjectHideFlags: 0
@@ -1026,7 +1008,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fd60cbfaf64b8d94daa531da670e30e4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  socket: {fileID: 40202748046786747}
 --- !u!1 &8035578406450785515
 GameObject:
   m_ObjectHideFlags: 0
@@ -1173,7 +1154,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fd60cbfaf64b8d94daa531da670e30e4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  socket: {fileID: 3352532996616760852}
 --- !u!1 &8488773424850787782
 GameObject:
   m_ObjectHideFlags: 0

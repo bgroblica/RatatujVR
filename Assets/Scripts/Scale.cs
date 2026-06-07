@@ -97,23 +97,6 @@ public class Scale : MonoBehaviour
             return;
         }
 
-        Cake cake =
-            obj.GetComponent<Cake>();
-
-        if (cake != null)
-        {
-            ShowData(
-                cake.milkAmount,
-                cake.flourAmount,
-                cake.eggAmount,
-                cake.sugarAmount,
-                cake.butterAmount,
-                cake.flavour.ToString()
-            );
-
-            return;
-        }
-
         ClearDisplay();
     }
 

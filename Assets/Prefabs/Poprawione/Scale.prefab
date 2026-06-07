@@ -283,7 +283,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_InteractionManager: {fileID: 0}
   m_InteractionLayers:
-    m_Bits: 412
+    m_Bits: 384
   m_Handedness: 0
   m_AttachTransform: {fileID: 6197867768803980486}
   m_KeepSelectedTargetValid: 1

@@ -204,8 +204,6 @@ GameObject:
   - component: {fileID: 2185555202976698595}
   - component: {fileID: 6469469110532165576}
   - component: {fileID: 3274853415079754016}
-  - component: {fileID: 4757246369649672797}
-  - component: {fileID: 191723131498975349}
   m_Layer: 0
   m_Name: Medium Mold
   m_TagString: Untagged
@@ -375,7 +373,31 @@ MonoBehaviour:
       m_Calls: []
   m_SelectExited:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 2185555202976698595}
+        m_TargetAssemblyTypeName: UnityEngine.Rigidbody, UnityEngine
+        m_MethodName: set_useGravity
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
+      - m_Target: {fileID: 2185555202976698595}
+        m_TargetAssemblyTypeName: UnityEngine.Rigidbody, UnityEngine
+        m_MethodName: set_isKinematic
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   m_FirstFocusEntered:
     m_PersistentCalls:
       m_Calls: []
@@ -479,33 +501,6 @@ MonoBehaviour:
   maxBatterHeight: 0.2
   batterSizeModifier: 1.32
   flavourColor: {r: 1, g: 0.9, b: 0.6, a: 1}
---- !u!114 &4757246369649672797
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1529923800063727147}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 86f9d09235b0da841aff77b553e845df, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &191723131498975349
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1529923800063727147}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 44be9f46d3407bc45abe9e804eabc0cc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  handAttach1: {fileID: 5743654938605018359}
-  handAttach2: {fileID: 6943624694440805062}
-  socketAttach: {fileID: 4199711826674498836}
 --- !u!1 &2876862973092308793
 GameObject:
   m_ObjectHideFlags: 0
