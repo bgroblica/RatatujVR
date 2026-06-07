@@ -17,6 +17,8 @@ GameObject:
   - component: {fileID: 5204275936465072458}
   - component: {fileID: 5956353518613757439}
   - component: {fileID: 8260453138010710093}
+  - component: {fileID: 8203227574895907230}
+  - component: {fileID: 8441710712740561733}
   m_Layer: 0
   m_Name: MediumCake
   m_TagString: Untagged
@@ -40,6 +42,7 @@ Transform:
   - {fileID: 4576868420289940495}
   - {fileID: 1822542485437853038}
   - {fileID: 4335575131088300970}
+  - {fileID: 4323430541297869130}
   - {fileID: 6700900345285100818}
   - {fileID: 5803603717048805957}
   m_Father: {fileID: 0}
@@ -382,6 +385,9 @@ MonoBehaviour:
   sugarAmount: 0
   butterAmount: 0
   flavour: 0
+  lemonIcing: {fileID: 0}
+  chocolateIcing: {fileID: 0}
+  strawberryIcing: {fileID: 0}
   bakeProgress: 0
   bakedMin: 650
   bakedMax: 800
@@ -396,6 +402,35 @@ MonoBehaviour:
   - {fileID: 7825751034242673184}
   - {fileID: 0}
   - {fileID: 0}
+  icing: 0
+--- !u!114 &8203227574895907230
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 129357779985346837}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 44be9f46d3407bc45abe9e804eabc0cc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  handAttach1: {fileID: 1822542485437853038}
+  handAttach2: {fileID: 4335575131088300970}
+  socketAttach: {fileID: 4323430541297869130}
+--- !u!114 &8441710712740561733
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 129357779985346837}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fd60cbfaf64b8d94daa531da670e30e4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  socket: {fileID: 7084180123712137044}
 --- !u!1 &216410353690924501
 GameObject:
   m_ObjectHideFlags: 0
@@ -581,6 +616,7 @@ GameObject:
   - component: {fileID: 1949166043464355306}
   - component: {fileID: 3495142836863621579}
   - component: {fileID: 2544863092343484386}
+  - component: {fileID: 5529975232691986779}
   m_Layer: 0
   m_Name: DecorationSocket4
   m_TagString: Untagged
@@ -672,6 +708,19 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.2, y: 0.15, z: 0.2}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &5529975232691986779
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2791458058911286307}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fd60cbfaf64b8d94daa531da670e30e4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  socket: {fileID: 3495142836863621579}
 --- !u!1 &3156953638322631904
 GameObject:
   m_ObjectHideFlags: 0
@@ -734,6 +783,37 @@ Transform:
   m_Children: []
   m_Father: {fileID: 3624388269877009288}
   m_LocalEulerAnglesHint: {x: 0, y: -90, z: 0}
+--- !u!1 &3282027890474510264
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4323430541297869130}
+  m_Layer: 0
+  m_Name: Attach Socket
+  m_TagString: Untagged
+  m_Icon: {fileID: 3306451490063965843, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4323430541297869130
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3282027890474510264}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0.7071058, z: -0, w: 0.7071078}
+  m_LocalPosition: {x: 0, y: -0.104, z: 0}
+  m_LocalScale: {x: 0.1726, y: 0.29974, z: 0.1726}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 3624388269877009288}
+  m_LocalEulerAnglesHint: {x: 0, y: -90, z: -90}
 --- !u!1 &3406051695004150225
 GameObject:
   m_ObjectHideFlags: 0
@@ -798,6 +878,7 @@ GameObject:
   - component: {fileID: 3347542132883920793}
   - component: {fileID: 7825751034242673184}
   - component: {fileID: 7533677283608801988}
+  - component: {fileID: 6866991807461241559}
   m_Layer: 0
   m_Name: DecorationSocket1
   m_TagString: Untagged
@@ -889,6 +970,19 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.2, y: 0.15, z: 0.2}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &6866991807461241559
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4000839875757351041}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fd60cbfaf64b8d94daa531da670e30e4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  socket: {fileID: 7825751034242673184}
 --- !u!1 &4252991563041343143
 GameObject:
   m_ObjectHideFlags: 0
@@ -937,6 +1031,7 @@ GameObject:
   - component: {fileID: 4034711381353385215}
   - component: {fileID: 6939396885316551803}
   - component: {fileID: 2765920625845639840}
+  - component: {fileID: 4478334843901741257}
   m_Layer: 0
   m_Name: DecorationSocket3
   m_TagString: Untagged
@@ -1028,6 +1123,19 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.2, y: 0.15, z: 0.2}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &4478334843901741257
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4573403445610793946}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fd60cbfaf64b8d94daa531da670e30e4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  socket: {fileID: 6939396885316551803}
 --- !u!1 &5583368140644956880
 GameObject:
   m_ObjectHideFlags: 0
@@ -1039,6 +1147,7 @@ GameObject:
   - component: {fileID: 6875412075331105525}
   - component: {fileID: 5730545661045176688}
   - component: {fileID: 3661985996091424105}
+  - component: {fileID: 8186807690884124649}
   m_Layer: 0
   m_Name: DecorationSocket6
   m_TagString: Untagged
@@ -1130,6 +1239,19 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.2, y: 0.15, z: 0.2}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &8186807690884124649
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5583368140644956880}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fd60cbfaf64b8d94daa531da670e30e4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  socket: {fileID: 5730545661045176688}
 --- !u!1 &7233784181690205024
 GameObject:
   m_ObjectHideFlags: 0
@@ -1194,6 +1316,7 @@ GameObject:
   - component: {fileID: 7600575156435349558}
   - component: {fileID: 2129171227706755916}
   - component: {fileID: 6440614989114154863}
+  - component: {fileID: 2160803967279554560}
   m_Layer: 0
   m_Name: DecorationSocket2
   m_TagString: Untagged
@@ -1285,6 +1408,19 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.2, y: 0.15, z: 0.2}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &2160803967279554560
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8059119673675086022}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fd60cbfaf64b8d94daa531da670e30e4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  socket: {fileID: 2129171227706755916}
 --- !u!1 &8427859702442493291
 GameObject:
   m_ObjectHideFlags: 0
@@ -1296,6 +1432,7 @@ GameObject:
   - component: {fileID: 1029873347322653646}
   - component: {fileID: 922609647078623546}
   - component: {fileID: 2317337746413590775}
+  - component: {fileID: 6779903278764623831}
   m_Layer: 0
   m_Name: DecorationSocket5
   m_TagString: Untagged
@@ -1387,6 +1524,19 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.2, y: 0.15, z: 0.2}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &6779903278764623831
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8427859702442493291}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fd60cbfaf64b8d94daa531da670e30e4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  socket: {fileID: 922609647078623546}
 --- !u!1 &8488773424850787782
 GameObject:
   m_ObjectHideFlags: 0

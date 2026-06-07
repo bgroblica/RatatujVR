@@ -7,6 +7,7 @@ public class Printer : MonoBehaviour
 {
     [Header("Refs")]
     public OrderManager orderManager;
+    public Computer computer;
 
     [Header("Spawn Points")]
     public Transform spawnPoint;
@@ -29,6 +30,13 @@ public class Printer : MonoBehaviour
     public bool TutorialPagesFinished()
     {
         return currentTutorialPage >= tutorialPages.Count;
+        if (TutorialPagesFinished())
+        {
+            if (computer != null)
+            {
+                computer.SetTutorialFinishedScreen();
+            }
+        }
     }
 
     public void PrintTutorialPage()

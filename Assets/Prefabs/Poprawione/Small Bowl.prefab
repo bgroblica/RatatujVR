@@ -291,6 +291,8 @@ GameObject:
   - component: {fileID: 5187800848247297365}
   - component: {fileID: 1686514952188183721}
   - component: {fileID: 8885189425255088206}
+  - component: {fileID: 406365734841517580}
+  - component: {fileID: 7988956487205750502}
   m_Layer: 0
   m_Name: Small Bowl
   m_TagString: Untagged
@@ -314,6 +316,7 @@ Transform:
   - {fileID: 6111049461423412317}
   - {fileID: 7442942733205347895}
   - {fileID: 3305625167024448825}
+  - {fileID: 7951233467622070166}
   - {fileID: 3620389046420317150}
   - {fileID: 8395395163111092335}
   - {fileID: 9014380091723166066}
@@ -508,12 +511,7 @@ MonoBehaviour:
   batterEgg: 0
   batterSugar: 0
   batterButter: 0
-  milkVisual: {fileID: 8395395163111092335}
-  maxMilkHeight: 0.2
-  milkSizeModifier: 1.32
-  flourVisual: {fileID: 9014380091723166066}
-  maxFlourHeight: 0.1
-  flourSizeModifier: 2
+  visuals: {fileID: 0}
   fillingRenderer: {fileID: 9200045683690092161}
   milkColor: {r: 1, g: 1, b: 1, a: 1}
   batterColor: {r: 1, g: 0.9, b: 0.6, a: 1}
@@ -551,6 +549,33 @@ MonoBehaviour:
   currentAmount: 0
   batterParticles: {fileID: 791232709932840114}
   bowl: {fileID: 5187800848247297365}
+--- !u!114 &406365734841517580
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1702894876586997470}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 86f9d09235b0da841aff77b553e845df, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &7988956487205750502
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1702894876586997470}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 44be9f46d3407bc45abe9e804eabc0cc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  handAttach1: {fileID: 7442942733205347895}
+  handAttach2: {fileID: 3305625167024448825}
+  socketAttach: {fileID: 7951233467622070166}
 --- !u!1 &2211911972950791906
 GameObject:
   m_ObjectHideFlags: 0
@@ -6872,6 +6897,37 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.12101078, y: 0.43183422, z: 0.026466608}
   m_Center: {x: -8.5445115e-12, y: 0.0014753864, z: 0.01339362}
+--- !u!1 &8921297591696852153
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7951233467622070166}
+  m_Layer: 0
+  m_Name: Attach Socket
+  m_TagString: Untagged
+  m_Icon: {fileID: 3306451490063965843, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7951233467622070166
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8921297591696852153}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0.7071058, z: -0, w: 0.7071078}
+  m_LocalPosition: {x: 0, y: -0.0029, z: 0}
+  m_LocalScale: {x: 0.1726, y: 0.29974, z: 0.1726}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 4282001182793176817}
+  m_LocalEulerAnglesHint: {x: 0, y: -90, z: -90}
 --- !u!1 &9200807322223506910
 GameObject:
   m_ObjectHideFlags: 0

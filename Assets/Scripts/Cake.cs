@@ -54,7 +54,7 @@ public class Cake : MonoBehaviour
 
     public enum CakeFlavour
     {
-        Deafult,
+        Plain,
         Vanilla,
         Strawberry,
         Chocolate

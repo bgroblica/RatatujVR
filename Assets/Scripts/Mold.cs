@@ -207,7 +207,7 @@ public class Mold : MonoBehaviour
         sugarAmount = 0f;
         butterAmount = 0f;
 
-        flavour = Cake.CakeFlavour.Deafult;
+        flavour = Cake.CakeFlavour.Plain;
         flavourColor = new Color(1f, 0.9f, 0.6f);
     }
 }
