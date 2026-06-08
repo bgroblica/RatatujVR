@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.03.00">
+	<object class="AudioFile" id="{273b33e7-7c57-4b38-a554-8980cd48955a}">
+		<property name="assetPath">
+			<value>538246__jchiledred__foodkware_oven-opening-and-closing-with-variations-01_josh_owi-3rd-year-sfx-pack_scarlett-18i20-samson-c01.wav</value>
+		</property>
+		<property name="isStreaming">
+			<value>true</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>48</value>
+		</property>
+		<property name="channelCount">
+			<value>1</value>
+		</property>
+		<property name="length">
+			<value>25.4706875</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{eea4a90a-8789-49c6-80bb-1dbc3f27df16}</destination>
+		</relationship>
+	</object>
+</objects>

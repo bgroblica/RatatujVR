@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.03.00">
+	<object class="AudioFile" id="{0b0b2477-e5fd-4151-bd0f-ffdd1d89e4b7}">
+		<property name="assetPath">
+			<value>788440__realsquink__oven-idling.wav</value>
+		</property>
+		<property name="isStreaming">
+			<value>true</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>96</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>41.114937500000003</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{eea4a90a-8789-49c6-80bb-1dbc3f27df16}</destination>
+		</relationship>
+	</object>
+</objects>
