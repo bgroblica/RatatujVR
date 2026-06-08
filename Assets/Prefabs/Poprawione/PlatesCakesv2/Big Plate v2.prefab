@@ -212,7 +212,6 @@ Transform:
   - {fileID: 6789942322823473814}
   - {fileID: 490807869172078103}
   - {fileID: 3279166846509440022}
-  - {fileID: 6623931447126717540}
   - {fileID: 2560824745657632386}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -556,7 +555,7 @@ Transform:
   m_GameObject: {fileID: 3840141409116811115}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.14, z: 0}
+  m_LocalPosition: {x: 0.8, y: 0.495, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -774,34 +773,3 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1.2737179, y: 0.10906476, z: 0.35842732}
   m_Center: {x: 0.0007241962, y: -0.003072217, z: 0.002172306}
---- !u!1 &9174995922522670111
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 6623931447126717540}
-  m_Layer: 0
-  m_Name: Attach Socket
-  m_TagString: Untagged
-  m_Icon: {fileID: 3306451490063965843, guid: 0000000000000000d000000000000000, type: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &6623931447126717540
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9174995922522670111}
-  serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0.7071058, z: -0, w: 0.7071078}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.49314287, y: 0.85639995, z: 0.49314287}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 352422905438175389}
-  m_LocalEulerAnglesHint: {x: 0, y: -90, z: -90}
