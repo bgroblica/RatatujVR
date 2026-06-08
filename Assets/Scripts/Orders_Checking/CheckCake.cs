@@ -42,8 +42,6 @@ public class CheckCake : MonoBehaviour
     {
         StartCoroutine(CheckCakeRoutine());
 
-        cakeSend.PlayOneShot();
-
         if (boxAnimator != null)
         {
             boxAnimator.SetBool("Closed", true);
@@ -66,6 +64,7 @@ public class CheckCake : MonoBehaviour
         }
 
         yield return new WaitForSeconds(destroyDelay);
+        cakeSend.PlayOneShot();
 
         DestroyCurrentCake();
 
