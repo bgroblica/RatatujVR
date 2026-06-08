@@ -16,7 +16,8 @@ public class CheckCake : MonoBehaviour
     public OneShotPlayer machineSending;
 
     [Header("Judging")]
-    public float judgingDelay = 2f;
+    public float judgingDelay = 0.5f;
+    public float oneShotDelay = 1.5f;
 
     public float destroyDelay = 0.5f;
 
@@ -51,6 +52,8 @@ public class CheckCake : MonoBehaviour
     private IEnumerator CheckCakeRoutine()
     {
 
+        yield return new WaitForSeconds(oneShotDelay);
+        machineSending.PlayOneShot();
         yield return new WaitForSeconds(judgingDelay);
 
         float score = EvaluateCake();
@@ -70,7 +73,6 @@ public class CheckCake : MonoBehaviour
         if (boxAnimator != null)
         {
             boxAnimator.SetBool("Closed", false);
-            machineSending.PlayOneShot();
         }
 
         if (gameFlowManager == null)
