@@ -16,6 +16,8 @@ GameObject:
   - component: {fileID: 4512444560254521497}
   - component: {fileID: 2431283071652396574}
   - component: {fileID: 1255179182473290776}
+  - component: {fileID: 4201002329169431303}
+  - component: {fileID: 2029040136539402664}
   m_Layer: 0
   m_Name: BigCakev2
   m_TagString: Untagged
@@ -387,6 +389,8 @@ MonoBehaviour:
   bakedMax: 1500
   bakeTick: 1
   cakeRenderer: {fileID: 6765057149320859184}
+  ovenAlarm: {fileID: 4201002329169431303}
+  cakeFinished: {fileID: 2029040136539402664}
   batterColor: {r: 1, g: 0.9, b: 0.6, a: 1}
   bakedColor: {r: 0.76862746, g: 0.42745098, b: 0.12941177, a: 1}
   burntColor: {r: 0.23529412, g: 0.15686275, b: 0.078431375, a: 1}
@@ -398,6 +402,45 @@ MonoBehaviour:
   - {fileID: 6520800219580742618}
   - {fileID: 2978854280167661545}
   icing: 0
+--- !u!114 &4201002329169431303
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 129357779985346837}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1540b741f1606de48b6cf9c1775e163d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fireAlarm:
+    Guid:
+      Data1: 99951247
+      Data2: 1131526648
+      Data3: -1320755523
+      Data4: 829874203
+    Path: event:/Oven/FireAlarm
+  alarmLength: 18.5
+--- !u!114 &2029040136539402664
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 129357779985346837}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 34cb588005334a84f8935059143d6a7d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  oneShotPlayed:
+    Guid:
+      Data1: 1863631591
+      Data2: 1096751280
+      Data3: -1974210917
+      Data4: -1958210824
+    Path: event:/Oven/OvenFinished
 --- !u!1 &808792315433164016
 GameObject:
   m_ObjectHideFlags: 0

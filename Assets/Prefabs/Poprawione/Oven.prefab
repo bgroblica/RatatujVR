@@ -407,6 +407,7 @@ GameObject:
   - component: {fileID: 5071594372794456074}
   - component: {fileID: 2216001336123646511}
   - component: {fileID: 2646344081367558078}
+  - component: {fileID: 3626891951077662883}
   m_Layer: 0
   m_Name: OvenDoor
   m_TagString: Untagged
@@ -524,6 +525,25 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.113818645, y: 0.072712064, z: 0.8236}
   m_Center: {x: 0.0664672, y: 0.61437106, z: 0.0010609925}
+--- !u!114 &3626891951077662883
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3273809697878566743}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 34cb588005334a84f8935059143d6a7d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  oneShotPlayed:
+    Guid:
+      Data1: 1215228478
+      Data2: 1152821840
+      Data3: -1489742163
+      Data4: -1557657317
+    Path: event:/Oven/OvenOpenClose
 --- !u!1 &4029244028025699967
 GameObject:
   m_ObjectHideFlags: 0
@@ -643,6 +663,7 @@ GameObject:
   - component: {fileID: 4992606687745240429}
   - component: {fileID: 5521255286540649481}
   - component: {fileID: 5457546346558137900}
+  - component: {fileID: 4897037890627548048}
   m_Layer: 0
   m_Name: OpenButton
   m_TagString: Untagged
@@ -825,6 +846,25 @@ MonoBehaviour:
   m_StartingInteractionStrengthFilters: []
   m_AutoFindParentInteractableInHierarchy: 0
   m_ParentInteractableObject: {fileID: 0}
+--- !u!114 &4897037890627548048
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6020658173357481329}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 34cb588005334a84f8935059143d6a7d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  oneShotPlayed:
+    Guid:
+      Data1: 1601838246
+      Data2: 1110192620
+      Data3: 11709060
+      Data4: 1771557929
+    Path: event:/Oven/OvenButton
 --- !u!1 &6547488298483884869
 GameObject:
   m_ObjectHideFlags: 0
@@ -996,6 +1036,8 @@ GameObject:
   - component: {fileID: 7788975367438488460}
   - component: {fileID: 2282148508639248046}
   - component: {fileID: 9014955077881908733}
+  - component: {fileID: 8241072404888757116}
+  - component: {fileID: 5843477038051109719}
   m_Layer: 0
   m_Name: Oven
   m_TagString: Untagged
@@ -1079,7 +1121,48 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   animator: {fileID: 7788975367438488460}
+  ovenButton: {fileID: 4897037890627548048}
+  ovenOpenClose: {fileID: 3626891951077662883}
+  looplayer: {fileID: 8241072404888757116}
   isOn: 0
+--- !u!114 &8241072404888757116
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8977040961658797636}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bd5c3048227706f489d561f313dbdda2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mixerLoop:
+    Guid:
+      Data1: 658090116
+      Data2: 1161321572
+      Data3: 1336428680
+      Data4: -993053661
+    Path: event:/Oven/OvenIdle
+--- !u!114 &5843477038051109719
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8977040961658797636}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 34cb588005334a84f8935059143d6a7d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  oneShotPlayed:
+    Guid:
+      Data1: 1215228478
+      Data2: 1152821840
+      Data3: -1489742163
+      Data4: -1557657317
+    Path: event:/Oven/OvenOpenClose
 --- !u!1001 &7418523619197162995
 PrefabInstance:
   m_ObjectHideFlags: 0

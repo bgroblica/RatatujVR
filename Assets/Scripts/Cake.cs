@@ -1,7 +1,6 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.XR.Interaction.Toolkit.Interactors;
-using UnityEngine.XR.Interaction.Toolkit.Locomotion.Comfort;
 
 public class Cake : MonoBehaviour
 {
@@ -29,8 +28,13 @@ public class Cake : MonoBehaviour
 
     public float bakeTick = 5f;
 
-    [Header("Visual")]
+    [Header("Visual and Sound")]
     public Renderer cakeRenderer;
+    public OvenAlarm ovenAlarm;
+    public OneShotPlayer cakeFinished;
+
+    private bool finishedSoundPlayed = false;
+    private bool burntSoundPlayed = false;
 
     public Color batterColor = new Color(1f, 0.9f, 0.6f);
     public Color bakedColor = new Color32(196, 109, 33, 255);
@@ -99,7 +103,25 @@ public class Cake : MonoBehaviour
         bakeProgress += bakeTick * Time.deltaTime;
 
         UpdateColor();
-        Debug.Log("Baking frame");
+
+        if (IsBaked() && !finishedSoundPlayed)
+        {
+            finishedSoundPlayed = true;
+
+            cakeFinished.PlayOneShot();
+        }
+
+        if (IsBurnt() && !burntSoundPlayed)
+        {
+            burntSoundPlayed = true;
+
+            ovenAlarm.OvenOn();
+        }
+    }
+
+    public void StopOvenAlarm()
+    {
+        ovenAlarm.OvenOff();
     }
 
     private void UpdateColor()
@@ -172,5 +194,4 @@ public class Cake : MonoBehaviour
         Baked,
         Burnt
     }
-
 }

@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8005352695233294533}
   - component: {fileID: 6092215633976089367}
+  - component: {fileID: 3909926832309541793}
   m_Layer: 0
   m_Name: Computer
   m_TagString: Untagged
@@ -55,6 +56,25 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 3975409234ebaba469928aa5ea99a283, type: 2}
   - {fileID: 11400000, guid: dca0a9e84ef52a64fad12f23de28fa65, type: 2}
   - {fileID: 11400000, guid: e1022a2a47c504d4fb6459cb238d4314, type: 2}
+--- !u!114 &3909926832309541793
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 89490561879220286}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 34cb588005334a84f8935059143d6a7d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  oneShotPlayed:
+    Guid:
+      Data1: 2009450364
+      Data2: 1312912280
+      Data3: -603523444
+      Data4: -1811614016
+    Path: event:/Printer/ComputerClick
 --- !u!1 &4053492825351765267
 GameObject:
   m_ObjectHideFlags: 0
@@ -404,6 +424,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 3909926832309541793}
+        m_TargetAssemblyTypeName: OneShotPlayer, Assembly-CSharp
+        m_MethodName: PlayOneShot
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   m_SelectExited:
     m_PersistentCalls:
       m_Calls: []
@@ -537,6 +569,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 3909926832309541793}
+        m_TargetAssemblyTypeName: OneShotPlayer, Assembly-CSharp
+        m_MethodName: PlayOneShot
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   m_SelectExited:
     m_PersistentCalls:
       m_Calls: []
@@ -645,6 +689,18 @@ MonoBehaviour:
       - m_Target: {fileID: 6092215633976089367}
         m_TargetAssemblyTypeName: Computer, Assembly-CSharp
         m_MethodName: Print
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 3909926832309541793}
+        m_TargetAssemblyTypeName: OneShotPlayer, Assembly-CSharp
+        m_MethodName: PlayOneShot
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

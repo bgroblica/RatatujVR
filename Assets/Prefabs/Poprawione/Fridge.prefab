@@ -237,6 +237,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: fe0636a71e0ae2c4aaf31a819ac933c6, type: 3}
       insertIndex: -1
       addedObject: {fileID: 496838132183530950}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: fe0636a71e0ae2c4aaf31a819ac933c6, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2900546673611233745}
     - targetCorrespondingSourceObject: {fileID: 4006263432558418877, guid: fe0636a71e0ae2c4aaf31a819ac933c6, type: 3}
       insertIndex: -1
       addedObject: {fileID: 5612710603900580657}
@@ -322,6 +325,25 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   animator: {fileID: 5741528056491835984}
+--- !u!114 &2900546673611233745
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1450081929052969316}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c90005ad6c4a663479833b62e23e0747, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fridgeLoop:
+    Guid:
+      Data1: -1337073925
+      Data2: 1116358810
+      Data3: 701991080
+      Data4: -1200755689
+    Path: event:/FridgeBuzzing
 --- !u!4 &2257545279464670174 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: fe0636a71e0ae2c4aaf31a819ac933c6, type: 3}

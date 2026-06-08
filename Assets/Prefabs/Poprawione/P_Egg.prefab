@@ -63,6 +63,57 @@ Transform:
   m_Children: []
   m_Father: {fileID: 206438496561517161}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &5071785964549081302
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6649717057580989905}
+  - component: {fileID: 2767069080236507026}
+  m_Layer: 0
+  m_Name: CrackFailed
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6649717057580989905
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5071785964549081302}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0.14505771, y: 0.041004874, z: -0.15560262}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 206438496561517161}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2767069080236507026
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5071785964549081302}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 34cb588005334a84f8935059143d6a7d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  oneShotPlayed:
+    Guid:
+      Data1: 1301109106
+      Data2: 1204644965
+      Data3: -1646323038
+      Data4: -85665686
+    Path: event:/Egg/EggHit
 --- !u!1 &6145016224387559093
 GameObject:
   m_ObjectHideFlags: 0
@@ -79,6 +130,7 @@ GameObject:
   - component: {fileID: 695650531294680585}
   - component: {fileID: 2493460048845719388}
   - component: {fileID: 2199029774457033885}
+  - component: {fileID: 6606650043859157929}
   m_Layer: 0
   m_Name: P_Egg
   m_TagString: Untagged
@@ -101,6 +153,7 @@ Transform:
   m_Children:
   - {fileID: 3403590019177449596}
   - {fileID: 8178407096078876313}
+  - {fileID: 6649717057580989905}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &7599722944182696989
@@ -175,7 +228,9 @@ MonoBehaviour:
   crackedEgg: {fileID: 3536217719649374247, guid: 14c38da6d8e3d894abc6ca0f2e39e8b7, type: 3}
   eggShellPrefab: {fileID: 7750204212939458051, guid: 50ca55752ff22194a8d277ba181b6b61, type: 3}
   crackForce: 2
-  crackVelocity: 0.1
+  crackVelocity: 1
+  eggCrack: {fileID: 0}
+  eggFailedCrack: {fileID: 2767069080236507026}
 --- !u!114 &6216692793501072809
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -373,6 +428,25 @@ MonoBehaviour:
   m_LimitAngularVelocity: 0
   m_MaxLinearVelocityDelta: 10
   m_MaxAngularVelocityDelta: 20
+--- !u!114 &6606650043859157929
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6145016224387559093}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 34cb588005334a84f8935059143d6a7d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  oneShotPlayed:
+    Guid:
+      Data1: 2079029525
+      Data2: 1120881942
+      Data3: 1020720574
+      Data4: -31601207
+    Path: event:/Egg/EggCracking
 --- !u!1 &8596885332177215107
 GameObject:
   m_ObjectHideFlags: 0

@@ -8,13 +8,14 @@ public class Printer : MonoBehaviour
     [Header("Refs")]
     public OrderManager orderManager;
     public Computer computer;
+    public OneShotPlayer oneShot;
 
     [Header("Spawn Points")]
     public Transform spawnPoint;
     public Transform trayPoint;
 
     [Header("Printing")]
-    public float printDuration = 0.6f;
+    public float printDuration = 4f;
 
     [Header("Tutorial Pages")]
     public List<GameObject> tutorialPages;
@@ -50,6 +51,8 @@ public class Printer : MonoBehaviour
                 spawnPoint.rotation);
 
         StartCoroutine(MovePaperToTray(paper));
+
+        oneShot.PlayOneShot();
 
         currentTutorialPage++;
 

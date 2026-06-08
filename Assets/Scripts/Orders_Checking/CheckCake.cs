@@ -1,5 +1,4 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.XR.Interaction.Toolkit.Interactors;
 using static GameFlowManager;
@@ -12,6 +11,9 @@ public class CheckCake : MonoBehaviour
     public Printer printer;
 
     public Animator boxAnimator;
+
+    public OneShotPlayer cakeSend;
+    public OneShotPlayer machineSending;
 
     [Header("Judging")]
     public float judgingDelay = 2f;
@@ -38,6 +40,8 @@ public class CheckCake : MonoBehaviour
     public void CheckCurrentCake()
     {
         StartCoroutine(CheckCakeRoutine());
+
+        cakeSend.PlayOneShot();
 
         if (boxAnimator != null)
         {
@@ -66,6 +70,7 @@ public class CheckCake : MonoBehaviour
         if (boxAnimator != null)
         {
             boxAnimator.SetBool("Closed", false);
+            machineSending.PlayOneShot();
         }
 
         if (gameFlowManager == null)

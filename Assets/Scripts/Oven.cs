@@ -8,6 +8,12 @@ public class Oven : MonoBehaviour
 
     public Animator animator;
 
+    public OneShotPlayer ovenButton;
+    public OneShotPlayer ovenOpenClose;
+
+    public LoopPlayer looplayer;
+
+
     private bool isOpen = false;
 
     public bool isOn = false;
@@ -37,9 +43,25 @@ public class Oven : MonoBehaviour
 
         if (mold != null)
         {
+
+            GameObject cakeObject =
+            mold.GetCake();
+
+            if (cakeObject != null)
+            {
+                Cake cake = cakeObject.GetComponent<Cake>();
+
+                if (cake != null)
+                {
+                    cake.StopOvenAlarm();
+                }
+            }
+
             moldsInside.Remove(mold);
 
             mold.ReleaseCake();
+
+
         }
     }
 
@@ -47,20 +69,35 @@ public class Oven : MonoBehaviour
     {
         isOpen = !isOpen;
 
+        ovenButton.PlayOneShot();
+
         animator.SetBool(
             "Open",
             isOpen
         );
+        ovenOpenClose.PlayOneShot();
+
     }
 
     public void TogglePower()
     {
         isOn = !isOn;
 
+        ovenButton.PlayOneShot();
+
         Debug.Log(
             "Oven Power: " +
             (isOn ? "ON" : "OFF")
         );
+
+        if (isOn == true)
+        {
+            looplayer.StartMixing();
+        }
+        else {
+            looplayer.StopMixing();
+        }
+
     }
 
     private void Update()

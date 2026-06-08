@@ -128,6 +128,7 @@ GameObject:
   - component: {fileID: 7693507116864340225}
   - component: {fileID: 1486154710243335351}
   - component: {fileID: 4663914809365649443}
+  - component: {fileID: 7268401411087622594}
   m_Layer: 0
   m_Name: Printer
   m_TagString: Untagged
@@ -221,9 +222,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   orderManager: {fileID: 0}
   computer: {fileID: 0}
+  oneShot: {fileID: 7268401411087622594}
   spawnPoint: {fileID: 3931889853561243143}
   trayPoint: {fileID: 3809185550658394869}
-  printDuration: 0.6
+  printDuration: 4
   tutorialPages:
   - {fileID: 5669651063620529089, guid: e540d0f461c96af4e8573532be682704, type: 3}
   - {fileID: 5669651063620529089, guid: f75984339db32f4428e050a2c914c9d4, type: 3}
@@ -260,6 +262,25 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1.05517, y: 0.39082447, z: 0.7538576}
   m_Center: {x: 0, y: 0.14656197, z: -0.036101237}
+--- !u!114 &7268401411087622594
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6806242461717615307}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 34cb588005334a84f8935059143d6a7d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  oneShotPlayed:
+    Guid:
+      Data1: -907035264
+      Data2: 1120767292
+      Data3: -1430331495
+      Data4: 929699470
+    Path: event:/Printer/Printing
 --- !u!1 &7922874516580473791
 GameObject:
   m_ObjectHideFlags: 0

@@ -18,6 +18,9 @@ public class Egg : Solids
     public float crackForce = 2f;
     public float crackVelocity = 1f;
 
+    public OneShotPlayer eggCrack;
+    public OneShotPlayer eggFailedCrack;
+
     private Rigidbody rb;
     private EggState eggState = EggState.Whole;
 
@@ -39,9 +42,13 @@ public class Egg : Solids
         if (eggState != EggState.Whole) return;
 
         if (rb.linearVelocity.magnitude < crackVelocity)
-            return;
+        {
+            eggFailedCrack.PlayOneShot();
+        }
+        else
 
         SetState(EggState.Cracked);
+        eggCrack.PlayOneShot();
         Debug.Log("Egg Cracked");
     }
 
