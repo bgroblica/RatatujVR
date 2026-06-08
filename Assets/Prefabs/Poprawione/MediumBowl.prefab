@@ -346,6 +346,7 @@ GameObject:
   - component: {fileID: 1686514952188183721}
   - component: {fileID: 8885189425255088206}
   - component: {fileID: 6466314947114700369}
+  - component: {fileID: 1097440223503186112}
   m_Layer: 0
   m_Name: MediumBowl
   m_TagString: Untagged
@@ -594,7 +595,6 @@ MonoBehaviour:
   batterButter: 0
   visuals: {fileID: 0}
   fillingRenderer: {fileID: 0}
-  milkColor: {r: 1, g: 1, b: 1, a: 1}
   batterColor: {r: 1, g: 0.9, b: 0.6, a: 1}
   flavourColor: {r: 1, g: 0.9, b: 0.6, a: 1}
 --- !u!114 &1686514952188183721
@@ -611,6 +611,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bowl: {fileID: 5187800848247297365}
   minMixSpeed: 1
+  loopPlayer: {fileID: 1097440223503186112}
 --- !u!114 &8885189425255088206
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -648,6 +649,25 @@ MonoBehaviour:
   sugarMesh: {fileID: 3263578062363963264}
   butterMesh: {fileID: 7121995511522050266}
   mixedMesh: {fileID: 1904079742450176503}
+--- !u!114 &1097440223503186112
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1702894876586997470}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bd5c3048227706f489d561f313dbdda2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mixerLoop:
+    Guid:
+      Data1: 1371004784
+      Data2: 1135243851
+      Data3: -315861316
+      Data4: 344929013
+    Path: event:/Mixing
 --- !u!1 &1904079742450176503
 GameObject:
   m_ObjectHideFlags: 0

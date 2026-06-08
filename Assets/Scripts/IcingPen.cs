@@ -10,6 +10,8 @@ public class IcingPen : MonoBehaviour
     private Cake currentCake;
     private bool isTouching = false;
 
+    public LoopPlayer loopPlayer;
+
     private void OnTriggerEnter(Collider other)
     {
         Cake cake = other.GetComponentInParent<Cake>();
@@ -18,6 +20,8 @@ public class IcingPen : MonoBehaviour
             return;
 
         Debug.Log("Cake inside");
+
+        loopPlayer.StartMixing();
 
         currentCake = cake;
         isTouching = true;
@@ -29,6 +33,8 @@ public class IcingPen : MonoBehaviour
         Cake cake = other.GetComponentInParent<Cake>();
 
         Debug.Log("Cake left");
+
+        loopPlayer.StopMixing();
 
         if (cake == currentCake)
         {

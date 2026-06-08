@@ -4,6 +4,8 @@ public class MilkCarton : Pourable
 {
     public ParticleSystem milkParticles;
 
+    public LoopPlayer loopPlayer;
+
     public override void UpdateAmount()
     {
     }
@@ -12,6 +14,7 @@ public class MilkCarton : Pourable
         if (isEmpty) return;
 
         base.StartPour();
+        loopPlayer.StartMixing();
 
         if (milkParticles != null)
         {
@@ -22,6 +25,7 @@ public class MilkCarton : Pourable
     protected override void StopPour()
     {
         base.StopPour();
+        loopPlayer.StopMixing();
 
         if (milkParticles != null)
             milkParticles.Stop();

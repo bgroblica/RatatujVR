@@ -4879,6 +4879,7 @@ GameObject:
   - component: {fileID: 4862513970284964943}
   - component: {fileID: 4508118558483824633}
   - component: {fileID: 4058644479124678455}
+  - component: {fileID: 3415033456860020719}
   m_Layer: 0
   m_Name: Milk Carton
   m_TagString: Untagged
@@ -5151,6 +5152,26 @@ MonoBehaviour:
   maxAmount: 5
   currentAmount: 0
   milkParticles: {fileID: 9164942489683156243}
+  loopPlayer: {fileID: 3415033456860020719}
+--- !u!114 &3415033456860020719
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6004377174909043247}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bd5c3048227706f489d561f313dbdda2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mixerLoop:
+    Guid:
+      Data1: 33540144
+      Data2: 1083891873
+      Data3: 1332792732
+      Data4: 832831715
+    Path: event:/PouringLiquid
 --- !u!1 &6277636959301541447
 GameObject:
   m_ObjectHideFlags: 0

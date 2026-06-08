@@ -97,9 +97,9 @@ GameObject:
   - component: {fileID: 6656950103886491532}
   - component: {fileID: 6040650948633069245}
   - component: {fileID: 3925198796189966766}
-  - component: {fileID: 5604976667015006296}
   - component: {fileID: 4771194618354871989}
   - component: {fileID: 2595165682751533700}
+  - component: {fileID: 1244635061604781161}
   m_Layer: 0
   m_Name: IcingPenLemon
   m_TagString: Untagged
@@ -225,19 +225,6 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.15625435, y: 0.4836942, z: 0.15625435}
   m_Center: {x: 0, y: 0.2418471, z: 0}
---- !u!114 &5604976667015006296
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5151485285805185196}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 65720ef7c72638e4c96310e0d3f00fa0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  smoothedSpeed: 5
 --- !u!114 &4771194618354871989
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -381,3 +368,23 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   icingType: 1
   applyTime: 2
+  loopPlayer: {fileID: 1244635061604781161}
+--- !u!114 &1244635061604781161
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5151485285805185196}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bd5c3048227706f489d561f313dbdda2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mixerLoop:
+    Guid:
+      Data1: -480398945
+      Data2: 1190046089
+      Data3: 174880396
+      Data4: -1847906323
+    Path: event:/PipingBag

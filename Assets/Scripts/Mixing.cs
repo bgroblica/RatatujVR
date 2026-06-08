@@ -8,6 +8,8 @@ public class Mixing : MonoBehaviour
     private Spoon currentSpoon;
     private bool spoonInside = false;
 
+    public LoopPlayer loopPlayer;
+
     private void OnTriggerEnter(Collider other)
     {
         Debug.Log("ENTER: " + other.name + " | root: " + other.transform.root.name);
@@ -42,6 +44,11 @@ public class Mixing : MonoBehaviour
             {
                 float effectiveSpeed = speed - minMixSpeed;
                 bowl.Mix(effectiveSpeed);
+                loopPlayer.StartMixing();
+            }
+            else
+            {
+                loopPlayer.StopMixing();
             }
         }
     }

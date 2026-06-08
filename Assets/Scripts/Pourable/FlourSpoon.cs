@@ -10,6 +10,8 @@ public class FlourSpoon : Pourable
 
     public ParticleSystem flourParticles;
 
+    public LoopPlayer loopPlayer;
+
     public override void UpdateAmount()
     {
         // not used
@@ -30,6 +32,7 @@ public class FlourSpoon : Pourable
         }
 
         base.StartPour();
+        loopPlayer.StartMixing();
 
         if (flourParticles != null)
         {
@@ -57,6 +60,7 @@ public class FlourSpoon : Pourable
     protected override void StopPour()
     {
         base.StopPour();
+        loopPlayer.StopMixing();
 
         if (flourParticles != null)
             flourParticles.Stop();

@@ -4999,6 +4999,7 @@ GameObject:
   - component: {fileID: 830769723524886359}
   - component: {fileID: 6911909151262794492}
   - component: {fileID: 7422215366594680544}
+  - component: {fileID: 8426043529621027666}
   m_Layer: 0
   m_Name: FlourSpoon
   m_TagString: Untagged
@@ -5097,6 +5098,7 @@ MonoBehaviour:
   flourScooping: {fileID: 3383395900803980026}
   filledMesh: {fileID: 5453340027243781821}
   flourParticles: {fileID: 322417675027128651}
+  loopPlayer: {fileID: 8426043529621027666}
 --- !u!114 &3383395900803980026
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5310,3 +5312,22 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.06431477, y: 0.0593369, z: 0.19395734}
   m_Center: {x: -0.0000000018626451, y: 0.014158852, z: 0.020612247}
+--- !u!114 &8426043529621027666
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8313876067395069361}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bd5c3048227706f489d561f313dbdda2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mixerLoop:
+    Guid:
+      Data1: 1932110533
+      Data2: 1205858758
+      Data3: 2012791687
+      Data4: 965526
+    Path: event:/PouringDry
