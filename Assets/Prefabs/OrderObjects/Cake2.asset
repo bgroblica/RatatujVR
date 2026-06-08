@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cakeName: Cake2
   maxIngredients: Big is 27, medium is 18, small is 9
-  previewMaterial: {fileID: 2100000, guid: a6a7b55301401f84e8b3d6e5598aca53, type: 2}
+  previewMaterial: {fileID: 2100000, guid: 80bf8ee7c7af3df47ad7eb447a354d57, type: 2}
   orderPaperPrefab: {fileID: 5669651063620529089, guid: a0c059cf5853aed428721089b206f68b, type: 3}
   happyResultPrefab: {fileID: 5669651063620529089, guid: 4d30fb527f4d3e24897768d8da507014, type: 3}
   sadResultPrefab: {fileID: 5669651063620529089, guid: 3320bf224c22bd8488e875edfb2439a9, type: 3}

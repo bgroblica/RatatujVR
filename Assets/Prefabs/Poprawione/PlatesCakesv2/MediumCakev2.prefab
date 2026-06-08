@@ -369,9 +369,9 @@ MonoBehaviour:
   sugarAmount: 0
   butterAmount: 0
   flavour: 0
-  lemonIcing: {fileID: 0}
-  chocolateIcing: {fileID: 0}
-  strawberryIcing: {fileID: 0}
+  lemonIcing: {fileID: 5605790588372316717, guid: e7c684a134e5a824db5bc8f91caa5dff, type: 3}
+  chocolateIcing: {fileID: 5605790588372316717, guid: 98028a3f0f2ec294eb5a0fc980ba6df5, type: 3}
+  strawberryIcing: {fileID: 5605790588372316717, guid: 4a687709f2b6f5e408fcab9fe1da378e, type: 3}
   bakeProgress: 0
   bakedMin: 650
   bakedMax: 800

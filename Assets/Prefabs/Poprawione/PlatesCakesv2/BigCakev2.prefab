@@ -379,9 +379,9 @@ MonoBehaviour:
   sugarAmount: 0
   butterAmount: 0
   flavour: 0
-  lemonIcing: {fileID: 0}
-  chocolateIcing: {fileID: 8363853790852610002}
-  strawberryIcing: {fileID: 4154766887701891607}
+  lemonIcing: {fileID: 5605790588372316717, guid: 3765402edc2e9584bb1a7e856b45d01a, type: 3}
+  chocolateIcing: {fileID: 5605790588372316717, guid: c75dc428a0c31974d822951479d8e113, type: 3}
+  strawberryIcing: {fileID: 5605790588372316717, guid: 0fa6bee76fceee74ab8eedfaeec74b86, type: 3}
   bakeProgress: 0
   bakedMin: 1300
   bakedMax: 1500
@@ -1736,11 +1736,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 1497817061778234797, guid: 315c0ec7d8a1c8e4fbf59fd164564ff7, type: 3}
   m_PrefabInstance: {fileID: 3706357109106093950}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &8363853790852610002 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 5151485285805185196, guid: 315c0ec7d8a1c8e4fbf59fd164564ff7, type: 3}
-  m_PrefabInstance: {fileID: 3706357109106093950}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &7414939321085795617
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1884,11 +1879,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1d81a3aa27fd78f4abd135cf4c998629, type: 3}
---- !u!1 &4154766887701891607 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 5151485285805185196, guid: 1d81a3aa27fd78f4abd135cf4c998629, type: 3}
-  m_PrefabInstance: {fileID: 9139337369979654843}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &7646023947080208150 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1497817061778234797, guid: 1d81a3aa27fd78f4abd135cf4c998629, type: 3}

@@ -54,7 +54,7 @@ public class Bowl : MonoBehaviour
 
     [Header("Material / Color")]
     public Renderer fillingRenderer;
-    public Color milkColor = Color.white;
+  //  public Color milkColor = Color.white;
     public Color batterColor = new Color(1f, 0.9f, 0.6f);
 
     [Header("Flavour Color")]
@@ -325,7 +325,7 @@ public class Bowl : MonoBehaviour
         float mixPercent = maxMix > 0 ? mixProgress / maxMix : 0f;
         mixPercent = Mathf.Clamp01(mixPercent);
 
-        Color currentColor = Color.Lerp(milkColor, batterColor, mixPercent);
+        Color currentColor = Color.Lerp(flavourColor, batterColor, mixPercent);
 
         fillingRenderer.material.color = currentColor;
     }

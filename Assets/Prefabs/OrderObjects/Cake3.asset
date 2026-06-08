@@ -14,7 +14,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cakeName: Cake3
   maxIngredients: Big is 27, medium is 18, small is 9
-  previewMaterial: {fileID: 2100000, guid: 81eed5a6a50299b4e8fd899d34c45e17, type: 2}
+  previewMaterial: {fileID: 2100000, guid: c739219e22432e948afd4b670f9df54c, type: 2}
+  orderPaperPrefab: {fileID: 5669651063620529089, guid: a7d97ed3e0d9f924486c729dbd51e82c, type: 3}
+  happyResultPrefab: {fileID: 5669651063620529089, guid: c2e8524c3acc4b54b97bf168f3c61274, type: 3}
+  sadResultPrefab: {fileID: 5669651063620529089, guid: 9de46396d5b336d4b93274cb44434a5f, type: 3}
   layers:
   - milk: 5
     flour: 8
@@ -25,5 +28,4 @@ MonoBehaviour:
     strawberries: 4
     lemons: 0
     requiredBakeState: 1
-  frostingType: 
-  frostingSomething: 
+    requiredIcing: 0

@@ -185,7 +185,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: d987d9e2fd4a5c34b9618de6c1f44c2c, type: 2}
+  - {fileID: 2100000, guid: ee008a5ba6610774fac04eebc0227bde, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -220,6 +220,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   orderManager: {fileID: 0}
+  computer: {fileID: 0}
   spawnPoint: {fileID: 3931889853561243143}
   trayPoint: {fileID: 3809185550658394869}
   printDuration: 0.6
