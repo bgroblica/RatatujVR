@@ -2,11 +2,11 @@
 
 public class Bowl : MonoBehaviour
 {
-    private Vector3 initialScaleMilk;
-    private Vector3 initialPositionMilk;
-    private Vector3 initialScaleFlour;
-    private Vector3 initialPositionFlour;
-
+//    private Vector3 initialScaleMilk;
+//    private Vector3 initialPositionMilk;
+//    private Vector3 initialScaleFlour;
+//    private Vector3 initialPositionFlour;
+//
     public BatterBowl batterBowl;
 
 
@@ -22,7 +22,7 @@ public class Bowl : MonoBehaviour
     public float maxIngredients = 20f;
 
     [Header("Flavour")]
-    public Cake.CakeFlavour flavour = Cake.CakeFlavour.Deafult;
+    public Cake.CakeFlavour flavour = Cake.CakeFlavour.Plain;
 
     public Cake.CakeFlavour batterFlavour;
 
@@ -43,13 +43,14 @@ public class Bowl : MonoBehaviour
     private bool batterCreated = false;
 
     [Header("Visual")]
-    public Transform milkVisual;
-    public float maxMilkHeight = 0.2f;
-    public float milkSizeModifier = 1.32f;
-
-    public Transform flourVisual;
-    public float maxFlourHeight = 0.2f;
-    public float flourSizeModifier = 1.32f;
+    public BowlVisuals visuals;
+ //   public Transform milkVisual;
+ //   public float maxMilkHeight = 0.2f;
+ //   public float milkSizeModifier = 1.32f;
+ //
+ //   public Transform flourVisual;
+ //   public float maxFlourHeight = 0.2f;
+ //   public float flourSizeModifier = 1.32f;
 
     [Header("Material / Color")]
     public Renderer fillingRenderer;
@@ -59,14 +60,14 @@ public class Bowl : MonoBehaviour
     [Header("Flavour Color")]
     public Color flavourColor = new Color(1f, 0.9f, 0.6f);
 
-    private void Awake()
-    {
-        initialScaleMilk = milkVisual.localScale;
-        initialPositionMilk = milkVisual.localPosition;
-
-        initialScaleFlour = flourVisual.localScale;
-        initialPositionFlour = flourVisual.localPosition;
-    }
+  //  private void Awake()
+  //  {
+  //      initialScaleMilk = milkVisual.localScale;
+  //      initialPositionMilk = milkVisual.localPosition;
+  //
+  //      initialScaleFlour = flourVisual.localScale;
+  //      initialPositionFlour = flourVisual.localPosition;
+  //  }
 
     // ---------------------------
     // CLEANING (read-only logic)
@@ -113,8 +114,9 @@ public class Bowl : MonoBehaviour
         allIngredients += amount;
         allIngredients = RoundIngredient(allIngredients);
 
-        UpdateVisualMilk();
+     //   UpdateVisualMilk();
         batterBowl.UpdateAmount();
+        RefreshVisuals();
     }
 
     public void AddFlour(float amount)
@@ -132,8 +134,9 @@ public class Bowl : MonoBehaviour
         allIngredients += amount;
         allIngredients = RoundIngredient(allIngredients);
 
-        UpdateVisualFlour();
+     //   UpdateVisualFlour();
         batterBowl.UpdateAmount();
+        RefreshVisuals();
     }
 
     public void AddEgg(float amount)
@@ -152,6 +155,7 @@ public class Bowl : MonoBehaviour
         allIngredients = RoundIngredient(allIngredients);
 
         batterBowl.UpdateAmount();
+        RefreshVisuals();
     }
 
     public void AddSugar(float amount)
@@ -170,6 +174,7 @@ public class Bowl : MonoBehaviour
         allIngredients = RoundIngredient(allIngredients);
 
         batterBowl.UpdateAmount();
+        RefreshVisuals();
     }
 
     public void AddButter(float amount)
@@ -188,63 +193,75 @@ public class Bowl : MonoBehaviour
         allIngredients = RoundIngredient(allIngredients);
 
         batterBowl.UpdateAmount();
+        RefreshVisuals();
     }
 
     // ---------------------------
     // VISUALS
     // ---------------------------
-    public void UpdateVisualMilk()
+
+    void RefreshVisuals()
     {
-        float normalized = milkAmount / maxIngredients;
-        normalized = Mathf.Clamp01(normalized);
-
-        float newHeight = normalized * maxMilkHeight;
-
-        milkVisual.localPosition = new Vector3(
-            initialPositionMilk.x,
-            initialPositionMilk.y,
-            initialPositionMilk.z + newHeight
+        visuals.UpdateVisuals(
+            eggAmount,
+            milkAmount,
+            flourAmount,
+            sugarAmount,
+            butterAmount
         );
-
-        float scaleMultiplier = Mathf.Lerp(1f, milkSizeModifier, normalized);
-
-        Vector3 scale = initialScaleMilk;
-        scale.x *= scaleMultiplier;
-        scale.y *= scaleMultiplier;
-
-        milkVisual.localScale = scale;
     }
+    //  public void UpdateVisualMilk()
+    //  {
+    //      float normalized = milkAmount / maxIngredients;
+    //      normalized = Mathf.Clamp01(normalized);
+    //
+    //      float newHeight = normalized * maxMilkHeight;
+    //
+    //      milkVisual.localPosition = new Vector3(
+    //          initialPositionMilk.x,
+    //          initialPositionMilk.y,
+    //          initialPositionMilk.z + newHeight
+    //      );
+    //
+    //      float scaleMultiplier = Mathf.Lerp(1f, milkSizeModifier, normalized);
+    //
+    //      Vector3 scale = initialScaleMilk;
+    //      scale.x *= scaleMultiplier;
+    //      scale.y *= scaleMultiplier;
+    //
+    //      milkVisual.localScale = scale;
+    //  }
 
-    private void UpdateVisualFlour()
-    {
-        float flourNormalized = flourAmount / maxIngredients;
-        flourNormalized = Mathf.Clamp01(flourNormalized);
-
-        float mixPercent = maxMix > 0
-            ? mixProgress / maxMix
-            : 0f;
-
-        mixPercent = Mathf.Clamp01(mixPercent);
-
-        float remaining = Mathf.Lerp(flourNormalized, 0f, mixPercent);
-
-        float newHeight = remaining * maxFlourHeight;
-
-        flourVisual.localPosition = new Vector3(
-            initialPositionFlour.x,
-            initialPositionFlour.y,
-            initialPositionFlour.z + (newHeight / 2f)
-        );
-
-        float scaleXY = Mathf.Lerp(1f, flourSizeModifier, remaining);
-
-        Vector3 scale = initialScaleFlour;
-        scale.x *= scaleXY;
-        scale.y *= scaleXY;
-        scale.z *= newHeight * 250f;
-
-        flourVisual.localScale = scale;
-    }
+    //  private void UpdateVisualFlour()
+    //  {
+    //      float flourNormalized = flourAmount / maxIngredients;
+    //      flourNormalized = Mathf.Clamp01(flourNormalized);
+    //
+    //      float mixPercent = maxMix > 0
+    //          ? mixProgress / maxMix
+    //          : 0f;
+    //
+    //      mixPercent = Mathf.Clamp01(mixPercent);
+    //
+    //      float remaining = Mathf.Lerp(flourNormalized, 0f, mixPercent);
+    //
+    //      float newHeight = remaining * maxFlourHeight;
+    //
+    //      flourVisual.localPosition = new Vector3(
+    //          initialPositionFlour.x,
+    //          initialPositionFlour.y,
+    //          initialPositionFlour.z + (newHeight / 2f)
+    //      );
+    //
+    //      float scaleXY = Mathf.Lerp(1f, flourSizeModifier, remaining);
+    //
+    //      Vector3 scale = initialScaleFlour;
+    //      scale.x *= scaleXY;
+    //      scale.y *= scaleXY;
+    //      scale.z *= newHeight * 250f;
+    //
+    //      flourVisual.localScale = scale;
+    //  }
 
     // ---------------------------
     // MIXING
@@ -255,10 +272,11 @@ public class Bowl : MonoBehaviour
         mixProgress = Mathf.Clamp(mixProgress, 0, maxMix);
 
         UpdateMaterial();
-        UpdateVisualFlour();
+      //  UpdateVisualFlour();
         if (IsFullyMixed() && !batterCreated)
         {
             CreateBatter();
+            RefreshVisuals();
         }
     }
     private float RoundIngredient(float value)
@@ -344,18 +362,18 @@ public class Bowl : MonoBehaviour
         batterSugar = 0f;
         batterButter = 0f;
 
-        flavour = Cake.CakeFlavour.Deafult;
+        flavour = Cake.CakeFlavour.Plain;
 
         flavourColor =
             new Color(1f, 0.9f, 0.6f);
-        batterFlavour = Cake.CakeFlavour.Deafult;
+        batterFlavour = Cake.CakeFlavour.Plain;
 
         batterCreated = false;
 
         mixProgress = 0f;
 
-        UpdateVisualMilk();
-        UpdateVisualFlour();
+     //   UpdateVisualMilk();
+     //   UpdateVisualFlour();
         UpdateMaterial();
     }
 }

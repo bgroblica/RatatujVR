@@ -7,6 +7,7 @@ public class Printer : MonoBehaviour
 {
     [Header("Refs")]
     public OrderManager orderManager;
+    public Computer computer;
 
     [Header("Spawn Points")]
     public Transform spawnPoint;

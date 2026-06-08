@@ -4,13 +4,17 @@ using static GameFlowManager;
 
 public class Computer : MonoBehaviour
 {
+    [Header("Refs")]
     public GameFlowManager gameFlow;
+    public Printer printer;
+
+    [Header("Screen Material")]
 
     public Renderer screenRenderer;
 
     public Material tutorialMaterial;
+    public Material tutorialFinishedMaterial;
 
-    public Printer printer;
 
     [Header("Orders")]
     public List<ClientOrders> availableOrders;
@@ -132,5 +136,13 @@ public class Computer : MonoBehaviour
         }
 
         RefreshScreen();
+    }
+
+    public void SetTutorialFinishedScreen()
+    {
+        if (screenRenderer == null || tutorialFinishedMaterial == null)
+            return;
+
+        screenRenderer.material = tutorialFinishedMaterial;
     }
 }

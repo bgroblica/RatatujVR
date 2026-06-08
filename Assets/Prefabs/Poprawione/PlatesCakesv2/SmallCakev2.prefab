@@ -14,10 +14,9 @@ GameObject:
   - component: {fileID: 6240131559576166918}
   - component: {fileID: 2319246080584933832}
   - component: {fileID: 1546975845997925376}
-  - component: {fileID: 7966648955582637896}
   - component: {fileID: 703638139370553321}
   m_Layer: 0
-  m_Name: SmallCake
+  m_Name: SmallCakev2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -305,18 +304,6 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.175, y: 0.15, z: 0.175}
   m_Center: {x: 0, y: 0.095, z: 0}
---- !u!114 &7966648955582637896
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 129357779985346837}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 86f9d09235b0da841aff77b553e845df, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &703638139370553321
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -335,6 +322,9 @@ MonoBehaviour:
   sugarAmount: 0
   butterAmount: 0
   flavour: 0
+  lemonIcing: {fileID: 0}
+  chocolateIcing: {fileID: 0}
+  strawberryIcing: {fileID: 0}
   bakeProgress: 0
   bakedMin: 400
   bakedMax: 500
@@ -347,6 +337,7 @@ MonoBehaviour:
   nextLayerSocket: {fileID: 0}
   decorationSockets:
   - {fileID: 595326742101790871}
+  icing: 0
 --- !u!1 &566170004754754575
 GameObject:
   m_ObjectHideFlags: 0
