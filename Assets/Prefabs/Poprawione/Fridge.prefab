@@ -252,6 +252,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: -4031999566044065383, guid: fe0636a71e0ae2c4aaf31a819ac933c6, type: 3}
       insertIndex: -1
       addedObject: {fileID: 8766921220102263913}
+    - targetCorrespondingSourceObject: {fileID: -4031999566044065383, guid: fe0636a71e0ae2c4aaf31a819ac933c6, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1821062140380081607}
     - targetCorrespondingSourceObject: {fileID: -3414919878296243991, guid: fe0636a71e0ae2c4aaf31a819ac933c6, type: 3}
       insertIndex: -1
       addedObject: {fileID: 7925573407342478971}
@@ -488,6 +491,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1821062140380081607}
+        m_TargetAssemblyTypeName: OneShotPlayer, Assembly-CSharp
+        m_MethodName: PlayOneShot
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   m_SelectExited:
     m_PersistentCalls:
       m_Calls: []
@@ -514,6 +529,25 @@ MonoBehaviour:
   m_StartingInteractionStrengthFilters: []
   m_AutoFindParentInteractableInHierarchy: 0
   m_ParentInteractableObject: {fileID: 0}
+--- !u!114 &1821062140380081607
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5824743957846652332}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 34cb588005334a84f8935059143d6a7d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  oneShotPlayed:
+    Guid:
+      Data1: 1601838246
+      Data2: 1110192620
+      Data3: 11709060
+      Data4: 1771557929
+    Path: event:/Oven/OvenButton
 --- !u!1 &5966955703026469324 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -3886550824284508679, guid: fe0636a71e0ae2c4aaf31a819ac933c6, type: 3}

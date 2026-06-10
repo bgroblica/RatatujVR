@@ -5,7 +5,7 @@
 			<value>FridgeBuzzing</value>
 		</property>
 		<property name="outputFormat">
-			<value>1</value>
+			<value>2</value>
 		</property>
 		<relationship name="folder">
 			<destination>{68efde22-7aad-46ca-a64d-81dba32f5760}</destination>
@@ -155,6 +155,7 @@
 	<object class="MixerBusEffectChain" id="{b46454be-e69c-406a-9628-a55280bea39b}">
 		<relationship name="effects">
 			<destination>{c0eba0e3-ca5e-4873-8807-b4da97371e08}</destination>
+			<destination>{67bbc683-003b-4238-8b93-160615f2b936}</destination>
 		</relationship>
 	</object>
 	<object class="MixerBusPanner" id="{1557ea30-f122-4785-9b1b-6b0064400c2b}" />
@@ -188,6 +189,14 @@
 	</object>
 	<object class="MixerBusPanner" id="{b21af1ca-11d5-49b3-a877-e99adc51109b}" />
 	<object class="MixerBusFader" id="{c0eba0e3-ca5e-4873-8807-b4da97371e08}" />
+	<object class="SpatialiserEffect" id="{67bbc683-003b-4238-8b93-160615f2b936}">
+		<property name="maximumDistance">
+			<value>5</value>
+		</property>
+		<property name="overrideRange">
+			<value>true</value>
+		</property>
+	</object>
 	<object class="AutomationPoint" id="{6d085f5a-4029-4973-8e0f-9cb25915c4b4}">
 		<property name="position">
 			<value>28</value>

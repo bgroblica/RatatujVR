@@ -103,8 +103,20 @@ public class Computer : MonoBehaviour
         {
             case GameState.Tutorial:
 
-                screenRenderer.material =
-                    tutorialMaterial;
+                if (
+                    printer != null &&
+                    printer.TutorialPagesFinished() &&
+                    tutorialFinishedMaterial != null
+                )
+                {
+                    screenRenderer.material =
+                        tutorialFinishedMaterial;
+                }
+                else
+                {
+                    screenRenderer.material =
+                        tutorialMaterial;
+                }
 
                 break;
 
@@ -136,13 +148,5 @@ public class Computer : MonoBehaviour
         }
 
         RefreshScreen();
-    }
-
-    public void SetTutorialFinishedScreen()
-    {
-        if (screenRenderer == null || tutorialFinishedMaterial == null)
-            return;
-
-        screenRenderer.material = tutorialFinishedMaterial;
     }
 }

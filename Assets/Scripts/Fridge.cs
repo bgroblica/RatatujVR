@@ -14,5 +14,6 @@ public class Fridge : MonoBehaviour
             "Open",
             isOpen
         );
+
     }
 }

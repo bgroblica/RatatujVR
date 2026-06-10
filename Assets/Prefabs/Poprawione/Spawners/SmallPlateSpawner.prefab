@@ -601,7 +601,7 @@ MonoBehaviour:
   m_StartingInteractionStrengthFilters: []
   m_AutoFindParentInteractableInHierarchy: 0
   m_ParentInteractableObject: {fileID: 0}
-  sugarCubePrefab: {fileID: 4680966802345969216, guid: 9334fd9d4042d8a46bf220fe17e1db26, type: 3}
+  sugarCubePrefab: {fileID: 4680966802345969216, guid: 0756596d944783c48ab37e0db36aae65, type: 3}
   spawnPoint: {fileID: 6511270279204557137}
 --- !u!1 &4711882264346752281
 GameObject:
@@ -939,7 +939,7 @@ Transform:
   m_GameObject: {fileID: 8640390248594279355}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.35, y: 0.05, z: 0}
+  m_LocalPosition: {x: 0.34, y: 0.075, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []

@@ -8,7 +8,8 @@ public class TrashBin : MonoBehaviour
             return;
 
         Debug.Log($"Destroyed by trash bin: {other.name}");
-
+        if (other.CompareTag("Player"))
+            return;
         Destroy(other.transform.root.gameObject);
     }
 }

@@ -59,6 +59,11 @@ public class Printer : MonoBehaviour
         Debug.Log(
             $"Printed tutorial page {currentTutorialPage}/{tutorialPages.Count}"
         );
+
+        if (TutorialPagesFinished() && computer != null)
+        {
+            computer.RefreshScreen();
+        }
     }
 
     // ---------------- ORDER ----------------

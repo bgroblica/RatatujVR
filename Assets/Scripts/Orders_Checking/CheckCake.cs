@@ -9,6 +9,7 @@ public class CheckCake : MonoBehaviour
     public XRSocketInteractor plateSocket;
     public GameFlowManager gameFlowManager;
     public Printer printer;
+    public Computer computer;
 
     public Animator boxAnimator;
 
@@ -81,6 +82,11 @@ public class CheckCake : MonoBehaviour
             GameState.Tutorial)
         {
             gameFlowManager.CompleteTutorial();
+
+            if (computer != null)
+            {
+                computer.RefreshScreen();
+            }
         }
         else if (gameFlowManager.currentState ==
                  GameState.ActiveOrder)

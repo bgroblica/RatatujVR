@@ -8,11 +8,12 @@ TagManager:
   - Spoon
   - Strawberry
   - Lemon
+  - PostProccess
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - PostProccess
   - Water
   - UI
   - 
