@@ -10,6 +10,9 @@ public class BowlVisuals : MonoBehaviour
 
     public GameObject mixedMesh;
 
+    public bool isMixed = false;
+
+
     public void UpdateVisuals(
         float egg,
         float milk,
@@ -23,10 +26,8 @@ public class BowlVisuals : MonoBehaviour
         sugarMesh.SetActive(sugar > 0);
         butterMesh.SetActive(butter > 0);
 
-        bool isMixed =
-            egg > 0 && milk > 0 && flour > 0 && sugar > 0 && butter > 0;
 
-        if (isMixed)
+        if (isMixed == true)
         {
             eggMesh.SetActive(false);
             milkMesh.SetActive(false);
@@ -35,6 +36,7 @@ public class BowlVisuals : MonoBehaviour
             butterMesh.SetActive(false);
 
             mixedMesh.SetActive(true);
+            Debug.Log("Mixed Mesh Active");
         }
         else
         {

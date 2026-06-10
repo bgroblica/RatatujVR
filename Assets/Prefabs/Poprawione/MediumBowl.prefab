@@ -593,8 +593,8 @@ MonoBehaviour:
   batterEgg: 0
   batterSugar: 0
   batterButter: 0
-  visuals: {fileID: 0}
-  fillingRenderer: {fileID: 0}
+  visuals: {fileID: 6466314947114700369}
+  fillingRenderer: {fileID: 7229026377550343612}
   batterColor: {r: 1, g: 0.9, b: 0.6, a: 1}
   flavourColor: {r: 1, g: 0.9, b: 0.6, a: 1}
 --- !u!114 &1686514952188183721

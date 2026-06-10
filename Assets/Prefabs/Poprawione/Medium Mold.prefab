@@ -488,7 +488,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ea013e661a30b7342a1e58496b9a60aa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  batterPrefab: {fileID: 129357779985346837, guid: f13f44aad6b586147a4420ae3691eb21, type: 3}
+  batterPrefab: {fileID: 129357779985346837, guid: 374f523f4f00fe4469fe3aa1f4484d1f, type: 3}
   batterVisual: {fileID: 3290309546273026072}
   milkAmount: 0
   flourAmount: 0

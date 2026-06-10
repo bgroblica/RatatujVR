@@ -18,6 +18,7 @@ public class Mixing : MonoBehaviour
             Debug.Log("SPOON ENTERED");
             spoonInside = true;
             currentSpoon = other.GetComponent<Spoon>();
+            loopPlayer.StartMixing();
         }
     }
 
@@ -26,6 +27,7 @@ public class Mixing : MonoBehaviour
         Debug.Log("EXIT: " + other.name + " | root: " + other.transform.root.name);
         if (other.CompareTag("Spoon"))
         {
+            loopPlayer.StopMixing();
             spoonInside = false;
             currentSpoon = null;
         }
@@ -44,11 +46,7 @@ public class Mixing : MonoBehaviour
             {
                 float effectiveSpeed = speed - minMixSpeed;
                 bowl.Mix(effectiveSpeed);
-                loopPlayer.StartMixing();
-            }
-            else
-            {
-                loopPlayer.StopMixing();
+
             }
         }
     }
