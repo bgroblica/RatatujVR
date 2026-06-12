@@ -447,7 +447,7 @@ MonoBehaviour:
   batterFlavour: 0
   mixProgress: 0
   maxMix: 3
-  mixModifier: 10
+  mixModifier: 50
   batterAmount: 0
   batterMilk: 0
   batterFlour: 0
@@ -510,6 +510,7 @@ MonoBehaviour:
   sugarMesh: {fileID: 970722695213564482}
   butterMesh: {fileID: 7856802398088603798}
   mixedMesh: {fileID: 2514316134121729889}
+  isMixed: 0
 --- !u!114 &2686177711365924953
 MonoBehaviour:
   m_ObjectHideFlags: 0

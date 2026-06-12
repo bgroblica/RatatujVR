@@ -17,11 +17,13 @@ public class LoopPlayer : MonoBehaviour
     public void StartMixing()
     {
         mixerInstance.start();
+        Debug.Log("Started Loop");
     }
 
     public void StopMixing()
     {
         mixerInstance.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
+        Debug.Log("Stopped Loop");
     }
 
     private void OnDestroy()

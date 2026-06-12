@@ -43,6 +43,9 @@ Transform:
   - {fileID: 4335575131088300970}
   - {fileID: 6700900345285100818}
   - {fileID: 5803603717048805957}
+  - {fileID: 1931141288362658513}
+  - {fileID: 7678288485382938055}
+  - {fileID: 808761477999464360}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &3571979023585693828
@@ -371,9 +374,9 @@ MonoBehaviour:
   sugarAmount: 0
   butterAmount: 0
   flavour: 0
-  lemonIcing: {fileID: 5605790588372316717, guid: e7c684a134e5a824db5bc8f91caa5dff, type: 3}
-  chocolateIcing: {fileID: 5605790588372316717, guid: 98028a3f0f2ec294eb5a0fc980ba6df5, type: 3}
-  strawberryIcing: {fileID: 5605790588372316717, guid: 4a687709f2b6f5e408fcab9fe1da378e, type: 3}
+  lemonIcing: {fileID: 3697654172546178945}
+  chocolateIcing: {fileID: 4833132702839441559}
+  strawberryIcing: {fileID: 5973807289559043566}
   bakeProgress: 0
   bakedMin: 650
   bakedMax: 800
@@ -1527,3 +1530,216 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.5119693, y: 0.20341678, z: 0.13686725}
   m_Center: {x: 1.3636083e-11, y: 0.00055591017, z: 0.0005980059}
+--- !u!1001 &1070018606780742330
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 3624388269877009288}
+    m_Modifications:
+    - target: {fileID: 1447259143190294635, guid: 98028a3f0f2ec294eb5a0fc980ba6df5, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1447259143190294635, guid: 98028a3f0f2ec294eb5a0fc980ba6df5, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1447259143190294635, guid: 98028a3f0f2ec294eb5a0fc980ba6df5, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1447259143190294635, guid: 98028a3f0f2ec294eb5a0fc980ba6df5, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1447259143190294635, guid: 98028a3f0f2ec294eb5a0fc980ba6df5, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1447259143190294635, guid: 98028a3f0f2ec294eb5a0fc980ba6df5, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1447259143190294635, guid: 98028a3f0f2ec294eb5a0fc980ba6df5, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1447259143190294635, guid: 98028a3f0f2ec294eb5a0fc980ba6df5, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1447259143190294635, guid: 98028a3f0f2ec294eb5a0fc980ba6df5, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1447259143190294635, guid: 98028a3f0f2ec294eb5a0fc980ba6df5, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5605790588372316717, guid: 98028a3f0f2ec294eb5a0fc980ba6df5, type: 3}
+      propertyPath: m_Name
+      value: IcingChocoOnMedium
+      objectReference: {fileID: 0}
+    - target: {fileID: 5605790588372316717, guid: 98028a3f0f2ec294eb5a0fc980ba6df5, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 98028a3f0f2ec294eb5a0fc980ba6df5, type: 3}
+--- !u!4 &1931141288362658513 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 1447259143190294635, guid: 98028a3f0f2ec294eb5a0fc980ba6df5, type: 3}
+  m_PrefabInstance: {fileID: 1070018606780742330}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &4833132702839441559 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5605790588372316717, guid: 98028a3f0f2ec294eb5a0fc980ba6df5, type: 3}
+  m_PrefabInstance: {fileID: 1070018606780742330}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &2246450426212171715
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 3624388269877009288}
+    m_Modifications:
+    - target: {fileID: 1447259143190294635, guid: 4a687709f2b6f5e408fcab9fe1da378e, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1447259143190294635, guid: 4a687709f2b6f5e408fcab9fe1da378e, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1447259143190294635, guid: 4a687709f2b6f5e408fcab9fe1da378e, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1447259143190294635, guid: 4a687709f2b6f5e408fcab9fe1da378e, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1447259143190294635, guid: 4a687709f2b6f5e408fcab9fe1da378e, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1447259143190294635, guid: 4a687709f2b6f5e408fcab9fe1da378e, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1447259143190294635, guid: 4a687709f2b6f5e408fcab9fe1da378e, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1447259143190294635, guid: 4a687709f2b6f5e408fcab9fe1da378e, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1447259143190294635, guid: 4a687709f2b6f5e408fcab9fe1da378e, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1447259143190294635, guid: 4a687709f2b6f5e408fcab9fe1da378e, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5605790588372316717, guid: 4a687709f2b6f5e408fcab9fe1da378e, type: 3}
+      propertyPath: m_Name
+      value: IcingStrawOnMedium
+      objectReference: {fileID: 0}
+    - target: {fileID: 5605790588372316717, guid: 4a687709f2b6f5e408fcab9fe1da378e, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 4a687709f2b6f5e408fcab9fe1da378e, type: 3}
+--- !u!4 &808761477999464360 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 1447259143190294635, guid: 4a687709f2b6f5e408fcab9fe1da378e, type: 3}
+  m_PrefabInstance: {fileID: 2246450426212171715}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &5973807289559043566 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5605790588372316717, guid: 4a687709f2b6f5e408fcab9fe1da378e, type: 3}
+  m_PrefabInstance: {fileID: 2246450426212171715}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &9123008855485443500
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 3624388269877009288}
+    m_Modifications:
+    - target: {fileID: 1447259143190294635, guid: e7c684a134e5a824db5bc8f91caa5dff, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1447259143190294635, guid: e7c684a134e5a824db5bc8f91caa5dff, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1447259143190294635, guid: e7c684a134e5a824db5bc8f91caa5dff, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1447259143190294635, guid: e7c684a134e5a824db5bc8f91caa5dff, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1447259143190294635, guid: e7c684a134e5a824db5bc8f91caa5dff, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1447259143190294635, guid: e7c684a134e5a824db5bc8f91caa5dff, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1447259143190294635, guid: e7c684a134e5a824db5bc8f91caa5dff, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1447259143190294635, guid: e7c684a134e5a824db5bc8f91caa5dff, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1447259143190294635, guid: e7c684a134e5a824db5bc8f91caa5dff, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1447259143190294635, guid: e7c684a134e5a824db5bc8f91caa5dff, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5605790588372316717, guid: e7c684a134e5a824db5bc8f91caa5dff, type: 3}
+      propertyPath: m_Name
+      value: IcingLemonOnMedium
+      objectReference: {fileID: 0}
+    - target: {fileID: 5605790588372316717, guid: e7c684a134e5a824db5bc8f91caa5dff, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: e7c684a134e5a824db5bc8f91caa5dff, type: 3}
+--- !u!1 &3697654172546178945 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5605790588372316717, guid: e7c684a134e5a824db5bc8f91caa5dff, type: 3}
+  m_PrefabInstance: {fileID: 9123008855485443500}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &7678288485382938055 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 1447259143190294635, guid: e7c684a134e5a824db5bc8f91caa5dff, type: 3}
+  m_PrefabInstance: {fileID: 9123008855485443500}
+  m_PrefabAsset: {fileID: 0}

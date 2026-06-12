@@ -2,11 +2,6 @@
 
 public class Bowl : MonoBehaviour
 {
-//    private Vector3 initialScaleMilk;
-//    private Vector3 initialPositionMilk;
-//    private Vector3 initialScaleFlour;
-//    private Vector3 initialPositionFlour;
-//
     public BatterBowl batterBowl;
 
 
@@ -48,7 +43,6 @@ public class Bowl : MonoBehaviour
 
     [Header("Material / Color")]
     public Renderer fillingRenderer;
-  //  public Color milkColor = Color.white;
     public Color batterColor = new Color(1f, 0.9f, 0.6f);
 
     [Header("Flavour Color")]
@@ -209,8 +203,6 @@ public class Bowl : MonoBehaviour
         if (IsFullyMixed() && !batterCreated)
         {
             CreateBatter();
-            RefreshVisuals();
-            visuals.isMixed = true;
         }
     }
     private float RoundIngredient(float value)
@@ -219,7 +211,9 @@ public class Bowl : MonoBehaviour
     }
     private void CreateBatter()
     {
+        visuals.isMixed = true;
         batterCreated = true;
+        visuals.UpdateBatter();
 
 
         // SAVE RECIPE DATA
@@ -308,8 +302,7 @@ public class Bowl : MonoBehaviour
 
         visuals.isMixed = false;
 
-     //   UpdateVisualMilk();
-     //   UpdateVisualFlour();
         UpdateMaterial();
+        visuals.UpdateBatter();
     }
 }

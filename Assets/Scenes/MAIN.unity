@@ -1536,10 +1536,6 @@ PrefabInstance:
       propertyPath: m_StaticEditorFlags
       value: 2147483647
       objectReference: {fileID: 0}
-    - target: {fileID: 1318647172622017452, guid: bf205979ae5481a47839ae04efec086f, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: -1.985
-      objectReference: {fileID: 0}
     - target: {fileID: 1410968346813763794, guid: bf205979ae5481a47839ae04efec086f, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 2147483647
@@ -2326,7 +2322,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3174808320804307734, guid: a71001b77522ea044b84b44481d8c565, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -2398,6 +2394,91 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 68f556142e951a74bbe838c9fa48c922, type: 3}
+--- !u!1001 &1087932455
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 1702894876586997470, guid: 4a09d4703d13a91499df46e2fbe64fe7, type: 3}
+      propertyPath: m_Name
+      value: MediumBowl
+      objectReference: {fileID: 0}
+    - target: {fileID: 4282001182793176817, guid: 4a09d4703d13a91499df46e2fbe64fe7, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -3.0821395
+      objectReference: {fileID: 0}
+    - target: {fileID: 4282001182793176817, guid: 4a09d4703d13a91499df46e2fbe64fe7, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.9810146
+      objectReference: {fileID: 0}
+    - target: {fileID: 4282001182793176817, guid: 4a09d4703d13a91499df46e2fbe64fe7, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.73214
+      objectReference: {fileID: 0}
+    - target: {fileID: 4282001182793176817, guid: 4a09d4703d13a91499df46e2fbe64fe7, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4282001182793176817, guid: 4a09d4703d13a91499df46e2fbe64fe7, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4282001182793176817, guid: 4a09d4703d13a91499df46e2fbe64fe7, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4282001182793176817, guid: 4a09d4703d13a91499df46e2fbe64fe7, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4282001182793176817, guid: 4a09d4703d13a91499df46e2fbe64fe7, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4282001182793176817, guid: 4a09d4703d13a91499df46e2fbe64fe7, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4282001182793176817, guid: 4a09d4703d13a91499df46e2fbe64fe7, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5187800848247297365, guid: 4a09d4703d13a91499df46e2fbe64fe7, type: 3}
+      propertyPath: eggAmount
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5187800848247297365, guid: 4a09d4703d13a91499df46e2fbe64fe7, type: 3}
+      propertyPath: milkAmount
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 5187800848247297365, guid: 4a09d4703d13a91499df46e2fbe64fe7, type: 3}
+      propertyPath: flourAmount
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5187800848247297365, guid: 4a09d4703d13a91499df46e2fbe64fe7, type: 3}
+      propertyPath: mixProgress
+      value: 5.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5187800848247297365, guid: 4a09d4703d13a91499df46e2fbe64fe7, type: 3}
+      propertyPath: sugarAmount
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5187800848247297365, guid: 4a09d4703d13a91499df46e2fbe64fe7, type: 3}
+      propertyPath: butterAmount
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5187800848247297365, guid: 4a09d4703d13a91499df46e2fbe64fe7, type: 3}
+      propertyPath: allIngredients
+      value: 18
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 4a09d4703d13a91499df46e2fbe64fe7, type: 3}
 --- !u!1 &1144444358
 GameObject:
   m_ObjectHideFlags: 0
@@ -3733,6 +3814,87 @@ Transform:
   m_Children: []
   m_Father: {fileID: 367208607}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &1569468314
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 1702894876586997470, guid: b480d27a749d5af4497ceaf0bf510363, type: 3}
+      propertyPath: m_Name
+      value: Small Bowl
+      objectReference: {fileID: 0}
+    - target: {fileID: 4282001182793176817, guid: b480d27a749d5af4497ceaf0bf510363, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -3.1984055
+      objectReference: {fileID: 0}
+    - target: {fileID: 4282001182793176817, guid: b480d27a749d5af4497ceaf0bf510363, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.0662363
+      objectReference: {fileID: 0}
+    - target: {fileID: 4282001182793176817, guid: b480d27a749d5af4497ceaf0bf510363, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -1.533071
+      objectReference: {fileID: 0}
+    - target: {fileID: 4282001182793176817, guid: b480d27a749d5af4497ceaf0bf510363, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4282001182793176817, guid: b480d27a749d5af4497ceaf0bf510363, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4282001182793176817, guid: b480d27a749d5af4497ceaf0bf510363, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4282001182793176817, guid: b480d27a749d5af4497ceaf0bf510363, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4282001182793176817, guid: b480d27a749d5af4497ceaf0bf510363, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4282001182793176817, guid: b480d27a749d5af4497ceaf0bf510363, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4282001182793176817, guid: b480d27a749d5af4497ceaf0bf510363, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5187800848247297365, guid: b480d27a749d5af4497ceaf0bf510363, type: 3}
+      propertyPath: eggAmount
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5187800848247297365, guid: b480d27a749d5af4497ceaf0bf510363, type: 3}
+      propertyPath: milkAmount
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5187800848247297365, guid: b480d27a749d5af4497ceaf0bf510363, type: 3}
+      propertyPath: flourAmount
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5187800848247297365, guid: b480d27a749d5af4497ceaf0bf510363, type: 3}
+      propertyPath: sugarAmount
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5187800848247297365, guid: b480d27a749d5af4497ceaf0bf510363, type: 3}
+      propertyPath: butterAmount
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5187800848247297365, guid: b480d27a749d5af4497ceaf0bf510363, type: 3}
+      propertyPath: allIngredients
+      value: 9
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: b480d27a749d5af4497ceaf0bf510363, type: 3}
 --- !u!1001 &1659263042
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4525,3 +4687,5 @@ SceneRoots:
   - {fileID: 1300823895}
   - {fileID: 1756940342}
   - {fileID: 14047534758510535}
+  - {fileID: 1087932455}
+  - {fileID: 1569468314}

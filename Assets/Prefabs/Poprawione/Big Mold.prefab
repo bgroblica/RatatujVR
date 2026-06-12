@@ -510,7 +510,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ea013e661a30b7342a1e58496b9a60aa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  batterPrefab: {fileID: 129357779985346837, guid: 1b6f4348f1d21164ba7e123c88ad9524, type: 3}
+  batterPrefab: {fileID: 129357779985346837, guid: 1aef53c105e057d46abb423ceb7f7f4d, type: 3}
   batterVisual: {fileID: 5420654269767953724}
   milkAmount: 0
   flourAmount: 0
@@ -518,10 +518,10 @@ MonoBehaviour:
   sugarAmount: 0
   butterAmount: 0
   batterAmount: 0
-  maxBatter: 18
+  maxBatter: 27
   flavour: 0
   maxBatterHeight: 0.1
-  batterSizeModifier: 100
+  batterSizeModifier: 1
   flavourColor: {r: 1, g: 0.9, b: 0.6, a: 1}
 --- !u!1 &2261353143697184046
 GameObject:

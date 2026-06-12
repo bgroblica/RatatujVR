@@ -184,7 +184,7 @@ Transform:
   m_GameObject: {fileID: 1405485442226075033}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: -0.1, z: 0}
+  m_LocalPosition: {x: 0, y: -0.065, z: 0}
   m_LocalScale: {x: 1, y: 0.01, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -496,10 +496,10 @@ MonoBehaviour:
   sugarAmount: 0
   butterAmount: 0
   batterAmount: 0
-  maxBatter: 8
+  maxBatter: 9
   flavour: 0
-  maxBatterHeight: 0.2
-  batterSizeModifier: 1.32
+  maxBatterHeight: 0.083
+  batterSizeModifier: 1
   flavourColor: {r: 1, g: 0.9, b: 0.6, a: 1}
 --- !u!1 &3756529971746856412
 GameObject:

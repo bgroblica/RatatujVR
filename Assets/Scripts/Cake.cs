@@ -20,6 +20,14 @@ public class Cake : MonoBehaviour
     public GameObject chocolateIcing;
     public GameObject strawberryIcing;
 
+    [Header("Icing Application")]
+    public float icingProgress = 0f;
+
+    private IcingType currentIcingType;
+    private bool isReceivingIcing = false;
+
+    public float applyTime = 2f;
+
     [Header("Baking")]
     public float bakeProgress = 0f;
 
@@ -62,6 +70,47 @@ public class Cake : MonoBehaviour
         Vanilla,
         Strawberry,
         Chocolate
+    }
+
+    public void StartIcing(IcingType icingType)
+    {
+        currentIcingType = icingType;
+        isReceivingIcing = true;
+    }
+
+    public void StopIcing()
+    {
+        isReceivingIcing = false;
+        icingProgress = 0f;
+    }
+
+    private void Update()
+    {
+        UpdateIcing();
+    }
+
+    private void UpdateIcing()
+    {
+        if (!isReceivingIcing)
+            return;
+
+        if (icing == currentIcingType)
+            return;
+
+        icingProgress += Time.deltaTime;
+
+        if (icingProgress >= applyTime)
+        {
+            SetIcing(currentIcingType);
+
+            icingProgress = 0f;
+            isReceivingIcing = false;
+
+            Debug.Log(
+                "Applied icing: " +
+                currentIcingType
+            );
+        }
     }
 
     public void SetIcing(IcingType type)

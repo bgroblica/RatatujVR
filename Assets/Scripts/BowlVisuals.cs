@@ -43,4 +43,24 @@ public class BowlVisuals : MonoBehaviour
             mixedMesh.SetActive(false);
         }
     }
+
+    public void UpdateBatter()
+    {
+        if (isMixed == true)
+        {
+            eggMesh.SetActive(false);
+            milkMesh.SetActive(false);
+            flourMesh.SetActive(false);
+            sugarMesh.SetActive(false);
+            butterMesh.SetActive(false);
+
+            mixedMesh.SetActive(true);
+            Debug.Log("Mixed Mesh Active");
+        }
+        else
+        {
+            mixedMesh.SetActive(false);
+            Debug.Log("Mixed Mesh Not Active");
+        }
+    }
 }

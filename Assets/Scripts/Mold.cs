@@ -104,37 +104,35 @@ public class Mold : MonoBehaviour
             return;
 
         float normalized =
-            maxBatter > 0
-            ? batterAmount / maxBatter
-            : 0f;
+            Mathf.Clamp01(
+                batterAmount / maxBatter
+            );
 
-        normalized =
-            Mathf.Clamp01(normalized);
-
-        float newHeight =
+        // Height
+        float height =
             normalized * maxBatterHeight;
 
         batterVisual.localPosition =
             new Vector3(
                 initialPositionBatter.x,
-                initialPositionBatter.y + newHeight,
+                initialPositionBatter.y + height,
                 initialPositionBatter.z
             );
 
-        float scaleY =
+        // Scale
+        float targetScale =
             Mathf.Lerp(
-                1f,
+                initialScaleBatter.y,
                 batterSizeModifier,
                 normalized
             );
 
         Vector3 scale =
-            initialScaleBatter;
+            batterVisual.localScale;
 
-        scale.y *= scaleY;
+        scale.y = targetScale;
 
-        batterVisual.localScale =
-            scale;
+        batterVisual.localScale = scale;
     }
 
     public bool HasBatter()
