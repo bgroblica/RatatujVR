@@ -262,7 +262,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 25faa0c0812b0644da94dff0222369df, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  socket: {fileID: 0}
+  socket: {fileID: 2699291280358651537}
   milkText: {fileID: 7357541660287653785}
   flourText: {fileID: 2370021431332950583}
   eggText: {fileID: 7892168033702275320}
