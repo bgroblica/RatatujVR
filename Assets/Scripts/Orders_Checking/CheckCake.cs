@@ -41,6 +41,15 @@ public class CheckCake : MonoBehaviour
 
     public void CheckCurrentCake()
     {
+        var interactable =
+            plateSocket.GetOldestInteractableSelected();
+
+        if (interactable == null)
+        {
+            Debug.Log("No cake on plate!");
+            return;
+        }
+
         StartCoroutine(CheckCakeRoutine());
 
         if (boxAnimator != null)
