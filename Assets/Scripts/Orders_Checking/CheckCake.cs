@@ -1,5 +1,6 @@
 using System.Collections;
 using UnityEngine;
+using UnityEngine.XR.Interaction.Toolkit.Interactables;
 using UnityEngine.XR.Interaction.Toolkit.Interactors;
 using static GameFlowManager;
 
@@ -277,13 +278,27 @@ public class CheckCake : MonoBehaviour
     private void DestroyCurrentCake()
     {
         var interactable =
-            plateSocket.GetOldestInteractableSelected();
+            plateSocket.GetOldestInteractableSelected() as XRBaseInteractable;
 
         if (interactable == null)
             return;
 
+        plateSocket.interactionManager?.SelectExit(
+            interactable.firstInteractorSelecting,
+            interactable
+        );
+
+        StartCoroutine(DestroyCakeNextFrame(interactable));
+    }
+    private IEnumerator DestroyCakeNextFrame(XRBaseInteractable interactable)
+    {
+        yield return null; // WAIT 1 FRAME (critical)
+
+        if (interactable == null)
+            yield break;
+
         CakeStackReader reader =
-            interactable.transform.GetComponent<CakeStackReader>();
+            interactable.GetComponent<CakeStackReader>();
 
         if (reader != null)
         {
