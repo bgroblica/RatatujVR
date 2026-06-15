@@ -28,6 +28,14 @@ public class Printer : MonoBehaviour
 
     // ---------------- TUTORIAL ----------------
 
+    private void Awake()
+    {
+        if (orderManager == null)
+        {
+            orderManager =
+                FindFirstObjectByType<OrderManager>();
+        }
+    }
     public bool TutorialPagesFinished()
     {
         return currentTutorialPage >= tutorialPages.Count;

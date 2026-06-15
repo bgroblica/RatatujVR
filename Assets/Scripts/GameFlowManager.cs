@@ -21,6 +21,7 @@ public class GameFlowManager : MonoBehaviour
     private void Start()
     {
         StartTutorial();
+        Debug.Log("GameFlowManager Start()");
     }
 
     public void StartTutorial()

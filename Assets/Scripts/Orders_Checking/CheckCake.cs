@@ -38,7 +38,19 @@ public class CheckCake : MonoBehaviour
         decorationWeight;
 
     // -----------------------------
-
+    private void Awake()
+    {
+        if (gameFlowManager == null)
+        {
+            gameFlowManager =
+                FindFirstObjectByType<GameFlowManager>();
+        }
+        if (orderManager == null)
+        {
+            orderManager =
+                FindFirstObjectByType<OrderManager>();
+        }
+    }
     public void CheckCurrentCake()
     {
         var interactable =

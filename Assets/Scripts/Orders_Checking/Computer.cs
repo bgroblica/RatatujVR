@@ -24,6 +24,15 @@ public class Computer : MonoBehaviour
     public ClientOrders CurrentOrder =>
         availableOrders[currentIndex];
 
+    private void Awake()
+    {
+        if (gameFlow == null)
+        {
+            gameFlow =
+                FindFirstObjectByType<GameFlowManager>();
+        }
+    }
+
     private void Start()
     {
         RefreshScreen();
