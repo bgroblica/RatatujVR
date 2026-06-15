@@ -169,7 +169,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3290309546273026072}
   m_Layer: 0
-  m_Name: BatterViual
+  m_Name: BatterVisual
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

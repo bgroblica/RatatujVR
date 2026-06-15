@@ -196,7 +196,7 @@ Transform:
   - {fileID: 5743654938605018359}
   - {fileID: 6943624694440805062}
   - {fileID: 4199711826674498836}
-  - {fileID: 3279434757420292104}
+  - {fileID: 8688877015583938085}
   - {fileID: 6602682856471045263}
   - {fileID: 3923842264150118238}
   - {fileID: 4648898275020840617}
@@ -458,7 +458,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   batterPrefab: {fileID: 129357779985346837, guid: 374f523f4f00fe4469fe3aa1f4484d1f, type: 3}
-  batterVisual: {fileID: 3279434757420292104}
+  batterVisual: {fileID: 8688877015583938085}
   milkAmount: 0
   flourAmount: 0
   eggAmount: 0
@@ -467,40 +467,9 @@ MonoBehaviour:
   batterAmount: 0
   maxBatter: 18
   flavour: 0
-  maxBatterHeight: 0.01
+  maxBatterHeight: 0.102
   batterSizeModifier: 1
   flavourColor: {r: 1, g: 0.9, b: 0.6, a: 1}
---- !u!1 &2327061122513716709
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 3279434757420292104}
-  m_Layer: 0
-  m_Name: BatterViual
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &3279434757420292104
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2327061122513716709}
-  serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: -0.08, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 5399679631278374152}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2876862973092308793
 GameObject:
   m_ObjectHideFlags: 0
@@ -722,6 +691,37 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.020304918, y: 0.19455332, z: 0.15077916}
   m_Center: {x: 0.27129582, y: -0.0013780892, z: -0.004386456}
+--- !u!1 &5619016605552056488
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8688877015583938085}
+  m_Layer: 0
+  m_Name: BatterVisual
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8688877015583938085
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5619016605552056488}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: -0.08, z: 0}
+  m_LocalScale: {x: 1, y: 0.01, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 5399679631278374152}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &5964856655911820860
 GameObject:
   m_ObjectHideFlags: 0

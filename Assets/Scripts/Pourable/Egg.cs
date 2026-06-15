@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class Egg : Solids
+public class Egg : MonoBehaviour
 {
     public enum EggState
     {

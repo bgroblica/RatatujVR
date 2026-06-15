@@ -86,7 +86,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 0e895cb3e777db74aa6c65a21b9f741b, type: 2}
+  - {fileID: 2100000, guid: 9edf7b9262489274d80fbe1e3f286a75, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -384,6 +384,8 @@ MonoBehaviour:
   lemonIcing: {fileID: 8929927724044098671}
   chocolateIcing: {fileID: 116418662821535333}
   strawberryIcing: {fileID: 2126939780824625040}
+  icingProgress: 0
+  applyTime: 2
   bakeProgress: 0
   bakedMin: 1300
   bakedMax: 1500
