@@ -6,8 +6,8 @@ using UnityEngine.XR.Interaction.Toolkit.Interactables;
 public class Printer : MonoBehaviour
 {
     [Header("Refs")]
-    private OrderManager orderManager;
-    private Computer computer;
+    public OrderManager orderManager;
+    public Computer computer;
     public OneShotPlayer oneShot;
 
     [Header("Spawn Points")]
