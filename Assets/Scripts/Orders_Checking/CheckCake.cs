@@ -38,7 +38,7 @@ public class CheckCake : MonoBehaviour
         decorationWeight;
 
     // -----------------------------
-    private void Awake()
+    public void Awake()
     {
         if (gameFlowManager == null)
         {

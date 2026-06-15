@@ -6,8 +6,8 @@ using UnityEngine.XR.Interaction.Toolkit.Interactables;
 public class Printer : MonoBehaviour
 {
     [Header("Refs")]
-    public OrderManager orderManager;
-    public Computer computer;
+    private OrderManager orderManager;
+    private Computer computer;
     public OneShotPlayer oneShot;
 
     [Header("Spawn Points")]
@@ -30,10 +30,26 @@ public class Printer : MonoBehaviour
 
     private void Awake()
     {
-        if (orderManager == null)
+        OrderManager manager =
+            FindFirstObjectByType<OrderManager>();
+
+        Debug.Log("Found OrderManager: " + manager);
+        orderManager = manager;
+    }
+    private void Start()
+    {
+        Debug.Log(
+            "OrderManagers found: " +
+            FindObjectsByType<OrderManager>(
+                FindObjectsSortMode.None
+            ).Length
+        );
+    }
+    public void Update()
+    {
+        if (Input.GetKeyUp(KeyCode.E))
         {
-            orderManager =
-                FindFirstObjectByType<OrderManager>();
+            Debug.Log("OrderManager is: " + orderManager);
         }
     }
     public bool TutorialPagesFinished()

@@ -24,7 +24,7 @@ public class Computer : MonoBehaviour
     public ClientOrders CurrentOrder =>
         availableOrders[currentIndex];
 
-    private void Awake()
+    public void Awake()
     {
         if (gameFlow == null)
         {
