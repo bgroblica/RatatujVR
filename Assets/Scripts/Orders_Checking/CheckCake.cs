@@ -270,6 +270,22 @@ public class CheckCake : MonoBehaviour
         if (interactable == null)
             return;
 
+        CakeStackReader reader =
+            interactable.transform.GetComponent<CakeStackReader>();
+
+        if (reader != null)
+        {
+            var layers = reader.GetFullCake();
+
+            foreach (var layer in layers)
+            {
+                if (layer.cake != null)
+                {
+                    Destroy(layer.cake.gameObject);
+                }
+            }
+        }
+
         Destroy(interactable.transform.root.gameObject);
     }
 }
