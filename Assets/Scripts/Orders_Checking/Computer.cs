@@ -95,6 +95,7 @@ public class Computer : MonoBehaviour
     public void RefreshScreen()
     {
         Debug.Log("RefreshScreen called");
+        Debug.Log("Current State = " + gameFlow.currentState);
 
         if (screenRenderer == null)
             return;
