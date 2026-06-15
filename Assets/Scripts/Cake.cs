@@ -81,7 +81,6 @@ public class Cake : MonoBehaviour
     public void StopIcing()
     {
         isReceivingIcing = false;
-        icingProgress = 0f;
     }
 
     private void Update()
