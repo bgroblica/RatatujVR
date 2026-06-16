@@ -12,20 +12,30 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 20a4b2744f6f7c64983cd605c22a84d0, type: 3}
   m_Name: Cake3
   m_EditorClassIdentifier: 
-  cakeName: Cake3
+  cakeName: Mish Mash cake
   maxIngredients: Big is 27, medium is 18, small is 9
   previewMaterial: {fileID: 2100000, guid: c739219e22432e948afd4b670f9df54c, type: 2}
   orderPaperPrefab: {fileID: 5669651063620529089, guid: a7d97ed3e0d9f924486c729dbd51e82c, type: 3}
   happyResultPrefab: {fileID: 5669651063620529089, guid: c2e8524c3acc4b54b97bf168f3c61274, type: 3}
   sadResultPrefab: {fileID: 5669651063620529089, guid: 9de46396d5b336d4b93274cb44434a5f, type: 3}
   layers:
-  - milk: 5
-    flour: 8
-    egg: 2
-    sugar: 2
-    butter: 1
-    flavour: 2
-    strawberries: 4
+  - milk: 4
+    flour: 7
+    egg: 5
+    sugar: 5
+    butter: 6
+    flavour: 0
+    strawberries: 8
     lemons: 0
     requiredBakeState: 1
-    requiredIcing: 0
+    requiredIcing: 1
+  - milk: 2
+    flour: 5
+    egg: 4
+    sugar: 4
+    butter: 3
+    flavour: 0
+    strawberries: 0
+    lemons: 6
+    requiredBakeState: 1
+    requiredIcing: 3

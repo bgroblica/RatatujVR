@@ -19,23 +19,23 @@ MonoBehaviour:
   happyResultPrefab: {fileID: 5669651063620529089, guid: 8477dc22cdc07274b82f7baef1b1da39, type: 3}
   sadResultPrefab: {fileID: 5669651063620529089, guid: 54589c762f31f724680f2d753d135b85, type: 3}
   layers:
-  - milk: 3
-    flour: 4
-    egg: 2
-    sugar: 1
-    butter: 1
+  - milk: 2
+    flour: 5
+    egg: 4
+    sugar: 4
+    butter: 3
     flavour: 1
-    strawberries: 0
+    strawberries: 6
     lemons: 0
     requiredBakeState: 1
-    requiredIcing: 0
+    requiredIcing: 2
   - milk: 1
     flour: 3
     egg: 2
     sugar: 2
     butter: 1
     flavour: 1
-    strawberries: 0
-    lemons: 1
+    strawberries: 4
+    lemons: 0
     requiredBakeState: 1
-    requiredIcing: 0
+    requiredIcing: 2

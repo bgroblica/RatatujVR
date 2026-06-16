@@ -12,20 +12,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 20a4b2744f6f7c64983cd605c22a84d0, type: 3}
   m_Name: Cake1
   m_EditorClassIdentifier: 
-  cakeName: Portal Cake
+  cakeName: Choco Cake
   maxIngredients: Big is 27, medium is 18, small is 9
   previewMaterial: {fileID: 2100000, guid: b7697d8ae6462ba4ca55b9fca36f5259, type: 2}
   orderPaperPrefab: {fileID: 5669651063620529089, guid: 862e8f10084d7354a995690e0fe55ba2, type: 3}
   happyResultPrefab: {fileID: 5669651063620529089, guid: 7c2725205a1109f489d7057d5d80e584, type: 3}
   sadResultPrefab: {fileID: 5669651063620529089, guid: 85b13d232106b2b468a4404f843a88b3, type: 3}
   layers:
-  - milk: 5
+  - milk: 6
     flour: 8
-    egg: 2
-    sugar: 2
-    butter: 1
+    egg: 4
+    sugar: 5
+    butter: 4
     flavour: 3
-    strawberries: 4
-    lemons: 0
+    strawberries: 2
+    lemons: 2
     requiredBakeState: 1
     requiredIcing: 3

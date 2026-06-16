@@ -12,30 +12,40 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 20a4b2744f6f7c64983cd605c22a84d0, type: 3}
   m_Name: Cake2
   m_EditorClassIdentifier: 
-  cakeName: Cake2
+  cakeName: Big Pink Lemon Cake
   maxIngredients: Big is 27, medium is 18, small is 9
   previewMaterial: {fileID: 2100000, guid: 80bf8ee7c7af3df47ad7eb447a354d57, type: 2}
   orderPaperPrefab: {fileID: 5669651063620529089, guid: a0c059cf5853aed428721089b206f68b, type: 3}
   happyResultPrefab: {fileID: 5669651063620529089, guid: 4d30fb527f4d3e24897768d8da507014, type: 3}
   sadResultPrefab: {fileID: 5669651063620529089, guid: 3320bf224c22bd8488e875edfb2439a9, type: 3}
   layers:
-  - milk: 5
+  - milk: 6
     flour: 8
-    egg: 2
-    sugar: 2
-    butter: 1
+    egg: 4
+    sugar: 5
+    butter: 4
     flavour: 2
-    strawberries: 4
-    lemons: 0
+    strawberries: 0
+    lemons: 1
     requiredBakeState: 1
-    requiredIcing: 0
-  - milk: 5
-    flour: 8
+    requiredIcing: 1
+  - milk: 4
+    flour: 6
     egg: 2
-    sugar: 2
-    butter: 1
+    sugar: 3
+    butter: 3
     flavour: 2
-    strawberries: 4
-    lemons: 0
+    strawberries: 0
+    lemons: 1
     requiredBakeState: 1
-    requiredIcing: 0
+    requiredIcing: 1
+  - milk: 2
+    flour: 3
+    egg: 1
+    sugar: 1
+    butter: 2
+    flavour: 2
+    strawberries: 0
+    lemons: 1
+    requiredBakeState: 1
+    requiredIcing: 1

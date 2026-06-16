@@ -221,14 +221,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: af16c4787bbe6b04e89e21a3ce4f5231, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ingredientType: 2
-  amount: 1
   meshFilter: {fileID: 7599722944182696989}
   wholeEgg: {fileID: -6820650550861052275, guid: 94fcd168d257f5640a70cb1f3c23e22a, type: 3}
   crackedEgg: {fileID: 3536217719649374247, guid: 14c38da6d8e3d894abc6ca0f2e39e8b7, type: 3}
   eggShellPrefab: {fileID: 7750204212939458051, guid: 50ca55752ff22194a8d277ba181b6b61, type: 3}
   crackForce: 2
-  crackVelocity: 0.1
+  crackVelocity: 2
   eggCrack: {fileID: 6606650043859157929}
   eggFailedCrack: {fileID: 2767069080236507026}
 --- !u!114 &6216692793501072809
